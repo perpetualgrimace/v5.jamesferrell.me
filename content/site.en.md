@@ -1,12 +1,12 @@
-Title: {{site-title}}
+Title: James Ferrell
 
 ----
 
-Description: {{site-description}}
+Description: James Ferrell is a designer/developer in Boston, MA. This is his portfolio site. He doesn't usually talk in the third person like this.
 
 ----
 
-Keywords: {{site-tags}}
+Keywords: Design, Web Design, UI Design, Visual Design, Development, Developer, Website, Webdev, Frontend, Front-end, Branding, Identity, Kirby CMS, Sketch, Boston, Tampa, Freelance, Contract
 
 ----
 
@@ -16,16 +16,20 @@ Dropdownable:
 
 Copyright:
 
-©20**-(date: Year) {{site-title}}. All rights reserved.
+© Copyright schmopyright. Steal my ideas and make them better.
 
 ----
 
-Cta: {{global-cta-headline}}
+Colophon:
+
+This site was built from the ground up with (link: http://getkirby.com text: Kirby CMS), which is the best CMS.
 
 ----
 
-CtaButton: {{global-cta-button-text}}
+Cta:
 
-----
+## Do I sound like someone you'd like to work with?
 
-ctaLink: contact
+I'm happy to chat about a new project, or whatever. Let's grab a coffee.
+
+(link: contact text: Get in touch class: button link-arrow)

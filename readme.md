@@ -1,12 +1,8 @@
-# James Ferrell - Kirby Framework
+# jamesferrell.me
 
-I've spent a lot of time retreading ground when building client websites over the past couple of years. So I've finally decided to build my own little Framework and make it a repo. Woo!
+This is my fifth major website redesign since 2011. I decided not to cut corners and completely mocked up the first group of pages in Sketch. Since the layout, many of the components, and even my coding style have changed (for the better) since the 2017 v4 redesign, I decided to largely start over using my very own [framework](https://github.com/perpetualgrimace/jf-kirby-framework) as a starting point.
 
-This framework was somewhat inspired by the [Kirby starterkit](https://github.com/getkirby/starterkit). It includes some basic templates and style for home, default, blog, and contact pages. It is meant of a starting point for my projects.
-
-It makes use of Kirby CMS, Sass, Gulp, and minimal Javascript (including jQuery, judge away).
-
-
+All following text is from the framework's readme.md file.
 
 ## Kirby CMS
 
@@ -275,25 +271,3 @@ At some point in the near future I plan on looking into module loading, but for 
   - Nav. Make the hamburger menu toggle work, makes dropdown menus accessible via keyboard.
   - Scroll. Just a smooth scroll script for now. Depends on an older version on jQuery, which is an issue I will get around to fixing at some point.
 3. Components. This used to be pages, but I renamed it components. For now, there's only the  contact-form validation, which is in need of some love.
-
-
-
-## Installation
-
-I assume you're probably here to see how I think, but here are some instructions for getting this thing up and running just in case:
-
-1. Install NPM and Gulp globally (if necessary).
-2. Install MAMP (or your localhost server maker of choice). Open it and start servers.
-3. Fork [this repo](https://github.com/JamesFerrell/jf-kirby-framework).
-4. Clone the repo and initialize submodules with one command: `git clone --recursive -j8 https://your-cloned-repo-url`
-5. Open up gulpfile.js. On line 19, redefine  `var proxyUrl` to match the name of your repo. *(Or, reconfigure the `browser-sync` task however you like)*
-6. `cd` into the newly cloned folder and use `npm install` to install all of the Gulp dependencies.
-7. Run `Gulp`.
-
-
-
-## The end, for now
-
-In the process of formalizing the my approach to organization and naming, I noticed some inconsistencies and (mostly) fixed them. I think this was a worthwhile project and I'm glad I did it.
-
-If you're still here, tweet at me and tell me how you would make it better! [@perpetualgrimac](http://twitter.com/perpetualgrimac)

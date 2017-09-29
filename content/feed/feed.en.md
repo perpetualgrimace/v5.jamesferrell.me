@@ -1,4 +1,4 @@
-Title: {{site-title}} RSS Feed
+Title: James Ferrell RSS Feed
 
 ----
 

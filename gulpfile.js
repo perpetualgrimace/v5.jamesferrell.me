@@ -15,7 +15,7 @@ var browserSync     = require('browser-sync');
 var reload          = browserSync.reload;
 
 // Define paths for convenience
-var proxyUrl        = 'localhost:8888/{{client-name}}/';
+var proxyUrl        = 'localhost:8888/v5.jamesferrell.me/';
 var scssMainPath    = 'assets/scss/*.scss';
 var scssPartialPath = 'assets/scss/**/*.scss';
 var jsPath          = 'assets/js/**/*.js';
