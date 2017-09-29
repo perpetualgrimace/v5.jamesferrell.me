@@ -1,6 +1,6 @@
-# jamesferrell.me
+# v5.jamesferrell.me
 
-This is my fifth major website redesign since 2011. I decided not to cut corners and completely mocked up the first group of pages in Sketch. Since the layout, many of the components, and even my coding style have changed (for the better) since the 2017 v4 redesign, I decided to largely start over using my very own [framework](https://github.com/perpetualgrimace/jf-kirby-framework) as a starting point.
+This is my fifth major website redesign since 2011. I decided not to cut corners and completely mocked up the first group of pages in Sketch. Since the layout, many of the components, and even my coding style have changed (for the better) since the 2015 v4 redesign, I decided to largely start over using my very own [framework](https://github.com/perpetualgrimace/jf-kirby-framework) as a starting point.
 
 All following text is from the framework's readme.md file.
 
