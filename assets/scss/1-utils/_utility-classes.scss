@@ -39,19 +39,15 @@
   @media (min-width: $m) { text-align: center; }
 }
 
-// underline links, or not
-.u-underline {
-  text-decoration: underline !important;
-}
-.u-underline-off {
-  text-decoration: none !important;
-}
-
 // make a link look like body text
 .u-unlink-body {
   @include body-font;
-  text-decoration: none !important;
   color: inherit !important;
+}
+
+// UPPERCASE
+.u-uppercase {
+  text-transform: uppercase;
 }
 
 // screen reader text

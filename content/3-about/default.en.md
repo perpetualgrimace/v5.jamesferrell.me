@@ -8,9 +8,9 @@ Headline: Thanks for stopping by
 
 Text:
 
-## Thanks for stopping by
+## About me
 
-I'm (link: https://www.invisionapp.com/blog/t-shaped-designers/ text: T-shaped), or (link: http://bradfrost.com/blog/post/job-title-its-complicated/ text: mortar), or (link: https://www.toptal.com/designers/visual/multidisciplinary-design text: multidisciplinary) — pick your favorite. If you have a problem, I can solve it. Or if you just want to talk about music or retro video games, I'm happy to do that too. (link: contact text: Contact me class: link-arrow)
+I'm (link: https://www.invisionapp.com/blog/t-shaped-designers/ text: T-shaped), or (link: http://bradfrost.com/blog/post/job-title-its-complicated/ text: mortar), or (link: https://www.toptal.com/designers/visual/multidisciplinary-design text: multidisciplinary) — pick your favorite. If you have a problem, I can solve it. Or if you just want to talk about music or retro video games, I'm happy to do that too. (link: contact text: Contact me class: link-arrow epsilon)
 
 ----
 

@@ -12,11 +12,18 @@
     $thumbImg = $site->url() . '/';
   }
 
-  // get author
-  if($item->author() != '') {
-    $author = $item->author();
+  // get relative date
+  if($item->published() != '') {
+    $relativeDate = $item->published()->relative(1);
   } else {
-    $author = $site->title();
+    $relativeDate = NULL;
+  }
+
+  // get description
+  if($item->description() != '') {
+    $description = $item->description();
+  } else {
+    $description = $item->text()->excerpt(25, 'words');
   }
 
   // get layout
@@ -30,13 +37,23 @@
 
 <article class="<?= $contentType?>-card-container card-container g-col <?= $cardLayout ?>">
 
-  <a href="<?= $item->url() ?>" class="<?= $contentType?>-card-thumb card-thumb" tabindex="-1">
-    <img class="<?= $contentType?>-card-img card-img" src="<?= $thumbImg ?>" alt="" draggable="false">
-  </a>
+  <div class="card-inner">
 
-  <div class="<?= $contentType?>-card-caption card-caption">
-     <a class="<?= $contentType?>-card-title card-title display gamma" href="<?= $item->url() ?>"><?= $item->title() ?></a>
-     <p class="<?= $contentType?>-card-meta card-meta">Posted by <?= $author ?></p>
+    <? /* <a href="<?= $item->url() ?>" class="<?= $contentType?>-card-thumb card-thumb" tabindex="-1">
+      <img class="<?= $contentType?>-card-img card-img" src="<?= $thumbImg ?>" alt="" draggable="false">
+    </a> */ ?>
+
+    <div class="<?= $contentType?>-card-caption card-caption">
+
+      <a class="<?= $contentType?>-card-title card-title heading delta" href="<?= $item->url() ?>"><?= $item->title() ?></a>
+
+      <p class="<?= $contentType?>-card-description card-description epsilon"><?= $description ?></p>
+
+      <? if ($relativeDate != NULL): ?>
+        <p class="<?= $contentType?>-card-meta card-meta milli u-uppercase">Written <?= $relativeDate ?></p>
+      <? endif ?>
+    </div>
+
   </div>
 
 </article>

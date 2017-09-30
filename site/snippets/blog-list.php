@@ -1,7 +1,7 @@
  <?
 
   // check for optional variables passed from template
-  if(isset($layout)): $layout = $layout; else: $layout = 'g-8'; endif;
+  if(isset($layout)): $layout = $layout; else: $layout = 'g-12'; endif;
   if(isset($cardLayout)): $cardLayout = $cardLayout; else: $cardLayout = ''; endif;
 
   // number of items to show on each page (articles list page)
@@ -22,7 +22,7 @@
 
 ?>
 
-<div class="g-columns g-col <?= $layout ?> u-fullheight">
+<div class="g-columns <?= $layout ?> u-fullheight">
   <div class="g-col content">
 
     <!-- check for a search query and display result count in a heading -->
@@ -39,13 +39,13 @@
     } ?>
 
     <? if ($page->isHomePage()): ?>
-      <h2 class="u-padding-bottom"><?= $pages->find('blog')->headline() ?></h2>
+      <h2 class="u-padding-bottom"><?= $page->blogHeadline() ?></h2>
     <? endif ?>
 
 
     <!-- display cards -->
     <? if ($items->count() != 0): ?>
-      <div class="g-columns">
+      <div class="g-columns g-compact">
         <? foreach ($items as $item) {
           snippet('card', array('item' => $item, 'cardLayout' => $cardLayout));
         } ?>
@@ -55,7 +55,7 @@
 
     <!-- display pagination if necessary... -->
     <? if($page->isHomePage() && ($pagination->items() > $pagNum)) { ?>
-      <a href="blog" class="more-link">All posts</a>
+      <a href="blog" class="more-link">More articles</a>
     <? } elseif (isset($pagination) && ($pagination->items() > $pagNum)) {
       snippet('pagination', array('pagination' => $pagination));
     } ?>

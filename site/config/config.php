@@ -1,7 +1,7 @@
 <?
 
 // license
-c::set('license', 'Enter Kirby pro license here');
+c::set('license', 'K2-PERSONAL-5abc44f1b1d651260220152fb51e1284');
 
 // cachebuster (https://github.com/getkirby-plugins/cachebuster-plugin)
 c::set('cachebuster', true);

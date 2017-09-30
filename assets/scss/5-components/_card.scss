@@ -2,6 +2,16 @@
 // standard card
 ////////////////////////////////
 
+.card-container {
+  width: 100%;
+}
+
+.card-inner {
+  @include box-shadow;
+  padding: $delta;
+  background: #fff;
+}
+
 
 // thumbnail and caption alignment
 .card-thumb,
@@ -34,7 +44,7 @@
 
   // hovering image triggers adjacent title
   &:hover + .card-caption > .card-title {
-    color: $secondary-color;
+    color: $brand-light;
   }
 }
 
@@ -49,7 +59,7 @@
 // caption positioning
 .card-caption {
   margin-top: 0;
-  padding-left: $gutter;
+  // padding-left: $gutter;
   width: calc(100% - #{($thumb-width / 2)}); // don't be wrapping
 
   // don't be wrapping when the thumbnail scales up
@@ -58,8 +68,11 @@
   }
 }
 
-// stop .card-title from inheriting parent line-height by changing it to a block element ¯\_(ツ)_/¯
-.card-title {
+
+// linked card title
+a.card-title {
+  color: $brand-color; // override .heading color
+  // stop .card-title from inheriting parent line-height by changing it to a block element ¯\_(ツ)_/¯
   display: block;
 }
 
@@ -67,7 +80,7 @@
 // small screen treatment
 @media (max-width: $s - 0.001) {
   .card-title {
-    font-size: $delta * 1.25; // when 6 font sizes aren't enough :/
+    font-size: $delta;
   }
   .card-meta {
     display: none;

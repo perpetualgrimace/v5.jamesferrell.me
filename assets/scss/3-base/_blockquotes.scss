@@ -11,16 +11,16 @@ blockquote {
     position: absolute;
     content: '\201F';
     font-family: georgia, serif;
-    font-size: $giga * 1.25;
+    font-size: $alpha;
     top: 2.85rem;
     left: -2.625rem;
     line-height: 0.01rem;
-    color: $secondary-color;
+    color: $brand-light;
   }
 
   // the quote
   * {
-    @include display-italic-font;
+    @include display-font;
     line-height: 1;
     font-size: $gamma;
   }

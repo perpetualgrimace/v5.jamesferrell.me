@@ -7,9 +7,7 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  height: 40vh;
-  min-height: 8rem;
-  min-height: calc(5rem + 20vw);
+  min-height: rem(183);
 
   // offset fixed nav
   @media (min-width: $l) and (min-height: $xxs) {
@@ -19,7 +17,12 @@
 
 // row
 .header > .g-container {
+  @include flex-vertical-center;
   z-index: 1;
+}
+
+.header-headline {
+  display: inline-block;
 }
 
 // hero image container
@@ -27,32 +30,4 @@
   @include inflate;
   background-size: cover;
   background-position: center;
-  background-color: $light-1;
-}
-
-
-////////////////////////////////
-// home header
-////////////////////////////////
-
-// fallback for non-video mobile devices
-.home-hero-mobile {
-  background: url("../../content/home/video-fallback.jpg");
-  background-size: cover;
-  background-position: 0;
-}
-
-// fake cover
-.home-video {
-  @include absolute-center;
-  position: absolute;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  overflow: hidden;
-}
-
-.home-headline {
-  display: inline;
 }

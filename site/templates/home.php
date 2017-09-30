@@ -10,17 +10,15 @@ snippet('global-body-open');
 
   // page title
   snippet('global-main-open');
-    snippet('home-header');
-    // 'scroll-indicator');
 
     // intro content
     snippet('global-section-open');
-      snippet('global-textblock', array('layout' => ''));
+      snippet('global-textblock', ['layout' => '']);
     snippet('global-section-close');
 
     // blog content
-    snippet('global-section-open');
-      snippet('blog-list', array('pagNum' => 6, 'cardLayout' => 'g-6', 'layout' => ''));
+    snippet('global-section-open', ['class' => 'g-col']);
+      snippet('blog-list', ['pagNum' => 6, 'layout' => '']);
     snippet('global-section-close');
 
   snippet('global-main-close');

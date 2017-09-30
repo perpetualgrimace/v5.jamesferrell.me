@@ -5,31 +5,22 @@
 // OG button
 .button {
   @include button-base;
-  background-image: radial-gradient(ellipse at top center, rgba($white, 0.15) 0, rgba($black, 0) 100%); // radial glossy overlay
-
-  &:hover, &:focus {
-    background-color: $secondary-color;
-    border-color: $secondary-color;
-  }
-  &:focus {
-    @include box-shadow-focus;
-  }
-  &:active {
-    background-color: $secondary-color;
-    border-color: $secondary-color;
-  }
 }
 
 // inverted
 .button-inverted {
-  @include button-base($white, $brand-color);
+  @include button-base($white, $white, $light-1, $brand-color);
   @include box-shadow;
-  background-image: linear-gradient(to bottom, $white 0%,rgba($black, 0.05) 100%); // linear glossy overlay
-
-  &:hover, &:focus {
-    color: $secondary-color !important;
-  }
-  &:active {
-    color: $secondary-color !important;
-  }
 }
+
+.button-fullwidth {
+  width: 100%;
+}
+
+// ginormous button
+/*
+.button-large {
+  padding: 1.05em 2em 1em 2em;
+  border-radius: $radius-lg;
+}
+*/

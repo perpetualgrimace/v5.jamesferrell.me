@@ -3,33 +3,31 @@
 ////////////////////////////////
 
 // brand palette
-$brand-color:     blue;
-$secondary-color: cyan;
+$brand-color: #0483DD;
 
-// ui
-$success-color:   green;
-$warning-color:   yellow;
-$error-color:     red;
+$brand-light: #2F99E4;
+$brand-dark:  #0062AA;
+$brand-black: #033860;
 
-// whites and blacks
-$black:   #000000;
-$dark-2:  #2A2A2A;
-$dark-1:  #555555;
-$gray:    #7F7F7F;
-$light-2: #AAAAAA;
-$light-1: #D4D4D4;
+// neutrals
 $white:   #FFFFFF;
+$light-1: #F2F5FC;
+$light-2: #CACED9;
+$gray:    #A4A9B7;
+$dark-1:  #7F8594;
+$dark-2:  #596073;
+$black:   #343C50;
 
 // shadow
-$shadow:          rgba($black, 0.5);
-$shadow-subtle:   rgba($black, 0.25);
-$shadow-dark:     rgba($black, 0.75);
+$shadow: rgba($dark-1, 0.35);
 
 // social media colors
 $facebook-color:  #3b5998;
 $twitter-color:   #00aced;
+$dribbble-color:  #ea4c89;
+$github-color:    #4078c0;
+$codepen-color:   #47cf73;
 $linkedin-color:  #0077B5;
-$google-color:    #DD4B39;
 $instagram-color: #e4405f;
 
 
@@ -37,14 +35,12 @@ $instagram-color: #e4405f;
 // font sizes
 ////////////////////////////////
 
-$giga:    5.0rem; // 100px
-$alpha:   3.4rem; // 68px
-$beta:    2.2rem; // 44px
-$gamma:   1.5rem; // 30px
-$delta:   1.0rem; // 20px
-$epsilon: 0.85rem; // use sparingly!
-$milli:   0.7rem; // 14px
-
+$alpha:   rem(56);
+$beta:    rem(38);
+$gamma:   rem(30);
+$delta:   rem(20); // 1rem
+$epsilon: rem(16);
+$milli:   rem(13);
 
 ////////////////////////////////
 // breakpoints
@@ -66,18 +62,19 @@ $xxxl: 100em;
 ////////////////////////////////
 
 // border
-$border-width:       2px;
+$border-width:       1px;
 $border-width-thick: 0.25em;
 
 // border radius
-$radius: 2px;
+$radius:     rem(4);
+$radius-lg:  rem(6);
 
 // used by _jf-grid.scss
 $gutter: 1rem;
 $max-container-width: 60rem;
 
 // used by _nav.scss
-$nav-height: 2.45rem; // 49px
+$nav-height: rem(66);
 
 // used by _cards.scss
 $thumb-width: 8rem;
@@ -88,4 +85,4 @@ $thumb-height: 6rem;
 // motion
 ////////////////////////////////
 
-$timing: 0.3s ease;
+$timing: 0.2s ease;

@@ -10,7 +10,7 @@ projectsLink: (link: projects text: More projects class: button button-block lin
 
 ----
 
-blogHeadline: 'My writing:'
+blogHeadline: My writing:
 
 ----
 

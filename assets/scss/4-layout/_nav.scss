@@ -10,7 +10,7 @@
   background: $white;
 
   @media (min-width: $l) and (min-height: $xxs) {
-    @include box-shadow($shadow-subtle);
+    @include box-shadow($shadow);
     position: fixed;
   }
 }
@@ -21,48 +21,14 @@
 
   // base style for nav elements
   * {
+    @include font-smoothing;
     text-transform: uppercase;
     text-decoration: none;
     font-size: $milli;
-    color: $black;
+    color: $gray;
   }
 }
 
-
-////////////////////////////////
-// logo
-////////////////////////////////
-
-// logo
-.nav-logo {
-  float: left;
-  height: 100%;
-  padding-left: $gutter;
-  padding-right: $gutter;
-  left: -($gutter);
-  // NOTE: remove this line when replacing logo text with an image
-  line-height: $nav-height; // vertically center
-
-  // svg positioning
-  svg {
-    height: 100%;
-    width: 7rem;
-    top: 0;
-  }
-}
-
-// not active page
-.nav-logo:not(.is-active-pg) {
-  svg path {
-    // fill: $black;
-  }
-
-  &:hover, &:focus, &:active {
-    svg path {
-      // fill: $brand-color;
-    }
-  }
-}
 
 ////////////////////////////////
 // main nav list
@@ -106,19 +72,46 @@
 .nav-link {
   display: block;
   line-height: $nav-height; // vertically center
+  z-index: 1;
+  overflow: hidden;
 
+  // extra padding where screen real estate allows
   @media (min-width: $m) {
     padding: 0 0.5rem;
-
-    &:hover, &:focus, &:active {
-      color: $brand-color;
-    }
   }
 
   // active page
   &.is-active-pg {
-    background: $light-1;
-    color: $black;
+    color: $dark-2;
+  }
+}
+
+
+//////////////////////////////////
+// hover effect via pseudo element
+//////////////////////////////////
+
+// initial state
+.nav-link:after {
+  @include pseudo;
+  @include inflate;
+  z-index: -1; // hide behind text
+  background: $brand-light;
+  background-image: linear-gradient(to bottom, $brand-light, $brand-color);
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+// hover state
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active {
+  color: $white; // make text readable against pseudo element
+
+  // show pseudo element
+  &:after {
+    opacity: 1;
+    transform: none;
   }
 }
 
@@ -132,13 +125,6 @@
   .nav-item {
     width: 20%;
     text-align: center;
-  }
-  .nav-link {
-
-    &:hover, &:active, &:focus {
-      background: $brand-color;
-      color: $white;
-    }
   }
 }
 
@@ -251,13 +237,13 @@
   // initial state
   &-bun {
     display: block;
-    width: ($border-width * 9);
-    height: $border-width;
+    width: 18px;
+    height: 2px;
     border-radius: 1px;
     background: $black;
 
     & + & {
-      margin-top: ($border-width * 1.5);
+      margin-top: 3px;
     }
   }
 
@@ -266,13 +252,13 @@
     transform: translateX(5px);
 
     .hamburger-bun-top {
-      transform: rotateZ(45deg) translateY(#{$border-width * 3.5});
+      transform: rotateZ(45deg) translateY(7px);
     }
     .hamburger-bun-patty {
       opacity: 0;
     }
     .hamburger-bun-bottom {
-      transform: rotateZ(-45deg) translateY(-#{$border-width * 3.5});
+      transform: rotateZ(-45deg) translateY(-7px);
     }
   }
 }

@@ -38,6 +38,11 @@ html, body {
   width: 100%;
 }
 
+// remove link underlines
+a {
+  text-decoration: none;
+}
+
 // Forms are stupid
 label {
   display: inline-block;

@@ -1,4 +1,4 @@
-Title: The Discipline of Self-Teaching: Learning a New Craft
+Title: The Discipline of self-teaching: learning a new craft
 
 ----
 
@@ -6,11 +6,11 @@ Tags: design,motivation,personal growth,inspirational
 
 ----
 
-Series: 
+Series:
 
 ----
 
-Text: 
+Text:
 
 (intro: This post was originally written for <a href="http://bermanadvertising.com">Berman Advertising</a>. Jeff admires my ability to figure out how to do stuff and asked me to write about that. So that's what I did.)
 
