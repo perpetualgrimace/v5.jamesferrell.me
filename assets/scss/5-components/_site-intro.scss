@@ -1,0 +1,80 @@
+////////////////////////////////
+// container
+////////////////////////////////
+
+// container
+.site-intro {
+  @include brand-color-depth;
+  @include font-smoothing;
+  color: $white;
+
+  // intro link stye
+  a {
+    color: $white;
+
+    &:hover, &:active, &:focus {
+      color: $brand-light;
+    }
+  }
+}
+
+// inner
+.site-intro-inner {
+  max-width: $max-container-width * 0.5;
+  padding: $gutter;
+
+  @media (min-width: $m) {
+    margin-left: auto;
+    max-width: rem(300);
+    padding: rem(40);
+  }
+}
+
+
+////////////////////////////////
+// avatar
+////////////////////////////////
+
+// container
+.site-intro-avatar {
+  margin-bottom: 0.25rem;
+
+  @media (min-width: $m) {
+    margin-bottom: 0.5rem;
+  }
+}
+
+// inner
+.site-intro-avatar-inner {
+  display: inline-block;
+}
+
+// image (global-avatar-image)
+.avatar-image {
+  border-radius: 50%;
+  overflow: hidden;
+  background: $white;
+  width: rem(80);
+  height: rem(80);
+
+  @media (min-width: $m) {
+    width: rem(120);
+    height: rem(120);
+  }
+}
+
+
+////////////////////////////////
+// colophon
+////////////////////////////////
+
+.site-intro-colophon {
+  p {
+    line-height: 1.25;
+    margin-top: 0.325em;
+
+    & + p {
+      margin-top: 0.625em;
+    }
+  }
+}

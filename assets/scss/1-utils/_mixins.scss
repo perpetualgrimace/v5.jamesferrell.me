@@ -151,6 +151,17 @@
 
 
 ////////////////////////////////
+// background-gradient styles
+////////////////////////////////
+
+@mixin brand-color-depth {
+  background: $brand-color; // fallback
+  background-image: radial-gradient(at top, $brand-light 0%, $brand-color 49%, $brand-dark 100%);
+}
+
+
+
+////////////////////////////////
 // shadow
 ////////////////////////////////
 

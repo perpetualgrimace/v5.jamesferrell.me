@@ -13,12 +13,6 @@ dt {
   @include body-bold-font;
 }
 
-// semibold type
-button, input[type='button'], label {
-  @include body-semibold-font;
-  text-transform: uppercase;
-}
-
 // italic type
 em, i {
   @include body-italic-font;
@@ -32,6 +26,12 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: none;
 }
 
+// semibold type
+button, input[type='button'], label,
+.subhead {
+  @include body-semibold-font;
+  text-transform: uppercase;
+}
 
 // type size defaults
 h1           { font-size: $beta; }

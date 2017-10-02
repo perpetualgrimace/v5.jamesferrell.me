@@ -6,6 +6,20 @@ Description: James Ferrell is a designer/developer in Boston, MA. This is his po
 
 ----
 
+Bio: Hello! I'm a multidisciplinary web designer/developer  currently living in Boston, MA. I design and build responsive, accessible, performant websites.
+
+I'm currently taking on new projects, so (link: contact text: get in touch)!
+
+----
+
+bioImg: jamesatar.jpg
+
+----
+
+bioImg2x: jamesatar@2x.jpg
+
+----
+
 Keywords: Design, Web Design, UI Design, Visual Design, Development, Developer, Website, Webdev, Frontend, Front-end, Branding, Identity, Kirby CMS, Sketch, Boston, Tampa, Freelance, Contract
 
 ----
