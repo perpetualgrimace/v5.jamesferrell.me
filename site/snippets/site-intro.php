@@ -12,7 +12,7 @@ if(in_array($page->slug(), $bioPages)) {
 
 ?>
 
-<div class="site-intro brand-theme<? e($bioCollapsed !== TRUE, ' is-collapsed') ?>">
+<div class="site-intro brand-theme<? e($bioCollapsed == TRUE, ' is-collapsed') ?>">
   <div class="site-intro-inner">
 
     <!-- my face -->

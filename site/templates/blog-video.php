@@ -10,8 +10,8 @@ snippet('global-body-open');
 
     // main content
     snippet('global-section-open');
-      snippet('blog-video-content');
-      snippet('blog-sidebar');
+      snippet('blog-video-primary');
+      snippet('blog-article-secondary');
     snippet('global-section-close');
 
   snippet('global-main-close');

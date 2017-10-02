@@ -10,7 +10,7 @@
 
 // inner
 .site-intro-inner {
-  max-width: $max-container-width * 0.75; // keep line-length reasonable
+  max-width: $max-container-width / 2; // keep line-length reasonable
   padding: $gutter;
   overflow: hidden; // prevent transformed elements from breaking out
 

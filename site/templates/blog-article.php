@@ -10,8 +10,8 @@ snippet('global-body-open');
 
     // main content
     snippet('global-section-open');
-      snippet('blog-article-content', array('layout' => 'g-9'));
-      snippet('blog-sidebar', array('layout' => 'g-3'));
+      snippet('blog-article-primary', array('layout' => 'g-9'));
+      snippet('blog-article-secondary', array('layout' => 'g-3'));
     snippet('global-section-close');
 
   snippet('global-main-close');
