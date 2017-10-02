@@ -155,10 +155,12 @@
 ////////////////////////////////
 
 @mixin brand-color-depth {
-  background: $brand-color; // fallback
   background-image: radial-gradient(at top, $brand-light 0%, $brand-color 49%, $brand-dark 100%);
 }
 
+@mixin radial-gloss {
+  background-image: radial-gradient(at top, rgba($white, 0.1) 0%, rgba($white, 0) 100%);
+}
 
 
 ////////////////////////////////

@@ -8,11 +8,12 @@
   width: 100%;
   z-index: 11;
   background: $white;
-
+  /*
   @media (min-width: $l) and (min-height: $xxs) {
     @include box-shadow($shadow);
     position: fixed;
   }
+  */
 }
 
 // nav element

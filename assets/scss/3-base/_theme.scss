@@ -34,6 +34,29 @@ main {
 
 
 ////////////////////////////////
+// brand theme
+////////////////////////////////
+
+.brand-theme {
+  @include font-smoothing;
+  @include radial-gloss;
+  background-color: $brand-color;
+  color: $white;
+
+  // intro link stye
+  a {
+    color: $white;
+
+    // interactions
+    &:hover, &:active, &:focus {
+      color: rgba($white, 0.875);
+      text-decoration: underline;
+    }
+  }
+}
+
+
+////////////////////////////////
 // dark theme
 ////////////////////////////////
 

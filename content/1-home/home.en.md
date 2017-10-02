@@ -2,7 +2,7 @@ Title: Web Designer & Developer
 
 ----
 
-projectsHeadline: 'My work:'
+projectsHeadline: My work:
 
 ----
 

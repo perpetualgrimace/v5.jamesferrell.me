@@ -4,38 +4,26 @@
 
 // container
 .site-intro {
+  // more pronounced gradient than the standard glossy overlay
   @include brand-color-depth;
-  @include font-smoothing;
-  color: $white;
-
-  // intro link stye
-  a {
-    color: $white;
-
-    // interactions
-    &:hover, &:active, &:focus {
-      color: rgba($white, 0.875);
-      text-decoration: underline;
-    }
-  }
 }
 
 // inner
 .site-intro-inner {
-  max-width: $max-container-width * 0.5;
+  max-width: $max-container-width * 0.75; // keep line-length reasonable
   padding: $gutter;
-  overflow: hidden;
+  overflow: hidden; // prevent transformed elements from breaking out
 
   @media (min-width: $m) {
-    margin-left: auto;
-    max-width: rem(300);
+    max-width: $max-sidebar-width;
+    margin: 0 auto;
     padding: rem(40);
   }
 }
 
 
 ////////////////////////////////
-// avatar
+// avatar spacing
 ////////////////////////////////
 
 // container
@@ -49,40 +37,7 @@
 
 // inner
 .site-intro-avatar-inner {
-  display: inline-block;
-}
-
-// image (global-avatar-image)
-.avatar-image {
-  border-radius: 50%;
-  overflow: hidden;
-  width: rem(80);
-  height: rem(80);
-  // initial placeholder state
-  font-size: rem(58);
-
-  @media (min-width: $m) {
-    width: rem(120);
-    height: rem(120);
-    // initial placeholder state
-    font-size: rem(80);
-  }
-}
-
-
-////////////////////////////////
-// colophon
-////////////////////////////////
-
-.site-intro-colophon {
-  p {
-    line-height: 1.25;
-    margin-top: 0.325em;
-
-    & + p {
-      margin-top: 0.625em;
-    }
-  }
+  display: inline-block; // utilize text-align
 }
 
 
@@ -93,48 +48,51 @@
 // logo icon container
 .site-intro-logo-icon {
   @include brand-color-depth;
-  border-radius: $radius;
+  // alignment
   display: inline-block;
-  line-height: 0;
   vertical-align: middle;
-  top: -1px;
-  width: 30px;
-  height: 30px;
+  top: -1px; // fudge the icon up
+  // set icon and margin in pixels; always be sharp
+  width: $logo-icon-size;
+  height: $logo-icon-size;
   margin-right: 6px;
-  transform: scale(0.5);
+  // aesthetic
+  border-radius: $radius;
+  // before transition
   opacity: 0;
+  transform: scale(0.5);
 }
 
 // logo image
 .logo-icon-img {
-  height: 100%;
-  width: 100%;
-  z-index: 1;
-  opacity: 0;
-  transform: scale(0);
+  height: $logo-icon-size;
+  width: $logo-icon-size;
 }
 
 // mah name
 .site-intro-logo-name {
-  display: inline-block;
-  transform: translateX(-40px);
+  display: inline-block; // needed to apply transform
 
-  // fudged center
-  @media (min-width: $m) {
-    transform: none;
+  // offset the logo image on smaller screens; not necessary on larger viewports
+  @media (max-width: $m - 0.001) {
+    transform: translateX(-40px);
   }
 }
 
+
 ////////////////////////////////
-// collapsed state, logo only
+// collapsed state: logo only
 ////////////////////////////////
 
 .site-intro.is-collapsed {
+  @include box-shadow;
   background: $brand-black;
+  // make the same height as the main navbar
   height: $nav-height;
   overflow: hidden;
 
-  // offset entire inner block so that the logo is vertically centered; fudged as hell
+  // vertically offset inner block to position the logo correctly
+  // NOTE: fudged as hell
   .site-intro-inner {
     top: -4.85rem;
 
@@ -144,28 +102,23 @@
   }
 
   // position & show the logo icon
-  .site-intro-logo-icon {
-    transform: none;
-    opacity: 1;
-  }
-  .logo-icon-img {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  // reset logo name position
+  .site-intro-logo-icon,
   .site-intro-logo-name {
+    // after transition
+    opacity: 1;
     transform: none;
   }
 
-  // hide the avatar
+  // shrink and hide the avatar
   .site-intro-avatar-inner {
+    // after transition
     transform: scale(0.75);
     opacity: 0;
   }
 
-  // hide the bio
-  .site-intro-colophon {
+  // hide the bio offscreen
+  .site-intro-bio {
+    // after transition
     transform: translateY(150%);
     opacity: 0;
   }

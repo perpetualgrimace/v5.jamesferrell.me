@@ -20,3 +20,18 @@ main [id]:before {
     height: $gutter * 5;
   }
 }
+
+
+////////////////////////////////
+// colophon text
+// TODO: refactor?
+////////////////////////////////
+
+.bio-text > p {
+  line-height: 1.25;
+  margin-top: 0.325em;
+
+  & + p {
+    margin-top: 0.625em;
+  }
+}

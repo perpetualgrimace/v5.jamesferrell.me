@@ -1,0 +1,46 @@
+////////////////////////////////
+// container
+////////////////////////////////
+
+// container
+.colophon {
+  max-width: $max-container-width;
+}
+
+// inner
+.colophon-inner {
+  padding: $gutter;
+
+  @media (min-width: $m) {
+    padding: rem(30) rem(40);
+  }
+}
+
+
+////////////////////////////////
+// layout
+////////////////////////////////
+
+.colophon-avatar,
+.colophon-caption {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+// avatar sizing
+.colophon-avatar {
+  width: calc(#{rem(100)});
+
+  @media (min-width: $m) {
+    width: calc(#{rem(160)});;
+  }
+}
+
+// caption sizing
+.colophon-caption {
+  width: calc(99.9% - #{rem(100)});
+
+  @media (min-width: $m) {
+    width: calc(99.9% - #{rem(160)});;
+  }
+}

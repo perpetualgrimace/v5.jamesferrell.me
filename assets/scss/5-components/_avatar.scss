@@ -1,0 +1,16 @@
+// used in site-intro and colophon components
+.avatar-image {
+  border-radius: 50%;
+  overflow: hidden;
+  width: rem(80);
+  height: rem(80);
+  // initial placeholder state
+  font-size: rem(58);
+
+  @media (min-width: $m) {
+    width: rem(120);
+    height: rem(120);
+    // initial placeholder state
+    font-size: rem(80);
+  }
+}

@@ -1,4 +1,18 @@
-<div class="site-intro">
+<?
+
+// array of pages that should show the expanded bio by default
+$bioPages = ['home', 'about', 'resume'];
+
+// check the current page slug against the array
+if(in_array($page->slug(), $bioPages)) {
+  $bioCollapsed = FALSE;
+} else {
+  $bioCollapsed = TRUE;
+}
+
+?>
+
+<div class="site-intro brand-theme<? e($bioCollapsed !== TRUE, ' is-collapsed') ?>">
   <div class="site-intro-inner">
 
     <!-- my face -->
@@ -22,7 +36,7 @@
     </div>
 
     <!-- bio -->
-    <div class="site-intro-colophon epsilon">
+    <div class="site-intro-bio bio-text epsilon">
       <?= $site->bio()->kt() ?>
     </div>
 
