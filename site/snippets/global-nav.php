@@ -42,14 +42,15 @@ $menutext = 'menu';
         <? foreach($items as $item): ?>
 
           <li class="nav-item<? e(in_array($item->uri(), $site->dropdownable()->yaml()), ' has-dropdown" aria-haspopup="true'); ?>">
-            <a class="nav-link<? e($item->isOpen(), ' is-active-pg') ?>" <? e( ($item->slug() == $page->slug()), 'aria-describedby="current"' ) ?> href="<? e( $item->isOpen() && ( $page->slug() == $item->slug() ), '#main', $item->url() ) ?>">
-            <?= $item->uri(); if($item->uri() == 'about'): ?>
-              <span class="u-screenreader"> <?= $site->title() ?></span>
+            <a class="nav-link<? e($item->isOpen(), ' is-active-pg') ?>" <? e( ($item->title() == $page->title()), 'aria-describedby="current"' ) ?> href="<? e( $item->isOpen() && ( $page->title() == $item->title() ), '#main', $item->url() ) ?>">
+            <? if($item->isHomePage()) { echo 'Home'; } else { echo $item->title(); }
+               if($item->uri() == 'about'): ?> <span class="u-screenreader"> <?= $site->title() ?></span>
             <? endif; ?>
             </a>
 
 
             <!-- dropdown, checked against $site->dropdownable() list -->
+            <? /*
             <? if($item->hasChildren() &&
             in_array($item->uri(), explode(', ', $site->dropdownable()))): ?>
 
@@ -57,7 +58,7 @@ $menutext = 'menu';
               <? foreach($item->children()->visible() as $child): ?>
 
                 <li class="dropdown-item" role="menuitem">
-                  <a id="dropdown-item-<?= $child->slug() ?>" class="dropdown-link<? e($child->isOpen(), ' is-active-pg') ?>" <? e( ($child->slug() == $page->slug() ), 'aria-describedby="current"') ?> href="<? e( $child->isOpen() && ( $page->slug() == $child->slug() ), '#main', $child->url() ) ?>">
+                  <a id="dropdown-item-<?= $child->title() ?>" class="dropdown-link<? e($child->isOpen(), ' is-active-pg') ?>" <? e( ($child->title() == $page->title() ), 'aria-describedby="current"') ?> href="<? e( $child->isOpen() && ( $page->title() == $child->title() ), '#main', $child->url() ) ?>">
                     <?= $child->title() ?>
                   </a>
                 </li><!-- dropdown-item -->
@@ -66,6 +67,7 @@ $menutext = 'menu';
             </ul><!-- dropdown -->
 
           <? endif ?>
+          */ ?>
 
           </li><!-- nav-item -->
 

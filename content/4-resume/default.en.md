@@ -1,8 +1,4 @@
-Title: About
-
-----
-
-Headline: Resumé
+Title: Resumé
 
 ----
 

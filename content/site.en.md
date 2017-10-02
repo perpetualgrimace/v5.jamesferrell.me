@@ -28,6 +28,11 @@ Dropdownable:
 
 ----
 
+footerLinks:
+- uses
+
+----
+
 Copyright:
 
 © Copyright schmopyright. Steal my ideas and make them better.
