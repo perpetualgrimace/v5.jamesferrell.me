@@ -11,6 +11,17 @@ a, label, input, textarea, button,
     box-shadow $timing;
 }
 
+// site intro transition
+.site-intro-avatar-inner,
+.site-intro-logo-icon,
+.site-intro-logo-name,
+.site-intro-colophon {
+  /* autoprefixer: off */
+  transition:
+    opacity $timing-gradual,
+    transform $timing-gradual;
+}
+
 // images
 img, [class*='img'] {
   /* autoprefixer: off */

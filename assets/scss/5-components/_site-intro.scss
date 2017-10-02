@@ -1,5 +1,5 @@
 ////////////////////////////////
-// container
+// default / expanded state
 ////////////////////////////////
 
 // container
@@ -12,8 +12,10 @@
   a {
     color: $white;
 
+    // interactions
     &:hover, &:active, &:focus {
-      color: $brand-light;
+      color: rgba($white, 0.875);
+      text-decoration: underline;
     }
   }
 }
@@ -22,6 +24,7 @@
 .site-intro-inner {
   max-width: $max-container-width * 0.5;
   padding: $gutter;
+  overflow: hidden;
 
   @media (min-width: $m) {
     margin-left: auto;
@@ -53,13 +56,16 @@
 .avatar-image {
   border-radius: 50%;
   overflow: hidden;
-  background: $white;
   width: rem(80);
   height: rem(80);
+  // initial placeholder state
+  font-size: rem(58);
 
   @media (min-width: $m) {
     width: rem(120);
     height: rem(120);
+    // initial placeholder state
+    font-size: rem(80);
   }
 }
 
@@ -76,5 +82,91 @@
     & + p {
       margin-top: 0.625em;
     }
+  }
+}
+
+
+////////////////////////////////
+// colophon
+////////////////////////////////
+
+// logo icon container
+.site-intro-logo-icon {
+  @include brand-color-depth;
+  border-radius: $radius;
+  display: inline-block;
+  line-height: 0;
+  vertical-align: middle;
+  top: -1px;
+  width: 30px;
+  height: 30px;
+  margin-right: 6px;
+  transform: scale(0.5);
+  opacity: 0;
+}
+
+// logo image
+.logo-icon-img {
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  opacity: 0;
+  transform: scale(0);
+}
+
+// mah name
+.site-intro-logo-name {
+  display: inline-block;
+  transform: translateX(-40px);
+
+  // fudged center
+  @media (min-width: $m) {
+    transform: none;
+  }
+}
+
+////////////////////////////////
+// collapsed state, logo only
+////////////////////////////////
+
+.site-intro.is-collapsed {
+  background: $brand-black;
+  height: $nav-height;
+  overflow: hidden;
+
+  // offset entire inner block so that the logo is vertically centered; fudged as hell
+  .site-intro-inner {
+    top: -4.85rem;
+
+    @media (min-width: $m) {
+      top: -8.05rem;
+    }
+  }
+
+  // position & show the logo icon
+  .site-intro-logo-icon {
+    transform: none;
+    opacity: 1;
+  }
+  .logo-icon-img {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  // reset logo name position
+  .site-intro-logo-name {
+    transform: none;
+  }
+
+  // hide the avatar
+  .site-intro-avatar-inner {
+    transform: scale(0.75);
+    opacity: 0;
+  }
+
+  // hide the bio
+  .site-intro-colophon {
+    transform: translateY(150%);
+    opacity: 0;
   }
 }
