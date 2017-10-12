@@ -34,8 +34,9 @@
   display: inline-block;
   width: 100%;
 
-  // xxs breakpoint, half width
-  @media (min-width: $xxs) and (max-width: $m - 0.001) {
+  // half width list items, where that makes sense
+  @media (min-width: $xxs) and (max-width: $m - 0.001),
+  /*OR*/ (min-width: $m) and (max-height: $s) {
     width: 50%;
   }
 }
