@@ -36,7 +36,7 @@ if(in_array($page->slug(), $bioPages)) {
     </div>
 
     <!-- bio -->
-    <div class="site-intro-bio bio-text epsilon">
+    <div class="site-intro-bio tertiary-text epsilon">
       <?= $site->bio()->kt() ?>
     </div>
 

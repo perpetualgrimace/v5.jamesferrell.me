@@ -8,17 +8,9 @@
   @include brand-color-depth;
 }
 
-// inner
+// positioning
 .site-intro-inner {
-  max-width: $max-container-width / 2; // keep line-length reasonable
-  padding: $gutter;
-  overflow: hidden; // prevent transformed elements from breaking out
-
-  @media (min-width: $m) {
-    max-width: $max-sidebar-width;
-    margin: 0 auto;
-    padding: rem(40);
-  }
+  @include teriary-sidebar-positioning;
 }
 
 
@@ -44,6 +36,11 @@
 ////////////////////////////////
 // colophon
 ////////////////////////////////
+
+// container
+.site-intro-logo {
+  margin-bottom: 0.25em;
+}
 
 // logo icon container
 .site-intro-logo-icon {

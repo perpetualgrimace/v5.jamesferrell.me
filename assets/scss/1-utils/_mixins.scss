@@ -224,6 +224,43 @@
 
 
 ////////////////////////////////
+// sidebar inner styles
+////////////////////////////////
+
+@mixin teriary-sidebar-positioning {
+  max-width: $max-container-width / 2; // keep line-length reasonable
+  padding: $gutter;
+  overflow: hidden; // prevent transformed elements from breaking out
+
+  @media (min-width: $m) {
+    max-width: $max-sidebar-width;
+    margin: 0 auto;
+    padding: rem(40);
+  }
+}
+
+
+////////////////////////////////
+// brand-theme base styles
+////////////////////////////////
+
+@mixin brand-theme {
+  @include font-smoothing;
+
+  // paragraph link stye
+  p > a {
+    color: $white;
+
+    // interactions
+    &:hover, &:active, &:focus {
+      color: rgba($white, 0.875);
+      text-decoration: underline;
+    }
+  }
+}
+
+
+////////////////////////////////
 // button base style
 ////////////////////////////////
 

@@ -38,21 +38,22 @@ main {
 ////////////////////////////////
 
 .brand-theme {
-  @include font-smoothing;
+  @include brand-theme;
   @include radial-gloss;
   background-color: $brand-color;
   color: $white;
+}
 
-  // intro link stye
-  a {
-    color: $white;
 
-    // interactions
-    &:hover, &:active, &:focus {
-      color: rgba($white, 0.875);
-      text-decoration: underline;
-    }
-  }
+////////////////////////////////
+// brand dark theme
+////////////////////////////////
+
+// remember to move this into its own file if it gets unruly
+.brand-black-theme {
+  @include brand-theme;
+  background: $brand-black;
+  color: rgba($white, 0.66);
 }
 
 

@@ -23,13 +23,11 @@ main [id]:before {
 
 
 ////////////////////////////////
-// colophon text
-// TODO: refactor?
+// tertiary text
 ////////////////////////////////
 
-.bio-text > p {
+.tertiary-text > p {
   line-height: 1.25;
-  margin-top: 0.325em;
 
   & + p {
     margin-top: 0.625em;

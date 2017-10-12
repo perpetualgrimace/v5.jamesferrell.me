@@ -1,0 +1,57 @@
+////////////////////////////////
+// container positioning
+////////////////////////////////
+
+.tertiary-inner {
+  @include teriary-sidebar-positioning;
+}
+
+// add padding, 1px border between social links and copyright
+.tertiary-social-list {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid $brand-dark;
+
+  @media (min-width: $m) {
+    padding-bottom: 2rem;
+  }
+}
+
+.tertiary-copyright {
+  padding-top: 1rem;
+
+  @media (min-width: $m) {
+    padding-top: 2rem;
+  }
+}
+
+
+////////////////////////////////
+// social list items
+////////////////////////////////
+
+// default
+.tertiary-social-list > .social-item {
+  display: inline-block;
+  width: 100%;
+
+  // xxs breakpoint, half width
+  @media (min-width: $xxs) and (max-width: $m - 0.001) {
+    width: 50%;
+  }
+}
+
+// flexbox enhancement: show all four items in a row
+@supports (justify-content: space-between) {
+  @media (min-width: 25em) and (max-width: $m - 0.001) {
+    // flex + space-between is magic
+    .tertiary-social-list {
+      display: flex;
+      justify-content: space-between;
+
+      // unset width so flexbox can flex
+      > .social-item {
+        width: auto;
+      }
+    }
+  }
+}
