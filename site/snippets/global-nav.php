@@ -19,20 +19,14 @@ $menutext = 'menu';
         <a class="button-inverted skip u-screenreader" href="#main">Skip to content</a>
 
 
-        <!-- logo -->
-        <a class="nav-logo<? e( $page->isHomePage(), ' is-active-pg' ) ?>" href="<? e( $page->isHomePage(), '#main', $site->url() ) ?>">
-          <?= $site->title() ?>
-        </a>
-
-
         <!-- nav menu toggle for small screens -->
         <a class="nav-toggle is-inactive" data-nav="toggle" href="#nav">
+          <span class="nav-toggle-text"><?= $menutext ?></span>
           <div class="hamburger is-inactive" data-nav="hamburger">
             <span class="hamburger-bun hamburger-bun-top"></span>
             <span class="hamburger-bun hamburger-bun-patty"></span>
             <span class="hamburger-bun hamburger-bun-bottom"></span>
           </div>
-          <span class="nav-toggle-text"><?= $menutext ?></span>
         </a>
 
 

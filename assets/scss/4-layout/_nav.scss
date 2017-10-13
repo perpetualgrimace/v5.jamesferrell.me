@@ -5,16 +5,24 @@
 // nav container
 .nav-container {
   top: 0;
-  width: 100%;
   z-index: 11;
-  background: $white;
-  /*
+  margin-bottom: -#{$nav-height}; // place menu toggle above
+
+  // background color
+  @media (min-width: $m) {
+    width: 100%;
+    background-color: $white;
+    margin-bottom: 0; // reset
+  }
+
+  // fixed nav on bigger screens
   @media (min-width: $l) and (min-height: $xxs) {
     @include box-shadow($shadow);
     position: fixed;
   }
-  */
+
 }
+
 
 // nav element
 .nav-main {
@@ -22,10 +30,11 @@
 
   // base style for nav elements
   * {
+    @include body-semibold-font;
     @include font-smoothing;
+    font-size: $epsilon;
     text-transform: uppercase;
     text-decoration: none;
-    font-size: $milli;
     color: $gray;
   }
 }
@@ -37,8 +46,6 @@
 
 // nav list
 .nav-list {
-  float: right;
-  background: $white;
 
   // small screens
   @media (max-width: $m - 0.001) {
@@ -78,7 +85,7 @@
 
   // extra padding where screen real estate allows
   @media (min-width: $m) {
-    padding: 0 0.5rem;
+    padding: 0 rem(9);
   }
 
   // active page
@@ -149,6 +156,7 @@
 ////////////////////////////////
 
 // dropdown menu
+/*
 .dropdown {
   @include dropdown-hidden;
   display: none; // hide on smaller screens
@@ -188,6 +196,7 @@
     background: $brand-color;
   }
 }
+*/
 
 
 ////////////////////////////////
@@ -201,19 +210,23 @@
 
 // menu toggle
 .nav-toggle {
+  @include box-shadow(rgba($black, 0.25));
   position: absolute;
   float: right;
-  height: $nav-height;
-  padding: ($gutter * 0.45) $gutter 0 $gutter; // somewhat fudged
-  right: -$gutter;
+  padding: 2px 10px 1px 9px; // somewhat fudged
+  right: $gutter;
+  top: $gutter * 2;
+  background: $white;
+  border-radius: $radius-lg;
 
   &-text {
-    font-size: $delta;
+    font-size: 18px;
+    color: $brand-color;
   }
 
   // active state theming
   &.is-active {
-    background: $black;
+    background: $brand-color;
 
     .hamburger-bun {
       background: $white;
@@ -233,15 +246,15 @@
 // humburger icon
 .hamburger {
   display: inline-block;
-  margin-right: 0.25rem;
+  margin-left: 0.4rem;
 
   // initial state
   &-bun {
     display: block;
-    width: 18px;
+    width: 16px;
     height: 2px;
     border-radius: 1px;
-    background: $black;
+    background: $brand-color;
 
     & + & {
       margin-top: 3px;
@@ -250,7 +263,7 @@
 
   // active state
   &.is-active {
-    transform: translateX(5px);
+    transform: translateX(6px);
 
     .hamburger-bun-top {
       transform: rotateZ(45deg) translateY(7px);
