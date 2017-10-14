@@ -203,7 +203,6 @@
 
 // dropdown mixins for hidden and visible states
 @mixin dropdown-hidden {
-  @include box-shadow($shadow);
   position: absolute;
   width: auto;
   transform: translate(0, -1rem);
@@ -216,6 +215,7 @@
   transform: translate(0, 0);
   opacity: 1;
   clip: auto;
+  overflow: visible;
 
   @media (max-width: $m - 0.001) {
     z-index: -1;

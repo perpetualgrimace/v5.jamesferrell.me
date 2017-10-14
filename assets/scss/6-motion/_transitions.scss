@@ -49,6 +49,13 @@ svg * {
     transform $timing;
 }
 
+// nav toggle
+.nav-toggle {
+  transition:
+    opacity $timing,
+    background-color $timing-gradual;
+}
+
 // hamburger
 .hamburger,
 .hamburger-bun {
