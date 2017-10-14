@@ -2,19 +2,37 @@
 // footer base
 ////////////////////////////////
 
+.footer {
+  @include radial-gloss;
+  box-shadow: inset 0 1rem 2rem -1rem $shadow-dark;
+}
+
 // footer links
 .footer-link {
+  @include body-semibold-font;
   @include font-smoothing;
   padding: 0.5rem;
   text-transform: uppercase;
-  font-size: $milli;
+  font-size: $epsilon;
+  color: $gray;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+
+  // active page link
+  &.is-active-pg {
+    color: $light-1;
+  }
 
   // interactions
-  &.is-active-pg {
-    opacity: 0.625;
+  &:hover, &:active, &:focus {
+    color: $white;
+  }
 
-    &:hover, &:active, &:focus {
-      opacity: 1;
+  // fudge about link back into place;
+  // it seems to dislike .u-screenreader span
+  @media (min-width: $xs) {
+    &[href*='about'] {
+      left: -0.25rem;
     }
   }
 }
@@ -24,31 +42,8 @@
 // footer nav
 ////////////////////////////////
 
-// switch to inline list style when the space is available
-.footer-nav-item {
-  @media (min-width: $m) {
-    display: inline-block;
-  }
-}
-
-
-////////////////////////////////
-// contact info
-////////////////////////////////
-
-
-
-////////////////////////////////
-// copyright
-////////////////////////////////
-
-
-////////////////////////////////
-// smaller screens
-////////////////////////////////
-
-@media (max-width: $m - 0.001) {
-
+// small screens
+@media (max-width: $xs - 0.001) {
   .footer-nav-link {
     display: block;
     padding-left: 0;
@@ -56,5 +51,20 @@
 
   .footer-nav-item + .footer-nav-item {
     border-top: 1px solid $gray;
+  }
+}
+
+
+// switch to inline list style when the space is available
+@media (min-width: $xs) {
+  .footer-nav {
+    padding-top: $gutter;
+    padding-bottom: $gutter;
+  }
+  .footer-nav-list {
+    text-align: center;
+  }
+  .footer-nav-item {
+    display: inline-block;
   }
 }

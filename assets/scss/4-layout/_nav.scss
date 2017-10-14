@@ -124,6 +124,7 @@
   @media (min-width: $m) {
     padding: 0 rem(9);
     line-height: $nav-height; // vertically center
+    font-size: $epsilon;
   }
 
   // active page

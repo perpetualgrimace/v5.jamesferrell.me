@@ -19,7 +19,7 @@ $items = new Pages();
   <div class="g-container">
 
     <!-- navigation -->
-    <div class="footer-nav g-columns milli u-left-center">
+    <div class="footer-nav g-columns milli">
       <ul class="footer-nav-list g-col">
         <? foreach($items as $item): ?>
 
