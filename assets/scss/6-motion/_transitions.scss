@@ -56,9 +56,11 @@ svg * {
     background-color $timing-gradual;
 }
 
-// hamburger
+// transform only
 .hamburger,
-.hamburger-bun {
+.hamburger-bun,
+.grid-icon,
+.secondary-link > svg {
   /* autoprefixer: off */
   transition: transform $timing;
 }

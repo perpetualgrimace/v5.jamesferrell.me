@@ -1,11 +1,22 @@
-main * + * {
+////////////////////////////////
+// content
+////////////////////////////////
+
+// default
+.content * + * {
   margin-top: 0.625em;
 }
 
-.display + .button {
-  margin-top: 1.5em;
+
+// space out all components that follow main content
+main .content ~ * {
+  margin-top: 2rem;
 }
 
+
+////////////////////////////////
+// anchor link offset
+////////////////////////////////
 
 // add anchor link offset to any element with an id
 main [id]:before {
@@ -18,18 +29,5 @@ main [id]:before {
   @media (min-width: $l) and (min-height: $xxs) {
     margin-top: -($gutter * 5);
     height: $gutter * 5;
-  }
-}
-
-
-////////////////////////////////
-// tertiary text
-////////////////////////////////
-
-.tertiary-text > p {
-  line-height: 1.25;
-
-  & + p {
-    margin-top: 0.625em;
   }
 }

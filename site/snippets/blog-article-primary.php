@@ -6,6 +6,15 @@ if(isset($field)) { $field = $page->$field(); } else { $field = $page->text(); }
 
 ?>
 
-<article class="content g-col <?= $layout ?>">
-  <?= $field->kirbytext() ?>
-</article>
+<div class="g-col <?= $layout ?>">
+
+  <!-- main article -->
+  <article class="content">
+    <?= $field->kirbytext() ?>
+  </article>
+
+  <!-- nav & colophon -->
+  <? snippet('content-nav') ?>
+  <? snippet('colophon') ?>
+
+</div>

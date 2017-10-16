@@ -1,0 +1,76 @@
+////////////////////////////////
+// baseline adjustments
+////////////////////////////////
+
+.secondary-item {
+  line-height: 1.25;
+
+  & + & {
+    margin-top: 1.25em;
+  }
+}
+
+
+////////////////////////////////
+// alignment & positioning
+////////////////////////////////
+
+// give the label some room to breath
+.secondary-label,
+.share-icon-twitter-svg {
+  margin-right: 0.25em;
+}
+
+// align share icon and text
+.secondary-link > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+////////////////////////////////
+// interactions
+////////////////////////////////
+
+// twitter link
+.secondary-link[href*='twitter'] {
+  // interactions
+  &:hover svg,
+  &:focus svg {
+    transform: scale(1.25) rotateZ(-6deg);
+
+    // change fill to twitter color
+    path {
+      fill: $twitter-color;
+    }
+  }
+}
+
+
+////////////////////////////////
+// flexbox enhancement
+////////////////////////////////
+
+@supports (flex-wrap: wrap) {
+  // small screens only
+  @media (max-width: $m - 0.001) {
+
+    // space out the items in a flexy way
+    .secondary-list {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-around;
+      flex-wrap: wrap;
+
+      // adjust margin to match *+*
+      .secondary-item:first-of-type {
+        margin-top: 1.25em;
+      }
+
+      // make the items not bunch up against each other
+      .secondary-item:not(:last-of-type) {
+        margin-right: $gutter;
+      }
+    }
+  }
+}

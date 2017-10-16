@@ -7,6 +7,10 @@ snippet('global-head');
 snippet('global-body-open');
   snippet('global-nav');
 
+  snippet('site-intro');
+  snippet('global-tertiary');
+  // snippet('colophon');
+
 
   // page title
   snippet('global-main-open');

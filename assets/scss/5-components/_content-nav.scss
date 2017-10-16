@@ -1,0 +1,153 @@
+////////////////////////////////
+// container
+////////////////////////////////
+
+.content-nav-list {
+  @include box-shadow;
+}
+
+
+////////////////////////////////
+// stacked list item border
+////////////////////////////////
+
+.content-nav-item-first {
+  border-bottom: 1px solid $light-1;
+}
+
+// hide blog list icon by default
+.content-nav-item-middle {
+  display: none;
+}
+
+
+////////////////////////////////
+// link
+////////////////////////////////
+
+.content-nav-link {
+  display: block;
+  width: 100%;
+  height: rem(90); // needed for alignment hack
+  padding: $milli;
+  background: #fff;
+}
+
+
+////////////////////////////////
+// inner container positioning
+////////////////////////////////
+
+.content-nav-inner {
+  @include vertical-center;
+  display: block; // required; spans hate positioning
+  line-height: 0.01; // fix list icon alignment
+}
+
+
+////////////////////////////////
+// label and title
+////////////////////////////////
+
+// stack them spans up
+.content-nav-label,
+.content-nav-title {
+  display: block;
+  width: 100%;
+}
+
+// label text style
+.content-nav-label {
+  @include body-semibold-font;
+  line-height: 1;
+  color: $dark-1;
+}
+
+// title text style
+.heading.content-nav-title { // specifity override
+  color: $brand-color;
+}
+
+
+////////////////////////////////
+// interactions
+////////////////////////////////
+
+// :hover & :focus
+.content-nav-link:hover,
+.content-nav-link:focus {
+  @include box-shadow-xl;
+  z-index: 1; // bring forward
+
+  // title
+  .content-nav-title {
+    color: $brand-light;
+  }
+
+  // fancy list icon transition
+  .grid-icon {
+    transform: scale(1.125) rotateZ(-90deg);
+
+    // :hover color
+    path {
+      fill: $brand-light;
+    }
+  }
+}
+
+
+// :active
+.content-nav-link:active {
+
+  // title
+  .content-nav-title {
+    color: $brand-dark;
+  }
+
+  // list
+  .grid-icon {
+    transform: rotateZ(-90deg); // stay rotated from :hover/:focus, return to original size
+
+    // :active color
+    path {
+      fill: $brand-dark;
+    }
+  }
+}
+
+
+
+
+////////////////////////////////
+// enhanced via flexbox
+////////////////////////////////
+
+// list icon in the middle, older/newer links take up the rest of the space
+@supports (display: flex) {
+  // bigger screens only
+  @media (min-width: $xs) {
+    .content-nav-list {
+      display: flex;
+    }
+
+    // take up a bunch of room by default
+    .content-nav-item {
+      flex: 2;
+    }
+
+    // reset border from default (stacked) layout
+    .content-nav-item-first {
+      border-bottom: none;
+    }
+
+    // smaller middle icon
+    .content-nav-item-middle {
+      display: block; // icon is display:none by default
+      flex: 1;
+      max-width: rem(60); // probably breaks ie11
+      // reset and adjust borders
+      border-left: 1px solid $light-1;
+      border-right: 1px solid $light-1;
+    }
+  }
+}

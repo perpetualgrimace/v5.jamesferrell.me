@@ -1,0 +1,9 @@
+.tag {
+  @include body-semibold-font;
+  @include font-smoothing;
+  text-transform: uppercase;
+  padding: 0.2em 0.5em 0.25em 0.5em;
+  color: $white;
+  background: $black;
+  border-radius: $radius;
+}

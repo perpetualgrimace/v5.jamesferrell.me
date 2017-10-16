@@ -44,3 +44,9 @@
     width: calc(99.9% - #{rem(160)});;
   }
 }
+
+// margin adjust
+.colophon-caption-name {
+  display: inline-block; // needed to make <author> use margin
+  margin-bottom: 0.25em;
+}

@@ -15,7 +15,7 @@
       <author class="colophon-caption-name subhead"><?= $site->title() ?></author>
 
       <!-- bio -->
-      <div class="colophon-caption-bio bio-text epsilon">
+      <div class="colophon-caption-bio tertiary-text epsilon">
         <?= $site->bio()->kt() ?>
       </div>
 
