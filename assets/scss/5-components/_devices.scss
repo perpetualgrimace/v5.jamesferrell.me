@@ -1,0 +1,80 @@
+///////////////////////////////////////
+// shared styles
+///////////////////////////////////////
+
+.device-shell {
+  @include device-shadow;
+  background: $black;
+  border: 1px solid $dark-1;
+  border-radius: 20px;
+}
+
+.device-screen {
+  position: absolute;
+  background: $gray;
+  box-shadow: 0 0 12px rgba($white, 0.05);
+  overflow: hidden; // change to auto to allow scrolling, but probably isn't elegant on widows devices
+}
+
+// position and size elements in the screen
+.device-screen > * {
+  display: block;
+  width: 100%;
+}
+
+
+///////////////////////////////////////
+// phone
+///////////////////////////////////////
+
+.phone-shell {
+  width: 160px;
+  height: 320px;
+}
+
+.phone-screen {
+  width: 144px;
+  height: 256px;
+  top: 32px;
+  left: 8px;
+}
+
+
+///////////////////////////////////////
+// laptop
+///////////////////////////////////////
+
+.laptop-shell {
+  width: 560px;
+  height: 386px;
+}
+
+.laptop-screen {
+  width: 524px;
+  height: 328px;
+  left: 18px;
+  top: 23px;
+}
+
+.laptop-bottom {
+  @include device-shadow;
+  position: absolute;
+  left: -65px;
+  top: 372px;
+  width: 690px;
+  height: 14px;
+  background: $gray;
+  border-radius: 2px 2px 0 0;
+  z-index: 1;
+}
+
+.laptop-bottom-bevel {
+  @include device-shadow;
+  position: absolute;
+  left: -65px;
+  top: 380px;
+  width: 690px;
+  height: 12px;
+  background: $dark-1;
+  border-radius: 7.5% / 100%; // now *that's* a CSS trick
+}

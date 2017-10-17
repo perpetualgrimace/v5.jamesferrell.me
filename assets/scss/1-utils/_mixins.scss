@@ -180,6 +180,11 @@
 @mixin box-shadow-focus($shadow-color: rgba($brand-light, 0.5)) {
   box-shadow: 0 0 0.25em $shadow-color;
 }
+@mixin device-shadow {
+  box-shadow:
+    0 2px 4px 0 rgba(0, 0, 0, 0.20),
+    0 2px 12px 0 rgba($black, 0.33);
+}
 
 // text shadow
 @mixin text-shadow($shadow-color: $shadow) {
