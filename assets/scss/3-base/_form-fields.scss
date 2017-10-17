@@ -36,9 +36,7 @@ textarea {
 label {
   display: block;
   padding-bottom: $gutter; // extend clickable area
-  top: 0.75rem;
   // compensate for padding
-  margin-top: -0.75rem;
   margin-bottom: -0.75rem;
   color: $dark-1;
 
@@ -50,8 +48,19 @@ label {
   &.error {
     @include body-bold-font;
     position: absolute;
-    color: $black;
+    color: $error-color;
     top: auto;
-    bottom: -0.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0; // reset padding
+    z-index: -1; // place behind fields
+    // transitionable properties
+    transform: none;
+    opacity: 1;
+
+    // default hidden state, toggled via js
+    &.is-hidden {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
   }
 }

@@ -11,12 +11,11 @@
 .footer-link {
   @include body-semibold-font;
   @include font-smoothing;
+  display: block;
   padding: 0.5rem;
   text-transform: uppercase;
   font-size: $epsilon;
   color: $gray;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
 
   // active page link
   &.is-active-pg {
@@ -26,14 +25,6 @@
   // interactions
   &:hover, &:active, &:focus {
     color: $white;
-  }
-
-  // fudge about link back into place;
-  // it seems to dislike .u-screenreader span
-  @media (min-width: $xs) {
-    &[href*='about'] {
-      left: -0.25rem;
-    }
   }
 }
 
@@ -58,8 +49,8 @@
 // switch to inline list style when the space is available
 @media (min-width: $xs) {
   .footer-nav {
-    padding-top: $gutter;
-    padding-bottom: $gutter;
+    padding-top: rem(13);
+    padding-bottom: rem(13);
   }
   .footer-nav-list {
     text-align: center;

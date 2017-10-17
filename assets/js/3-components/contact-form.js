@@ -18,7 +18,7 @@ $(document).ready(function(){
   $('#contact-form').on('submit', function(e) {
 
     // re-hide error messages on submit
-    $('[data-validation]').hide();
+    $('[data-validation]').addClass('is-hidden');
 
     // validation
     var name  = $('#contact-form-name').val();
@@ -26,24 +26,24 @@ $(document).ready(function(){
     var text  = $('#contact-form-text').val();
 
     if (name === '') {
-      $('[data-validation="name-empty"]').show();
+      $('[data-validation="name-empty"]').removeClass('is-hidden');
       $('#contact-form-name').focus();
       return false;
     }
     if (email === '') {
-      $('[data-validation="email-empty"]').show();
+      $('[data-validation="email-empty"]').removeClass('is-hidden');
       $('#contact-form-email').focus();
       return false;
     }
     if(isEmail(email) === false) {
       e.preventDefault();
-      $('[data-validation="email-invalid"]').show();
+      $('[data-validation="email-invalid"]').removeClass('is-hidden');
       $('#contact-form-email').focus();
       return false;
     }
 
     if (text === '') {
-      $('[data-validation="text-empty"]').show();
+      $('[data-validation="text-empty"]').removeClass('is-hidden');
       $('#contact-form-text').focus();
       return false;
     }
