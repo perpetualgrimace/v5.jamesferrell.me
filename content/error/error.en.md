@@ -2,14 +2,12 @@ Title: Error
 
 ----
 
-Headline: 404: Page not found
+Headline: Error
 
 ----
 
 Text:
 
-## {{Error subhead}}
-
-{{Error text}}
+I’m looking for the thing, but I cannot find the thing.
 
 (link: / text: Back to home class: button)

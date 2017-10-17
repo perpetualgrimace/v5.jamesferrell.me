@@ -20,6 +20,10 @@ bioImg2x: jamesatar@2x.jpg
 
 ----
 
+heroImg: default-hero.jpg
+
+----
+
 Keywords: Design, Web Design, UI Design, Visual Design, Development, Developer, Website, Webdev, Frontend, Front-end, Branding, Identity, Kirby CMS, Sketch, Boston, Tampa, Freelance, Contract
 
 ----

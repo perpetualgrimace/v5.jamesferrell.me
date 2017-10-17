@@ -13,6 +13,14 @@
   @media (min-width: $l) and (min-height: $xxs) {
     margin-top: $nav-height;
   }
+
+  // add glossy overlay to pseudo element so it shows up over the hero image
+  &:before {
+    @include pseudo;
+    @include inflate;
+    @include radial-gloss;
+    z-index: 1;
+  }
 }
 
 // row
@@ -21,8 +29,15 @@
   z-index: 1;
 }
 
+// headline
 .header-headline {
   display: inline-block;
+}
+
+// subhead (span nested within .header-headline)
+.header-subhead {
+  display: block; // make the span stackable
+  margin-top: 0.25em; // space it out from the title
 }
 
 // hero image container

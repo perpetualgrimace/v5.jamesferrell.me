@@ -1,23 +1,31 @@
 <?
+
 //set headline
-if($page->headline() != '') { $headline = $page->headline(); }
-else { $headline = $page->title(); }
+if($page->headline() != '') {
+  $headline = $page->headline();
+} else {
+  $headline = $page->title();
+}
+
 ?>
 
 <header class="header u-fullwidth dark-theme" role="banner">
 
   <div class="g-container">
     <div class="g-col">
-      <h1 class="header-headline"><?= $headline ?></h1>
+      <h1 class="header-headline">
 
-      <? if ($page->subhead() != ''): ?>
-        <h2 class="header-subhead delta"><?= $page->subhead() ?></h2>
-      <? endif ?>
+        <?= $headline ?>
 
-    </div>
+        <? if ($page->subhead() != ''): ?>
+          <span class="header-subhead delta">
+            <span class="u-screenreader">: </span>
+            <?= $page->subhead() ?>
+          </span>
+        <? endif ?>
 
-    <div class="g-col">
-      <? snippet('breadcrumbs') ?>
+      </h1>
+
     </div>
 
   </div>
