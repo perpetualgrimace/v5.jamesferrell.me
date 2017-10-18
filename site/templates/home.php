@@ -22,6 +22,11 @@ snippet('global-body-open');
 
     // blog content
     snippet('global-section-open', ['class' => 'g-col']);
+      snippet('project-list', ['pagNum' => 6]);
+    snippet('global-section-close');
+
+    // blog content
+    snippet('global-section-open', ['class' => 'g-col']);
       snippet('blog-list', ['pagNum' => 6, 'layout' => '']);
     snippet('global-section-close');
 

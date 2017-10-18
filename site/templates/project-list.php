@@ -12,8 +12,7 @@ snippet('global-body-open');
 
     // main content
     snippet('global-section-open');
-      snippet('blog-list');
-      snippet('blog-sidebar');
+      snippet('project-list');
     snippet('global-section-close');
 
   snippet('global-main-close');

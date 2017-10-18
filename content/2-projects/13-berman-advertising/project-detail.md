@@ -30,4 +30,4 @@ laptopImg2x: berman-laptop@2x.png
 
 ----
 
-externalLink: http://bermanadvertising.com
+externalLink: http://bermancreative.com
