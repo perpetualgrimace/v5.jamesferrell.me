@@ -191,6 +191,10 @@
   text-shadow: 0 1px 0.25em $shadow-color;
 }
 
+@mixin text-shadow-lg($shadow-color: $shadow-dark) {
+  text-shadow: 0 1px 0.5em $shadow-color;
+}
+
 
 ////////////////////////////////
 // perspective
@@ -274,7 +278,6 @@
   display: inline-block;
   overflow: hidden; // clip :after gradient fill
   margin-top: 0.75rem;
-  font-size: 1rem;
   text-decoration: none !important;
   color: $text-color !important;
   background-color: $primary-color; // base color
@@ -298,7 +301,7 @@
     background: $light-color;
     color: $text-color;
     border-color: $dark-color;
-    transform: perspective(50em) rotateX(10deg) scale(1.0125); // 3d effect
+    // transform: perspective(50em) rotateX(10deg) scale(1.0125); // 3d effect
 
     // show gradient fill
     &:after {
@@ -316,7 +319,8 @@
     background: $dark-color;
     color: $text-color;
     border-color: $dark-color;
-    transform: perspective(50em) rotateX(8deg) scale(1); // more subtle 3d effect
+    transform: scale(0.995); // more subtle 3d effect
+    // transform: perspective(50em) rotateX(8deg) scale(1); // more subtle 3d effect
 
     // partially hide gradient fill to allow darker background color to show through
     &:after {

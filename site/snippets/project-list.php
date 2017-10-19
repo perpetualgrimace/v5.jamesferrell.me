@@ -26,7 +26,7 @@
 
     <!-- display project-items -->
     <? if ($items->count() != 0): ?>
-      <div class="g-columns g-compact">
+      <div class="g-columns project-list">
         <? foreach ($items as $item) {
           snippet('project-item', array('item' => $item));
         } ?>
@@ -36,7 +36,7 @@
 
     <!-- display pagination if necessary -->
     <? if($page->isHomePage() && ($pagination->items() > $pagNum)) { ?>
-      <a href="blog" class="more-link">More articles</a>
+      <a href="projects" class="button button-fullwidth">More projects</a>
     <? } elseif (isset($pagination) && ($pagination->items() > $pagNum)) {
       snippet('pagination', array('pagination' => $pagination));
     } ?>

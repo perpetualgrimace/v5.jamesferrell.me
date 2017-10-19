@@ -24,43 +24,73 @@
     $tags = ['untagged'];
   }
 
+  // link text
+  if ($contentType == 'web') {
+    $linkText = 'View live site';
+  } elseif ($contentType == 'album') {
+    $linkText = 'Listen on bandcamp';
+  } elseif ($contentType == 'controller') {
+    $linkText = 'View project on Dribbble';
+  } else {
+    $linkText = 'Missing ' . $contentType . ' snippet!';
+  }
+
+  // determine heading tag (for accessiblity!)
+  if($page->isHomePage()) {
+    $headingTag = 'h3';
+  } else {
+    $headingTag = 'h2';
+  }
+
 ?>
 
-<article class="<?= $contentType?>-project-item project-item">
 
+<article class="<?= $contentType?>-project-item project-item dark-theme " style="background-color: <?= $projectColor ?>">
+
+
+  <!-- link -->
+  <a href="<?= $item->externalLink() ?>" class="project-item-link">
+    <span class="u-screenreader"><?= $linkText ?></span>
+  </a>
+
+
+  <!-- inner container -->
   <div class="project-item-inner">
 
-    <? /* <a href="<?= $item->url() ?>" class="<?= $contentType?>-project-item-thumb project-item-thumb" tabindex="-1">
-      <img class="<?= $contentType?>-project-item-img project-item-img" src="<?= $thumbImg ?>" alt="" draggable="false">
-    </a> */ ?>
 
-    <div class="<?= $contentType?>-project-item-caption project-item-caption" style="background-color: <?= $projectColor ?>">
+    <!-- caption -->
+    <div class="project-item-caption">
 
-      <a class="<?= $contentType?>-project-item-title project-item-title heading delta" href="<?= $item->externalLink() ?>"><?= $item->title() ?></a>
+      <!-- heading -->
+      <<?= $headingTag ?> class="<?= $contentType?>-project-item-title project-item-title heading beta" href="<?= $item->externalLink() ?>"><?= $item->title() ?></<?= $headingTag ?>>
 
-      <?
+      <!-- tags -->
+      <ul class="project-tag-list tag-list">
+        <? foreach ($tags as $tag): ?>
+          <li class="tag-item u-margin-top-sm">
+            <? snippet('tag', ['tag' => $tag]); ?>
+          </li>
+        <? endforeach ?>
+      </ul>
 
-      // add tags
-      foreach ($tags as $tag) {
-        snippet('tag', ['tag' => $tag]);
-      }
+    </div> <!-- .project-item-caption -->
 
-      // check content type and add the corresponding image
-      if ($contentType == 'web') {
-        snippet('device-mobile', ['item' => $item]);
-        snippet('device-laptop', ['item' => $item]);
-      } elseif ($contentType == 'album') {
-        snippet('album', ['item' => $item]);
-      } elseif ($contentType == 'controller') {
-        snippet('controller', ['item' => $item]);
-      } else {
-        echo '<p class="dark-theme">Missing ' . $contentType . ' snippet!</p>';
-      }
 
-      ?>
+    <!-- image -->
+    <?
+    // check content type and add the corresponding image
+    if ($contentType == 'web') {
+      snippet('device-mobile', ['item' => $item]);
+      snippet('device-laptop', ['item' => $item]);
+    } elseif ($contentType == 'album') {
+      snippet('album', ['item' => $item]);
+    } elseif ($contentType == 'controller') {
+      snippet('controller', ['item' => $item]);
+    } else {
+      echo '<p class="dark-theme">Missing ' . $contentType . ' snippet!</p>';
+    }
 
-    </div>
+    ?>
 
-  </div>
-
-</article>
+  </div><!-- .project-item-inner -->
+</article><!-- .project-item -->

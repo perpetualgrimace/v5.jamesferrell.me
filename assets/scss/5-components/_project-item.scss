@@ -1,0 +1,248 @@
+// tweakpoint for this component
+$device-tweakpoint: 50em;
+
+// project item list
+.project-list {
+  @media (min-width: $m) {
+    border-radius: 2px;
+    overflow: hidden;
+  }
+}
+
+// project item container
+.project-item {
+  @include radial-gloss; // background style added in template
+  overflow: hidden;
+  // default layout properties
+  max-height: rem(420);
+  padding: 1rem;
+  text-align: center;
+
+  // minor adjustment
+  @media (min-width: $xs) {
+    max-height: rem(530);
+    padding-top: 1.5rem;
+  }
+
+  // one-time tweakpoint: enough room to show entire laptop screen
+  @media (min-width: 38em) {
+    max-height: none;
+    padding-bottom: 1.875rem;
+  }
+
+  // add bigger padding and left-aligned text
+  @media (min-width: $device-tweakpoint) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    text-align: left;
+  }
+}
+
+
+// project item inner container
+.project-item-inner {
+  max-width: 680px; // everything in pixels, woo!
+  // center inner-container
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+// space out tag list
+.project-tag-list {
+  margin-top: rem(3); // fudged to fit the baseline
+  margin-bottom: $gutter * 1.5;
+
+  @media (min-width: $device-tweakpoint) {
+    margin-bottom: $gutter * 2;
+  }
+}
+
+
+// add shadow to title
+.project-item-title {
+  @include text-shadow-lg;
+}
+
+
+// make entire project item clickable, hide link by default
+.project-item-link {
+  @include inflate;
+  background-color: rgba($white, 0.05);
+  z-index: 3;
+  // to transition
+  opacity: 0;
+
+  // interactions
+  &:hover, &:focus {
+    opacity: 1;
+
+    // phone is in the foreground; it moves farther, faster
+    & + .project-item-inner .mobile-container {
+      transform: translateY(-14px);
+    }
+
+    // other items are in the background, they move less, slower
+    & + .project-item-inner .laptop-container,
+    & + .project-item-inner .controller-container,
+    & + .project-item-inner .album-container {
+      transform: translateY(-3px);
+    }
+  }
+}
+
+
+// make image containers text-alignable
+.project-img,
+.device-container {
+  display: inline-block;
+}
+
+
+////////////////////////////////////
+// device positioning
+////////////////////////////////////
+
+// hide phone and only show laptop
+.project-item .mobile-container {
+  @media (min-width: $xs) {
+    // position mobile container
+    position: absolute;
+    bottom: -1rem;
+    right: 0;
+    z-index: 2;
+  }
+}
+
+
+// hide laptop
+.project-item .laptop-container {
+  @media (max-width: $xs - 0.001) {
+    display: none;
+  }
+}
+
+
+// flipped device layout for even items:
+// phone left, laptop right
+@media (min-width: $device-tweakpoint) {
+  .project-item:nth-of-type(even) .mobile-container {
+    right: auto; // reset right positioning
+  }
+  .project-item:nth-of-type(even) .laptop-container {
+    left: 120px; // offset using pixels actually works, because everything is in pixels 😬
+  }
+}
+
+
+////////////////////////////////////
+// controller positioning
+////////////////////////////////////
+
+// keep image centered within container
+.controller-container {
+  text-align: center;
+}
+
+
+// hide the cord on small viewports
+@media (max-width: $device-tweakpoint - 0.001) {
+  // limit container height
+  .controller-container {
+    overflow: hidden;
+    height: 160px;
+  }
+  // position image so cord is hidden
+  .controller-img {
+    bottom: 75px;
+    max-width: 100%; // flow off the screen
+
+    // when the controller starts to scale down, switch to percentage based units for positioning
+    @media (max-width: 24em) {
+      bottom: 0;
+      margin-top: -20%;
+    }
+  }
+}
+
+
+// caption left, image right layout
+@media (min-width: $device-tweakpoint) {
+
+  // set container height
+  .controller-project-item {
+    height: rem(300);
+
+    // position controller right
+    .controller-container {
+      position: absolute;
+      text-align: right;
+      width: 50%;
+      top: -1.5rem;
+      right: 0;
+    }
+
+    // let the image be actual size and break out of the container slightly if needed
+    .controller-img {
+      max-width: none;
+    }
+
+    // make the caption vertically centerable
+    .project-item-inner {
+      height: rem(220);
+    }
+
+    // vertically center caption, limit width
+    .project-item-caption {
+      @include vertical-center;
+      width: 50%;
+    }
+  }
+}
+
+
+////////////////////////////////////
+// album positioning
+////////////////////////////////////
+
+// make the album look physical
+.album-img {
+  @include device-shadow;
+  border-radius: $radius;
+}
+
+
+// caption left, image right layout
+@media (min-width: $device-tweakpoint) {
+
+  // set container height
+  .album-project-item {
+    height: rem(400);
+
+    // position album right
+    .album-container {
+      float: right;
+      width: 49.9%;
+      text-align: right;
+    }
+
+    // set album size by height
+    .album-img {
+      height: rem(340);
+      width: auto;
+      max-width: none;
+    }
+
+    // make the caption vertically centerable
+    .project-item-inner {
+      height: rem(360);
+    }
+
+    // vertically center caption, limit width
+    .project-item-caption {
+      @include vertical-center;
+      width: 50%;
+      float: left; // needed to make the floated album not clear
+    }
+  }
+}

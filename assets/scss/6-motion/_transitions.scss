@@ -42,7 +42,8 @@ svg * {
 
 // nav list smooth expand / collapse
 .nav-list,
-.dropdown {
+.dropdown,
+.project-item-link-text {
   /* autoprefixer: off */
   transition:
     opacity $timing,
@@ -63,4 +64,22 @@ svg * {
 .secondary-link > svg {
   /* autoprefixer: off */
   transition: transform $timing;
+}
+
+// transform only, slower transition
+.mobile-container {
+  /* autoprefixer: off */
+  transition: transform $timing-gradual;
+}
+
+.laptop-container,
+.controller-container,
+.album-container {
+  /* autoprefixer: off */
+  transition: transform $timing-long;
+}
+
+// opacity only, slower transition
+.project-item-link {
+  transition: opacity $timing-long;
 }

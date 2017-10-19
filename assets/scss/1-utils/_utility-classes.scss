@@ -186,6 +186,11 @@
 ////////////////////////////////
 
 // hide on small screens
+.u-hide-below-xs {
+  @media (max-width: $xs - 0.001) {
+    display: none !important;
+  }
+}
 .u-hide-below-m {
   @media (max-width: $m - 0.001) {
     display: none !important;

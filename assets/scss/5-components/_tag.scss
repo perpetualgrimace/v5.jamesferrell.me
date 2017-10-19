@@ -1,9 +1,26 @@
+// individual tag component
 .tag {
   @include body-semibold-font;
   @include font-smoothing;
+  display: inline-block;
   text-transform: uppercase;
-  padding: 0.2em 0.5em 0.25em 0.5em;
+  padding: 0.2rem 0.5rem 0.2rem 0.5rem;
   color: $white;
   background: $black;
   border-radius: $radius;
+}
+
+
+// list of tags, each wrapped in an li
+.tag-list {
+
+  // wrapper li; display tags horizontally
+  .tag-item {
+    display: inline-block;
+
+    // add spacing to the right of all but the last item
+    &:not(:last-of-type) {
+      margin-right: $gutter / 2;
+    }
+  }
 }

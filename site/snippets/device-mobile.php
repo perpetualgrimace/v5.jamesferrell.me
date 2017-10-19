@@ -12,9 +12,9 @@ if ($item->mobileImg() != '' && $item->mobileImg2x() != '') {
 
 ?>
 
-<div class="device-container phone-container">
-  <div class="device-shell phone-shell"></div>
-  <div class="device-screen phone-screen">
+<div class="device-container mobile-container">
+  <div class="device-shell mobile-shell"></div>
+  <div class="device-screen mobile-screen">
     <? if ($allImages == TRUE): ?>
       <img class="project-image" data-src="<?= $img ?>" data-src2x="<?= $img2x ?>" sizes="144px" alt="">
       <noscript>

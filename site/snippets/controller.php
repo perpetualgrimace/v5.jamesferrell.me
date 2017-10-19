@@ -14,9 +14,9 @@ if ($item->controllerImg() != '' && $item->controllerImg2x() != '') {
 
 <div class="controller-container">
   <? if ($allImages == TRUE): ?>
-    <img class="project-image" data-src="<?= $img ?>" data-src2x="<?= $img2x ?>" sizes="320px" alt="">
+    <img class="project-img controller-img" data-src="<?= $img ?>" data-src2x="<?= $img2x ?>" sizes="320px" alt="">
     <noscript>
-      <img class="project-image" src="<?= $img ?>" srcset="<?= $img ?>, <?= $img2x?> 2x" sizes="320px" alt="">
+      <img class="project-img controller-img" src="<?= $img ?>" srcset="<?= $img ?>, <?= $img2x?> 2x" sizes="320px" alt="">
     </noscript>
   <? else: ?>
     <h3>Check image filenames</h3>

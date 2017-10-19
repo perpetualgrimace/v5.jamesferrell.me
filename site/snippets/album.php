@@ -12,9 +12,9 @@ if ($item->albumImg() != '' && $item->albumImg2x() != '') {
 
 <div class="album-container">
   <? if ($allImages == TRUE): ?>
-    <img class="project-image" data-src="<?= $img ?>" data-src2x="<?= $img2x ?>" sizes="320px" alt="">
+    <img class="project-img album-img" data-src="<?= $img ?>" data-src2x="<?= $img2x ?>" sizes="320px" alt="">
     <noscript>
-      <img class="project-image" src="<?= $img ?>" srcset="<?= $img ?>, <?= $img2x?> 2x" sizes="320px" alt="">
+      <img class="project-img album-img" src="<?= $img ?>" srcset="<?= $img ?>, <?= $img2x?> 2x" sizes="320px" alt="">
     </noscript>
   <? else: ?>
     <h3>Check image filenames</h3>
