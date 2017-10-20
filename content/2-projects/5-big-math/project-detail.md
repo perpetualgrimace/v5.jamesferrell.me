@@ -10,7 +10,7 @@ thumbnailLayout: album
 
 ----
 
-tags: branding, audio production
+tags: branding, audio production, digital illustration
 
 ----
 

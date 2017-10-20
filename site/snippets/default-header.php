@@ -9,11 +9,11 @@ if($page->headline() != '') {
 
 ?>
 
-<header class="header u-fullwidth dark-theme" role="banner">
+<header class="default-header header u-fullwidth dark-theme" role="banner">
 
   <div class="g-container">
     <div class="g-col">
-      <h1 class="header-headline">
+      <h1 class="default-header-headline">
 
         <?= $headline ?>
 

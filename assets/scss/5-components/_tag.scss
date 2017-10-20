@@ -17,6 +17,7 @@
   // wrapper li; display tags horizontally
   .tag-item {
     display: inline-block;
+    margin-bottom: 0.5em;
 
     // add spacing to the right of all but the last item
     &:not(:last-of-type) {

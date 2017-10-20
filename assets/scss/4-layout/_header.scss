@@ -1,37 +1,13 @@
 ////////////////////////////////
-// global
+// global header styles
 ////////////////////////////////
 
 // main container
 .header {
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  min-height: rem(183);
-
   // offset fixed nav
   @media (min-width: $l) and (min-height: $xxs) {
     margin-top: $nav-height;
   }
-
-  // add glossy overlay to pseudo element so it shows up over the hero image
-  &:before {
-    @include pseudo;
-    @include inflate;
-    @include radial-gloss;
-    z-index: 1;
-  }
-}
-
-// row
-.header > .g-container {
-  @include flex-vertical-center;
-  z-index: 1;
-}
-
-// headline
-.header-headline {
-  display: inline-block;
 }
 
 // subhead (span nested within .header-headline)
@@ -45,4 +21,55 @@
   @include inflate;
   background-size: cover;
   background-position: center;
+}
+
+
+////////////////////////////////
+// default-header
+////////////////////////////////
+
+.default-header {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  min-height: rem(183);
+
+  // add glossy overlay to pseudo element so it shows up over the hero image
+  &:before {
+    @include pseudo;
+    @include inflate;
+    @include radial-gloss;
+    z-index: 1;
+  }
+}
+
+// row
+.default-header > .g-container {
+  @include flex-vertical-center;
+  z-index: 1;
+}
+
+// headline
+.default-header-headline {
+  display: inline-block;
+}
+
+
+////////////////////////////////
+// filter header
+////////////////////////////////
+
+.filter-header-headline {
+  margin-bottom: 0.65rem;
+}
+
+// tagcloud positioning
+.filter-headline-label,
+.filter-tag-list {
+  display: inline-block;
+}
+
+// .filter-tag-list
+.filter-headline-label {
+  margin-right: 0.5em;
 }

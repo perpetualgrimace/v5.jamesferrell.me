@@ -6,7 +6,7 @@ snippet('global-body-open');
 
   // page title
   snippet('global-main-open');
-    snippet('global-header');
+    snippet('default-header');
 
     // main content
     snippet('global-section-open');

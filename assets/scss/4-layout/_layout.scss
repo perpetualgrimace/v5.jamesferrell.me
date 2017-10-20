@@ -18,6 +18,7 @@
 // add padding to sections
 .section {
   @include clearfix;
+  clear: both; // when clearfix just isn't enough
   padding-top: 2rem;
   padding-bottom: 2rem;
 
