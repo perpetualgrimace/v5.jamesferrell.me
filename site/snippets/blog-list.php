@@ -38,12 +38,13 @@
       <? endif;
     } ?>
 
+    <!-- home page -->
     <? if ($page->isHomePage()): ?>
       <h2 class="u-padding-bottom"><?= $page->blogHeadline() ?></h2>
     <? endif ?>
 
 
-    <!-- display cards -->
+    <!-- display blog cards -->
     <? if ($items->count() != 0): ?>
       <div class="g-columns g-compact">
         <? foreach ($items as $item) {
@@ -53,9 +54,9 @@
     <? endif ?>
 
 
-    <!-- display pagination if necessary... -->
+    <!-- display pagination if necessary -->
     <? if($page->isHomePage() && ($pagination->items() > $pagNum)) { ?>
-      <a href="blog" class="more-link">More articles</a>
+      <a href="blog" class="button link-arrow epsilon">More articles</a>
     <? } elseif (isset($pagination) && ($pagination->items() > $pagNum)) {
       snippet('pagination', array('pagination' => $pagination));
     } ?>

@@ -36,7 +36,7 @@
 
     <!-- display pagination if necessary -->
     <? if($page->isHomePage() && ($pagination->items() > $pagNum)) { ?>
-      <a href="projects" class="button button-fullwidth">More projects</a>
+      <a href="projects" class="button link-arrow epsilon">More projects</a>
     <? } elseif (isset($pagination) && ($pagination->items() > $pagNum)) {
       snippet('pagination', array('pagination' => $pagination));
     } ?>

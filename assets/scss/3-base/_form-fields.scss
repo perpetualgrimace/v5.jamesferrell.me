@@ -50,7 +50,6 @@ label {
     position: absolute;
     color: $error-color;
     top: auto;
-    padding-top: 0.25rem;
     padding-bottom: 0; // reset padding
     z-index: -1; // place behind fields
     // transitionable properties

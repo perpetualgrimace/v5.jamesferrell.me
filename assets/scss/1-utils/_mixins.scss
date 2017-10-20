@@ -256,6 +256,11 @@
 @mixin brand-theme {
   @include font-smoothing;
 
+  // heading link style
+  h2, h3, h4, h5, h6 {
+    color: $white;
+  }
+
   // paragraph link stye
   p > a {
     color: $white;
@@ -274,10 +279,13 @@
 ////////////////////////////////
 
 @mixin button-base($primary-color: $brand-color, $light-color: $brand-light, $dark-color: $brand-dark, $text-color: $white) {
+  @include body-semibold-font;
   @include font-smoothing;
   display: inline-block;
   overflow: hidden; // clip :after gradient fill
+  z-index: 1; // needed to make :after pseudo element visible
   margin-top: 0.75rem;
+  text-transform: uppercase;
   text-decoration: none !important;
   color: $text-color !important;
   background-color: $primary-color; // base color
@@ -290,7 +298,7 @@
   &:after {
     @include pseudo;
     @include inflate;
-    z-index: -1; // prevent from obscuring text
+    z-index: -1;
     background-image: linear-gradient(to bottom, $light-color, $primary-color);
     opacity: 0; // initial opacity
   }
@@ -298,7 +306,6 @@
   // hover state
   &:hover,
   &:focus {
-    background: $light-color;
     color: $text-color;
     border-color: $dark-color;
     // transform: perspective(50em) rotateX(10deg) scale(1.0125); // 3d effect
@@ -306,6 +313,7 @@
     // show gradient fill
     &:after {
       opacity: 1;
+      transform: none;
     }
   }
 
@@ -319,7 +327,6 @@
     background: $dark-color;
     color: $text-color;
     border-color: $dark-color;
-    transform: scale(0.995); // more subtle 3d effect
     // transform: perspective(50em) rotateX(8deg) scale(1); // more subtle 3d effect
 
     // partially hide gradient fill to allow darker background color to show through

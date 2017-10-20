@@ -13,6 +13,8 @@ snippet('global-body-open');
       snippet('global-textblock');
     snippet('global-section-close');
 
+    snippet('cta');
+
   snippet('global-main-close');
 
   // footer

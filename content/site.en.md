@@ -51,8 +51,8 @@ This site was built from the ground up with (link: http://getkirby.com text: Kir
 
 Cta:
 
-## Do I sound like someone you'd like to work with?
+## Do I sound like someone you'd like to work with?
 
 I'm happy to chat about a new project, or whatever. Let's grab a coffee.
 
-(link: contact text: Get in touch class: button link-arrow)
+(link: contact text: Get in touch class: button-inverted link-arrow epsilon)

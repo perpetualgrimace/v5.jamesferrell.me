@@ -15,7 +15,7 @@ I use a 2015 MacBook Pro with a 15" retina display, 2.2GHz i7 processor, and 16g
 
 ### Design:
 - **(link: https://www.sketchapp.com text: Sketch)** is my design software of choice. It makes web and UI design both efficient and realistic. Now if only they would implement nested character styles it would be perfect. 😒
-- **Photoshop** is amazing for editing photos and clunky as hell for everything else.
+- **Photoshop** is amazing for editing photos (and clunky as hell for everything else).
 - **(link: https://affinity.serif.com/en-gb/designer/ text: Affinity Designer)** is a generally good enough replacement for Illustrator. At this point, the less Adobe software on my Mac, the better.
 - **(link: https://www.kodlian.com/apps/icon-slate text: Icon slate)** is the most friendly way I've found to make custom app icons and favicons.
 - **(link: http://www.svgs.us text: svgsus)** keeps vector icon libraries at the ready, incredibly useful. It also has a very clever name.

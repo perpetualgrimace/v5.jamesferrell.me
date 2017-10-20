@@ -1,6 +1,6 @@
 // interactive stuff
 a, label, input, textarea, button,
-[class*=button], button:after, .nav-link:after {
+[class*=button], [class*=button]:after, .nav-link:after {
   /* autoprefixer: off */
   transition:
     color $timing,
@@ -61,7 +61,8 @@ svg * {
 .hamburger,
 .hamburger-bun,
 .grid-icon,
-.secondary-link > svg {
+.secondary-link > svg,
+.link-arrow:before {
   /* autoprefixer: off */
   transition: transform $timing;
 }

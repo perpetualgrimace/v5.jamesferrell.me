@@ -12,7 +12,7 @@ Series:
 
 Text:
 
-*intro: This post was originally written for <a href="http://bermanadvertising.com">Berman Advertising</a>. Jeff admires my ability to figure out how to do stuff and asked me to write about that. So that's what I did.*
+*This post was originally written for <a href="http://bermanadvertising.com">Berman Advertising</a>. Jeff admires my ability to figure out how to do stuff and asked me to write about that. So that's what I did.*
 
 Some people discover the thing that they want to do for the rest of their lives in a moment of clarity. Some refer to this as a calling. At one point, in the midst of their daily routine, EUREKA! They realize this is the thing for them.
 

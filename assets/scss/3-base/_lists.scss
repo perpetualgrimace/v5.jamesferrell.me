@@ -2,14 +2,15 @@
 // lists
 ////////////////////////////////
 
-// inline lists
-.inline-list > li {
-  display: inline-block;
-}
-
 .bullets,
 .content ul {
   list-style: disc;
+}
+
+.content {
+  ul, ol {
+    padding-left: $gutter;
+  }
 }
 
 // ordered lists

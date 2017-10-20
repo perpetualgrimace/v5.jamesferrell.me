@@ -14,6 +14,8 @@ snippet('global-body-open');
       snippet('blog-sidebar');
     snippet('global-section-close');
 
+    snippet('cta');
+
   snippet('global-main-close');
 
   // footer

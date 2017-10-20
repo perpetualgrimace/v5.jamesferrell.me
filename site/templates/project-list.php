@@ -1,7 +1,5 @@
 <?
 
-# NOTE: currently just a copy of blog-list
-
 snippet('global-head');
 snippet('global-body-open');
   snippet('global-nav');
@@ -14,6 +12,8 @@ snippet('global-body-open');
     snippet('global-section-open');
       snippet('project-list');
     snippet('global-section-close');
+
+    snippet('cta');
 
   snippet('global-main-close');
 

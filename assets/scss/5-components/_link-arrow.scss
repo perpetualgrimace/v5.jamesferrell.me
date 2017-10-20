@@ -1,0 +1,44 @@
+// add an arrow to a link or button
+.link-arrow {
+  // NOTE: button style uses :after
+  &:before {
+    content: '\2192';
+    float: right;
+    margin-left: 0.25em;
+  }
+
+  &:hover, &:focus {
+    &:before {
+      transform: translateX(3px);
+    }
+  }
+}
+
+
+// add an arrow to a link or button
+.link-arrow-back {
+  // NOTE: button style uses :after
+  &:before {
+    content: '\2192';
+    margin-right: 0.25em;
+  }
+
+  &:hover, &:focus {
+    &:before {
+      transform: translateX(-3px);
+    }
+  }
+}
+
+
+// fudge arrow alignment on buttons
+[class*='button'][class*='link-arrow']:before {
+  margin-top: -0.0666em; // fudged
+}
+
+
+// fix alignment and remove margin on inline links
+p > [class*='link-arrow'] {
+  display: inline-block;
+  margin-top: 0; // override * + * default
+}

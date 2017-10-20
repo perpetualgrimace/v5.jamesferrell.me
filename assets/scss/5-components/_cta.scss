@@ -1,0 +1,26 @@
+// global cta
+.cta {
+
+  // add padding to container, specificty override
+  &.g-col {
+    @media (min-width: $s) {
+      padding: 1.5rem 2rem 2rem 2rem;
+    }
+  }
+
+  // set heading style to beta
+  h2, h3 {
+    font-size: $beta;
+  }
+
+  // set vertical spacing
+  p:first-of-type {
+    margin-top: 0.625em;
+    margin-bottom: 0.5em;
+  }
+
+  // override margin-reset for p > .link-arrow
+  p:last-of-type [class*='link-arrow'] {
+    margin-top: 0.75rem;
+  }
+}
