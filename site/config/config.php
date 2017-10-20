@@ -52,5 +52,41 @@ c::set('routes', array(
     'action'  => function() {
       go('panel');
     }
+  ),
+
+  array(
+    'pattern' => 'projects/(:any)',
+    'action' => function() {
+      go('projects');
+    }
+  ),
+
+  /*
+  NOTE: remember to uncomment the following and remove the previous rule when/if I build work pages
+
+  // /projects/blackkey » /projects/black-key-recording
+  array(
+    'pattern' => 'projects/blackkey',
+    'action'  => function() {
+      go('projects/black-key-recording');
+    }
+  ),
+
+  // projects/fusion » projects/fusion-lamps
+  array(
+    'pattern' => 'projects/fusion',
+    'action'  => function() {
+      go('projects/fusion-lamps');
+    }
+  ),
+
+  // projects/controllers » projets/classic-controller-illustrations
+  array(
+    'pattern' => 'projects/controllers',
+    'action'  => function() {
+      go('projets/classic-controller-illustrations');
+    }
   )
+
+  */
 ));
