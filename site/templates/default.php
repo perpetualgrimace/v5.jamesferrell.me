@@ -10,7 +10,14 @@ snippet('global-body-open');
 
     // main content
     snippet('global-section-open');
-      snippet('global-textblock');
+      // use content blocks
+      if ($page->blocks() != '') {
+        snippet('blocks');
+      // standard text field assumed
+      } else {
+        snippet('global-textblock');
+      }
+
     snippet('global-section-close');
 
     snippet('cta');
