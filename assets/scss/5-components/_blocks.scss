@@ -1,0 +1,16 @@
+// default spacing
+.block + .block {
+  margin-top: 1rem;
+}
+
+// add columns where that makes sense
+.block-list {
+  column-width: rem(300);
+  column-gap: $gutter * 2;
+  break-inside: avoid;
+}
+
+// applied to container divs within ul
+.block-bullet-list-group {
+  break-inside: avoid;
+}
