@@ -4,7 +4,7 @@
   $contentType = $item->intendedTemplate();
 
   // get thumbnail image
-  if(($contentType = 'blog-video') && ($item->youtubeId() != '')) {
+  if($contentType == 'blog-video' && $item->youtubeId() != '') {
     $thumbImg = 'http://img.youtube.com/vi/' . $item->youtubeId() . '/1.jpg';
   } elseif ($item->thumbImg() != '') {
     $thumbImg = $item->image($item->thumbImg())->url();

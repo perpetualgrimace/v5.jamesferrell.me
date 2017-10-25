@@ -6,13 +6,13 @@
 .nav-container {
   top: 0;
   z-index: 11;
-  margin-bottom: -#{$nav-height}; // place menu toggle above
+  margin-bottom: 0;
+  background-color: $brand-black;
 
   // background color
-  @media (min-width: $m) {
-    width: 100%;
+  @media (min-width: $s) {
+    // width: 100%;
     background-color: $white;
-    margin-bottom: 0; // reset
   }
 
   // fixed nav on bigger screens
@@ -28,6 +28,14 @@
 .nav-main {
   height: $nav-height;
 
+  // layout adjustments on bigger screens
+  @media (min-width: $m) {
+    max-width: none;
+  }
+  @media (min-width: $l) {
+    left: -0.5rem;
+  }
+
   // base style for nav elements
   * {
     @include body-semibold-font;
@@ -41,6 +49,29 @@
 
 
 ////////////////////////////////
+// nav logo (small screens)
+////////////////////////////////
+
+// container
+.nav-logo {
+  @media (max-width: $l - 0.001) {
+    width: 11.5rem;
+    padding: 0.75rem 0.75rem 0.75rem 2rem;
+    left: -2rem; // offset padding
+    z-index: -1;
+    box-shadow: none !important;
+  }
+}
+
+.nav-logo .logo-name {
+  @media (max-width: 18em) {
+    opacity: 0 !important;
+  }
+}
+
+
+
+////////////////////////////////
 // main nav list
 ////////////////////////////////
 
@@ -48,7 +79,7 @@
 .nav-list {
 
   // small screens
-  @media (max-width: $m - 0.001) {
+  @media (max-width: $s - 0.001) {
     @include dropdown-hidden;
     max-width: $max-sidebar-width;
     right: $gutter;
@@ -61,7 +92,7 @@
       height: $nav-height * 1.17; // fudged
 
       // feels bad 💩
-      @media (min-width: $s) and (max-width: $m - 0.001) {
+      @media (min-width: $xs) and (max-width: $s - 0.001) {
         height: $nav-height * 1.11; // soooo fudged, omg
       }
     }
@@ -77,11 +108,22 @@
         border-radius: 0 0 $radius-lg $radius-lg;
 
         // just kill me 💀
-        @media (min-width: $s) and (max-width: $m - 0.001) {
+        @media (min-width: $xs) and (max-width: $s - 0.001) {
           height: calc(100% - #{$nav-height * 1.11}); // still fudged
         }
       }
     }
+  }
+}
+
+
+// nav list, medium screens
+.nav-list {
+  @media (min-width: $s) and (max-width: $l - 0.001) {
+    position: absolute;
+    top: 0;
+    left: 12rem;
+    text-align: center;
   }
 }
 
@@ -92,7 +134,7 @@
   float: left;
   background: $white;
 
-  @media (max-width: $m - 0.001) {
+  @media (max-width: $s - 0.001) {
     & + & {
       border-top: 1px solid $light-1;
     }
@@ -103,7 +145,7 @@
   }
 
   // large screen style
-  @media (min-width: $m) {
+  @media (min-width: $s) {
     width: auto;
     display: block;
   }
@@ -121,7 +163,7 @@
   padding-right: rem(15);
 
   // extra padding where screen real estate allows
-  @media (min-width: $m) {
+  @media (min-width: $s) {
     padding: 0 rem(9);
     line-height: $nav-height; // vertically center
     font-size: $epsilon;
@@ -170,6 +212,17 @@
 // expanded menu via js
 .nav-list.is-expanded {
   @include dropdown-visible;
+
+  // fudge the list into place
+  @media (max-width: $xs - 0.001) {
+    margin-top: -1.125rem;
+    top: -3px;
+  }
+
+  @media (min-width: $xs) and (max-width: $s - 0.001) {
+    margin-top: -1rem;
+    top: -2px;
+  }
 }
 
 // menu toggle
@@ -180,7 +233,7 @@
   text-align: right;
   padding: 2px 10px 1px 9px; // somewhat fudged
   right: $gutter;
-  top: $gutter * 2;
+  top: 0.675rem;
   background: $white;
   border-radius: $radius-lg;
 
@@ -207,8 +260,17 @@
   }
 
   // hide on large screens
-  @media (min-width: $m) {
+  @media (min-width: $s) {
     display: none;
+  }
+}
+
+
+// limit width of toggled menu to container width
+@media (max-width: $xxs - 0.001) {
+  .nav-toggle.is-active,
+  .nav-list.is-expanded {
+    max-width: calc(100% - 2rem);
   }
 }
 
@@ -327,9 +389,13 @@
 
 // skip link
 a.skip {
-  top: $nav-height + ($gutter / 2); // position under nav bar
+  top: $nav-height + 0.13rem; // position under nav bar
   z-index: 8;
   transform: translateX(-100%);
+
+  @media (min-width: $l) {
+    left: 1.5rem;
+  }
 }
 .skip:focus {
   clip: auto;

@@ -22,7 +22,8 @@
 .site-intro-avatar {
   margin-bottom: 0.25rem;
 
-  @media (min-width: $m) {
+  @media (min-width: $l) {
+    text-align: center;
     margin-bottom: 0.5rem;
   }
 }
@@ -38,12 +39,12 @@
 ////////////////////////////////
 
 // container
-.site-intro-logo {
+.logo {
   margin-bottom: 0.25em;
 }
 
 // logo icon container
-.site-intro-logo-icon {
+.logo-icon {
   @include brand-color-depth;
   // alignment
   display: inline-block;
@@ -67,11 +68,11 @@
 }
 
 // mah name
-.site-intro-logo-name {
+.logo-name {
   display: inline-block; // needed to apply transform
 
   // offset the logo image on smaller screens; not necessary on larger viewports
-  @media (max-width: $m - 0.001) {
+  @media (max-width: $l - 0.001) {
     transform: translateX(-40px);
   }
 }
@@ -81,7 +82,8 @@
 // collapsed state: logo only
 ////////////////////////////////
 
-.site-intro.is-collapsed {
+.site-intro.is-collapsed,
+.nav-logo {
   @include box-shadow;
   background: $brand-black;
   // make the same height as the main navbar
@@ -93,14 +95,14 @@
   .site-intro-inner {
     top: -4.85rem;
 
-    @media (min-width: $m) {
+    @media (min-width: $l) {
       top: -8.05rem;
     }
   }
 
   // position & show the logo icon
-  .site-intro-logo-icon,
-  .site-intro-logo-name {
+  .logo-icon,
+  .logo-name {
     // after transition
     opacity: 1;
     transform: none;

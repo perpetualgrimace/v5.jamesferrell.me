@@ -15,7 +15,7 @@ $items = new Pages();
 
 ?>
 
-<footer class="footer dark-theme" role="contentinfo">
+<footer class="footer dark-theme">
   <div class="g-container">
 
     <!-- navigation -->

@@ -22,8 +22,8 @@
 
 ?>
 
-<div class="g-columns <?= $layout ?> u-fullheight">
-  <div class="g-col content">
+<div class="<?= $layout ?>">
+  <div class="g-columns content">
 
     <!-- check for a search query and display result count in a heading -->
     <? if (isset($query)) {

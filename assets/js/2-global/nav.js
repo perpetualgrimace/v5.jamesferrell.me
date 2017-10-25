@@ -3,7 +3,8 @@
 $(document).ready(function() {
 
   // menu toggle
-  $('[data-nav="toggle"]').click(function() {
+  $('[data-nav="toggle"]').click(function(e) {
+    e.preventDefault(); // prevent page jump
     $('[data-nav="toggle"]').toggleClass('is-inactive is-active');
     $('[data-nav="hamburger"]').toggleClass('is-inactive is-active');
     $('.nav-list').toggleClass('is-collapsed is-expanded');

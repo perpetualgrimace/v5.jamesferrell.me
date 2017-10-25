@@ -17,7 +17,7 @@ $socialAccounts = ['twitter', 'dribbble', 'codepen', 'github'];
       ?>
     </ul>
 
-    <div class="tertiary-copyright tertiary-text epsilon">
+    <div class="tertiary-copyright tertiary-text epsilon" role="contentinfo">
       <?= kirbytext($site->copyright()) ?>
       <?= kirbytext($site->colophon()) ?>
     </div>

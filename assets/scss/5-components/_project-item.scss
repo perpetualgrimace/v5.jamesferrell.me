@@ -1,12 +1,10 @@
 // tweakpoint for this component
-$device-tweakpoint: 50em;
+$device-tweakpoint: 68em;
 
 // project item list
 .project-list {
-  @media (min-width: $m) {
-    border-radius: 2px;
-    overflow: hidden;
-  }
+  border-radius: 2px;
+  overflow: hidden;
 }
 
 // project item container

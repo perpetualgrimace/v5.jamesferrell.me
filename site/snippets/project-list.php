@@ -15,31 +15,25 @@
 ?>
 
 
-<div class="g-columns">
-  <div class="g-col">
-
-    <!-- home page -->
-    <? if ($page->isHomePage()): ?>
-      <h2 class="u-padding-bottom"><?= $page->projectsHeadline() ?></h2>
-    <? endif ?>
+<!-- home page -->
+<? if ($page->isHomePage()): ?>
+  <h2 class="u-padding-bottom"><?= $page->projectsHeadline() ?></h2>
+<? endif ?>
 
 
-    <!-- display project-items -->
-    <? if ($items->count() != 0): ?>
-      <div class="g-columns project-list">
-        <? foreach ($items as $item) {
-          snippet('project-item', array('item' => $item));
-        } ?>
-      </div>
-    <? endif ?>
-
-
-    <!-- display pagination if necessary -->
-    <? if($page->isHomePage() && ($pagination->items() > $pagNum)) { ?>
-      <a href="projects" class="button link-arrow epsilon">More projects</a>
-    <? } elseif (isset($pagination) && ($pagination->items() > $pagNum)) {
-      snippet('pagination', array('pagination' => $pagination));
+<!-- display project-items -->
+<? if ($items->count() != 0): ?>
+  <div class="project-list">
+    <? foreach ($items as $item) {
+      snippet('project-item', array('item' => $item));
     } ?>
-
   </div>
-</div>
+<? endif ?>
+
+
+<!-- display pagination if necessary -->
+<? if($page->isHomePage() && ($pagination->items() > $pagNum)) { ?>
+  <a href="projects" class="button link-arrow epsilon u-margin-top">More projects</a>
+<? } elseif (isset($pagination) && ($pagination->items() > $pagNum)) {
+  snippet('pagination', array('pagination' => $pagination));
+} ?>

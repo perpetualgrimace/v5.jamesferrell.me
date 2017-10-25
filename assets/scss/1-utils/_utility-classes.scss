@@ -214,3 +214,10 @@
     display: none !important;
   }
 }
+
+// hide on larger screens
+.u-hide-above-l {
+  @media (min-width: $l) {
+    display: none !important;
+  }
+}

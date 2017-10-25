@@ -30,6 +30,12 @@ $menutext = 'menu';
         </a>
 
 
+        <!-- logo + name for small screens -->
+        <div class="nav-logo u-hide-above-l">
+          <? snippet('global-logo') ?>
+        </div>
+
+
         <!-- main nav -->
         <ul id="nav" class="nav-list is-collapsed">
 

@@ -241,7 +241,7 @@
   padding: $gutter;
   overflow: hidden; // prevent transformed elements from breaking out
 
-  @media (min-width: $m) {
+  @media (min-width: $l) {
     max-width: $max-sidebar-width;
     margin: 0 auto;
     padding: rem(40);

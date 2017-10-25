@@ -60,12 +60,7 @@
 .card-caption {
   margin-top: 0;
   // padding-left: $gutter;
-  width: calc(100% - #{($thumb-width / 2)}); // don't be wrapping
-
-  // don't be wrapping when the thumbnail scales up
-  @media (min-width: $s) {
-    width: calc(100% - #{$thumb-width + ( $gutter * 2 )});
-  }
+  width: 100%;
 }
 
 
@@ -77,12 +72,21 @@ a.card-title {
 }
 
 
+// adjust line height
+.card-description {
+  line-height: 1.25;
+}
+
+
 // small screen treatment
 @media (max-width: $s - 0.001) {
-  .card-title {
-    font-size: $delta;
-  }
   .card-meta {
+    display: none;
+  }
+}
+// three column treatment
+@media (min-width: $xl) {
+  .secondary-content .card-meta {
     display: none;
   }
 }

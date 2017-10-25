@@ -27,3 +27,91 @@
     padding-top: 0;
   }
 }
+
+
+// default margin for content
+.primary-content,
+.secondary-content {
+  padding: 1.5rem 2rem;
+}
+
+
+// add padding for tertiary-sidebar sections on smaller screens
+@media (max-width: $l - 0.001) {
+  .tertiary-sidebar > * {
+    padding: 1rem;
+  }
+}
+
+
+@media (min-width: $xs) and (max-width: $l - 0.001) {
+  .tertiary-sidebar {
+    display: flex;
+    align-items: center;
+    background: $brand-black;
+
+    > * {
+      width: 50%;
+    }
+  }
+}
+
+
+// 2 column layout
+@media (min-width: $l) {
+  .tertiary-sidebar {
+    position: absolute;
+    width: 25%; // fallback
+    width: calc(#{$max-sidebar-width});
+    top: 0;
+    left: 0;
+
+    // extend background
+    &:before {
+      @include pseudo;
+      position: fixed;
+      width: 25%;
+      width: calc(#{$max-sidebar-width});
+      height: 100%;
+      background: $brand-black;
+    }
+  }
+
+  .nav-container,
+  .main {
+    // fallback
+    width: 75%;
+    left: 25%;
+    // non-fallback
+    width: calc(100% - #{$max-sidebar-width});
+    left: calc(#{$max-sidebar-width});
+  }
+
+  .main {
+    margin-left: 0;
+
+    @media (min-width: $l) and (min-height: $xxs) {
+      margin-top: $nav-height;
+    }
+  }
+}
+
+
+// 3 column layout
+@media (min-width: $xl) {
+
+  // resize and accommodate gutters
+  .primary-content {
+    padding-right: $gutter;
+    width: 75%;
+    width: calc(100% - #{$max-sidebar-width});
+  }
+  .secondary-content {
+    position: absolute;
+    padding-left: $gutter;
+    width: 25%; // fallback
+    width: calc(#{$max-sidebar-width});
+    right: 0;
+    top: 1.5rem;
+  }
+}
