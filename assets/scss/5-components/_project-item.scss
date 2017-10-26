@@ -1,13 +1,24 @@
-// tweakpoint for this component
-$device-tweakpoint: 68em;
+// tweakpoints
+$device-tweakpoint-s: 36em;
+$device-tweakpoint-l: 68em;
 
-// project item list
+
+////////////////////////////////////
+// project list
+////////////////////////////////////
+
+// add rounded corners to list
 .project-list {
   border-radius: 2px;
   overflow: hidden;
 }
 
-// project item container
+
+////////////////////////////////////
+// project item
+////////////////////////////////////
+
+// default project-item style
 .project-item {
   @include radial-gloss; // background style added in template
   overflow: hidden;
@@ -16,26 +27,32 @@ $device-tweakpoint: 68em;
   padding: 1rem;
   text-align: center;
 
-  // minor adjustment
-  @media (min-width: $xs) {
+  // minor height+padding adjustment
+  @media (min-width: $device-tweakpoint-s) {
     max-height: rem(530);
     padding-top: 1.5rem;
   }
 
-  // one-time tweakpoint: enough room to show entire laptop screen
-  @media (min-width: 38em) {
+  // enough room to show entire laptop screen
+  @media (min-width: $s) {
     max-height: none;
     padding-bottom: 1.875rem;
   }
 
-  // add bigger padding and left-aligned text
-  @media (min-width: $device-tweakpoint) {
+  // add bigger padding
+  @media (min-width: $device-tweakpoint-l) {
     padding-left: 2rem;
     padding-right: 2rem;
+    // left align text and laptop-container
+    // NOTE: won't apply to mobile, album or controller
     text-align: left;
   }
 }
 
+
+////////////////////////////////////
+// project item inner container
+////////////////////////////////////
 
 // project item inner container
 .project-item-inner {
@@ -46,22 +63,35 @@ $device-tweakpoint: 68em;
 }
 
 
+////////////////////////////////////
+// tag list
+////////////////////////////////////
+
 // space out tag list
 .project-tag-list {
   margin-top: rem(3); // fudged to fit the baseline
   margin-bottom: $gutter * 1.5;
 
-  @media (min-width: $device-tweakpoint) {
+  // add more margin at left-aligned layout
+  @media (min-width: $device-tweakpoint-l) {
     margin-bottom: $gutter * 2;
   }
 }
 
 
-// add shadow to title
+////////////////////////////////////
+// title
+////////////////////////////////////
+
+// add text shadow
 .project-item-title {
   @include text-shadow-lg;
 }
 
+
+////////////////////////////////////
+// link & interactions
+////////////////////////////////////
 
 // make entire project item clickable, hide link by default
 .project-item-link {
@@ -80,7 +110,7 @@ $device-tweakpoint: 68em;
       transform: translateY(-14px);
     }
 
-    // other items are in the background, they move less, slower
+    // other items are in the background; they move less, slower
     & + .project-item-inner .laptop-container,
     & + .project-item-inner .controller-container,
     & + .project-item-inner .album-container {
@@ -89,6 +119,10 @@ $device-tweakpoint: 68em;
   }
 }
 
+
+////////////////////////////////////
+// image positioning
+////////////////////////////////////
 
 // make image containers text-alignable
 .project-img,
@@ -103,7 +137,7 @@ $device-tweakpoint: 68em;
 
 // hide phone and only show laptop
 .project-item .mobile-container {
-  @media (min-width: $xs) {
+  @media (min-width: $device-tweakpoint-s) {
     // position mobile container
     position: absolute;
     bottom: -1rem;
@@ -115,15 +149,19 @@ $device-tweakpoint: 68em;
 
 // hide laptop
 .project-item .laptop-container {
-  @media (max-width: $xs - 0.001) {
+  @media (max-width: $device-tweakpoint-s - 0.001) {
     display: none;
+  }
+  // awkwardly resposition laptop
+  @media (min-width: $device-tweakpoint-s) and (max-width: 42em - 0.001) {
+    margin-left: 1rem;
   }
 }
 
 
 // flipped device layout for even items:
 // phone left, laptop right
-@media (min-width: $device-tweakpoint) {
+@media (min-width: $device-tweakpoint-l) {
   .project-item:nth-of-type(even) .mobile-container {
     right: auto; // reset right positioning
   }
@@ -144,7 +182,7 @@ $device-tweakpoint: 68em;
 
 
 // hide the cord on small viewports
-@media (max-width: $device-tweakpoint - 0.001) {
+@media (max-width: $device-tweakpoint-l - 0.001) {
   // limit container height
   .controller-container {
     overflow: hidden;
@@ -165,7 +203,7 @@ $device-tweakpoint: 68em;
 
 
 // caption left, image right layout
-@media (min-width: $device-tweakpoint) {
+@media (min-width: $device-tweakpoint-l) {
 
   // set container height
   .controller-project-item {
@@ -211,7 +249,7 @@ $device-tweakpoint: 68em;
 
 
 // caption left, image right layout
-@media (min-width: $device-tweakpoint) {
+@media (min-width: $device-tweakpoint-l) {
 
   // set container height
   .album-project-item {

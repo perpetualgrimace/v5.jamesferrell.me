@@ -1,4 +1,4 @@
-<div class="colophon brand-theme">
+<div class="colophon brand-theme u-hide-below-l u-margin-bottom-sm">
   <div class="colophon-inner">
 
     <!-- my face -->

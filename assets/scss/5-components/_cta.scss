@@ -1,12 +1,11 @@
-// global cta
-.cta {
+////////////////////////////////////
+// global cta defaults
+////////////////////////////////////
 
-  // add padding to container, specificty override
-  &.g-col {
-    @media (min-width: $s) {
-      padding: 1.5rem 2rem 2rem 2rem;
-    }
-  }
+.cta {
+  // add padding to container
+  padding: 1.5rem 2rem 2rem 2rem;
+  border-radius: 2px;
 
   // set heading style to beta
   h2, h3 {
@@ -18,9 +17,23 @@
     margin-top: 0.625em;
     margin-bottom: 0.5em;
   }
+}
 
-  // override margin-reset for p > .link-arrow
-  p:last-of-type [class*='link-arrow'] {
-    margin-top: 0.75rem;
+////////////////////////////////////
+// contextual adjustments
+////////////////////////////////////
+
+// override margin-reset for p > .link-arrow
+.cta > p:last-of-type > [class*='link-arrow'] {
+  margin-top: 0.75rem;
+}
+
+// adjust margin when a CTA follows a sidebar container
+.secondary-content + .primary-content > .cta {
+  margin-top: 0.25rem;
+
+  // three column layout
+  @media (min-width: $l) {
+    margin-top: 0;
   }
 }

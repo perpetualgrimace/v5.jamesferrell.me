@@ -4,16 +4,21 @@ snippet('global-head');
 snippet('global-body-open');
   snippet('global-nav');
 
-  // page title
+  // main
   snippet('global-main-open');
-    snippet('default-header');
 
-    // main content
-    snippet('global-section-open');
+    // page title
+    snippet('image-header');
+
+    // primary content
+    snippet('global-section-open', ['class' => 'primary-content']);
       snippet('search-results');
     snippet('global-section-close');
 
   snippet('global-main-close');
+
+  // logo, colophon, social links, copyright
+  snippet('tertiary-sidebar');
 
   // footer
   snippet('global-footer');

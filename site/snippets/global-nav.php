@@ -20,7 +20,7 @@ $menutext = 'menu';
 
 
         <!-- nav menu toggle for small screens -->
-        <a class="nav-toggle is-inactive" data-nav="toggle" href="#nav">
+        <a class="nav-toggle is-inactive u-hide-above-s" data-nav="toggle" href="#nav">
           <span class="nav-toggle-text"><?= $menutext ?></span>
           <div class="hamburger is-inactive" data-nav="hamburger">
             <span class="hamburger-bun hamburger-bun-top"></span>

@@ -1,41 +1,78 @@
-// add an arrow to a link or button
+////////////////////////////////////
+// set link arrow :before content
+////////////////////////////////////
+
+// Always Be Arrowing
+[class*=link-arrow]:before {
+  content: '\2192'; // →
+}
+
+
+////////////////////////////////////
+// default arrow, faces right
+////////////////////////////////////
+
 .link-arrow {
   // NOTE: button style uses :after
   &:before {
-    content: '\2192';
     float: right;
     margin-left: 0.25em;
   }
 
   &:hover, &:focus {
     &:before {
-      transform: translateX(3px);
+      transform: translateX(2px);
     }
   }
 }
 
 
-// add an arrow to a link or button
+////////////////////////////////////
+// back arrow, faces left
+////////////////////////////////////
+
 .link-arrow-back {
   // NOTE: button style uses :after
   &:before {
-    content: '\2192';
     margin-right: 0.25em;
   }
 
   &:hover, &:focus {
     &:before {
-      transform: translateX(-3px);
+      transform: translateX(-2px);
     }
   }
 }
 
 
+////////////////////////////////////
+// download arrow, faces down
+////////////////////////////////////
+
+.link-arrow-download {
+  // NOTE: button style uses :after
+  &:before {
+    float: right;
+    margin-left: 0.325em;
+    transform: rotateZ(90deg);
+  }
+
+  &:hover, &:focus {
+    &:before {
+      transform: rotateZ(90deg) translateX(1px);
+    }
+  }
+}
+
+
+////////////////////////////////////
+// contextual adjustments
+////////////////////////////////////
+
 // fudge arrow alignment on buttons
 [class*='button'][class*='link-arrow']:before {
   margin-top: -0.0666em; // fudged
 }
-
 
 // fix alignment and remove margin on inline links
 p > [class*='link-arrow'] {

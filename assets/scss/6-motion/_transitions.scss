@@ -62,7 +62,7 @@ svg * {
 .hamburger-bun,
 .grid-icon,
 .secondary-link > svg,
-.link-arrow:before {
+[class*=link-arrow]:before {
   /* autoprefixer: off */
   transition: transform $timing;
 }

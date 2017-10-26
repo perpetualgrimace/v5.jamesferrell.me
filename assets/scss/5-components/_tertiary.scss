@@ -49,7 +49,7 @@
 
   // half width list items, where that makes sense
   @media (min-width: $xxs) and (max-width: $l - 0.001),
-  /*OR*/ (min-width: $l) and (max-height: $s) {
+  /*OR*/ (min-width: $l) and (max-height: $s - 0.001) {
     width: 50%;
   }
 }

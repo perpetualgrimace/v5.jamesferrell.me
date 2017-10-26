@@ -19,7 +19,7 @@ blocks:
 
 ----
 
-tertiary:
+secondary:
 
 ## References
 
@@ -31,4 +31,4 @@ Available on request.
 
 Need an inaccessible version that can only be opened with proprietary software? I've got you covered. 😉
 
-(link: resume text: Download PDF class: link-download)
+(file: jamesferrell-resume-2017-screen.pdf text: Download PDF class: link-arrow-download)

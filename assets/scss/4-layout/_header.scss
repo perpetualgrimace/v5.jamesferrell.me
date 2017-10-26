@@ -2,14 +2,6 @@
 // global header styles
 ////////////////////////////////
 
-// main container
-.header {
-  // offset fixed nav
-  @media (min-width: $l) and (min-height: $xxs) {
-    margin-top: $nav-height;
-  }
-}
-
 // subhead (span nested within .header-headline)
 .header-subhead {
   display: block; // make the span stackable
@@ -25,14 +17,15 @@
 
 
 ////////////////////////////////
-// default-header
+// image header
 ////////////////////////////////
 
-.default-header {
+.image-header {
   display: flex;
   align-items: center;
   overflow: hidden;
   min-height: rem(183);
+  padding: 2rem; // align left edge to content, ensure even spacing
 
   // add glossy overlay to pseudo element so it shows up over the hero image
   &:before {
@@ -43,15 +36,11 @@
   }
 }
 
-// row
-.default-header > .g-container {
-  @include flex-vertical-center;
-  z-index: 1;
-}
-
 // headline
-.default-header-headline {
+.image-header-headline {
   display: inline-block;
+  z-index: 1;
+  top: -0.25rem; // fudge into x-height vertical alignment
 }
 
 
@@ -59,6 +48,17 @@
 // filter header
 ////////////////////////////////
 
+// space out the filter-header
+.filter-header {
+  padding-bottom: 1.5rem;
+
+  // make filter-header stop before the secondary-content sidebar
+  @media (min-width: $xl) {
+    padding-right: $max-sidebar-width;
+  }
+}
+
+// headline positioning
 .filter-header-headline {
   margin-bottom: 0.65rem;
 }
@@ -69,7 +69,7 @@
   display: inline-block;
 }
 
-// .filter-tag-list
+// space out label from tagcloud
 .filter-headline-label {
   margin-right: 0.5em;
 }

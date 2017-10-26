@@ -29,7 +29,7 @@ textarea {
 // textarea
 textarea {
   min-height: 8rem;
-  max-height: 16rem;
+  max-height: 18rem;
 }
 
 // labels
@@ -62,4 +62,10 @@ label {
       opacity: 0;
     }
   }
+}
+
+
+// contact form textarea sizing based on viewport
+.contact-form textarea {
+  height: calc(15vh + 10vw);
 }

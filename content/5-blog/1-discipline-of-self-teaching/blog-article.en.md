@@ -1,4 +1,4 @@
-Title: The Discipline of self-teaching: learning a new craft
+Title: The discipline of self-teaching: Learning a new craft
 
 ----
 

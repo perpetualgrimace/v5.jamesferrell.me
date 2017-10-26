@@ -4,17 +4,42 @@ snippet('global-head');
 snippet('global-body-open');
   snippet('global-nav');
 
-  // page title
+  // main
   snippet('global-main-open');
-    snippet('default-header');
 
-    // main content
-    snippet('global-section-open');
-      snippet('blog-article-primary', array('layout' => 'g-9'));
-      snippet('blog-article-secondary', array('layout' => 'g-3'));
+    // page title
+    snippet('image-header');
+
+    // primary content
+    snippet('global-section-open', ['class' => 'primary-content blog-content']);
+
+      // use content blocks
+      if ($page->blocks() != '') {
+        snippet('blocks');
+      // standard text field assumed
+      } else {
+        snippet('global-textblock');
+      }
+
+    snippet('global-section-close');
+
+
+    // secondary content
+    snippet('global-section-open', ['class' => 'secondary-content image-header-offset']);
+      snippet('blog-article-secondary');
+    snippet('global-section-close');
+
+
+    // content nav + colophon
+    snippet('global-section-open', ['class' => 'primary-content blog-content']);
+      snippet('content-nav');
+      snippet('colophon');
     snippet('global-section-close');
 
   snippet('global-main-close');
+
+  // logo, colophon, social links, copyright
+  snippet('tertiary-sidebar');
 
   // footer
   snippet('global-footer');

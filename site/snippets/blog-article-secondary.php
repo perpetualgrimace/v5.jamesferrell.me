@@ -1,7 +1,5 @@
 <?
 
-if(isset($layout)) { $layout = $layout; } else { $layout = 'g-4'; }
-
 // category
 $category = str_replace(',', ', ', $page->topic());
 $category = preg_replace('/\s\s+/', ' ', $category);
@@ -22,8 +20,8 @@ $twitterShareLink = 'https://twitter.com/share?url=' . $page->url() . '&text=' .
 ?>
 
 
-<aside class="blog-secondary g-col <?= $layout ?>">
-  <ul class="secondary-list epsilon">
+<aside class="blog-secondary">
+  <ul class="secondary-meta-list epsilon">
 
     <!-- category -->
     <li class="secondary-item">

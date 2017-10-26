@@ -207,6 +207,27 @@
 
 
 ////////////////////////////////
+// layout helpers
+////////////////////////////////
+
+@mixin primary-content-width {
+  width: 75%; // fallback
+  width: calc(100% - #{$max-sidebar-width});
+}
+
+@mixin secondary-content-width {
+  width: 25%; // fallback
+  width: calc(#{$max-sidebar-width});
+}
+
+@mixin secondary-content-position-right {
+  position: absolute;
+  padding-left: $gutter; // combines with primary-content's also halfed gutter
+  right: 0;
+}
+
+
+////////////////////////////////
 // nav / dropdown-menu
 ////////////////////////////////
 
@@ -225,9 +246,40 @@
   opacity: 1;
   clip: auto;
   overflow: visible;
+  z-index: 1;
+}
 
-  @media (max-width: $m - 0.001) {
-    z-index: -1;
+// apply to a link
+@mixin fancy-nav-hover {
+  &:after {
+    @include pseudo;
+    @include inflate;
+    z-index: -1; // hide behind text
+    background: $brand-light;
+    background-image: linear-gradient(to bottom, $brand-light, $brand-color);
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  // hover state
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $white; // make room for pseudo element
+    color: $white; // make text readable against pseudo element
+
+    // show pseudo element
+    &:after {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+// nav toggle max width
+@mixin nav-toggle-max-width {
+  @media (max-width: $xxs - 0.001) {
+    max-width: calc(100% - 2rem);
   }
 }
 

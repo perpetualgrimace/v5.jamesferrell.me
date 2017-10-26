@@ -207,15 +207,23 @@
     display: none !important;
   }
 }
+.u-hide-below-l {
+  @media (max-width: $l - 0.001) {
+    display: none !important;
+  }
+}
 
 // hide on large screens
+.u-hide-above-s {
+  @media (min-width: $s) {
+    display: none !important;
+  }
+}
 .u-hide-above-m {
   @media (min-width: $m) {
     display: none !important;
   }
 }
-
-// hide on larger screens
 .u-hide-above-l {
   @media (min-width: $l) {
     display: none !important;

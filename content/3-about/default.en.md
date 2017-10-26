@@ -59,10 +59,10 @@ blocks:
 
 ----
 
-tertiary:
+secondary:
 
 ## My resumé
 
-As you can see, I know how to make an acute accent with my keyboard. Also, of the three accepted stylings of the word resumé, I prefer the version with one accent at the end.
+As you can see, of the three accepted stylings of the word resumé, I prefer the version with one accent at the end.
 
-(link: contact text: Contact me class: link-arrow)
+(link: resume text: Resumé page class: link-arrow)

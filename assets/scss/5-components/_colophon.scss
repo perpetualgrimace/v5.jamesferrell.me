@@ -1,16 +1,12 @@
 ////////////////////////////////
-// container
+// colophon defaults
 ////////////////////////////////
 
-// container
-.colophon {
-  max-width: $max-container-width;
-}
-
-// inner
+// add padding to inner container
 .colophon-inner {
   padding: $gutter;
 
+  // more padding
   @media (min-width: $m) {
     padding: rem(30) rem(40);
   }
@@ -21,6 +17,7 @@
 // layout
 ////////////////////////////////
 
+// display avatar and caption inline and vertically center
 .colophon-avatar,
 .colophon-caption {
   display: inline-block;
@@ -31,6 +28,7 @@
 .colophon-avatar {
   width: calc(#{rem(100)});
 
+  // bigger avatar on bigger screens
   @media (min-width: $m) {
     width: calc(#{rem(160)});;
   }
@@ -40,13 +38,24 @@
 .colophon-caption {
   width: calc(99.9% - #{rem(100)});
 
+  // account for bigger avatar on bigger screens
   @media (min-width: $m) {
     width: calc(99.9% - #{rem(160)});;
   }
 }
 
-// margin adjust
+// JAMES FERRELL positioning
 .colophon-caption-name {
   display: inline-block; // needed to make <author> use margin
   margin-bottom: 0.25em;
+}
+
+
+////////////////////////////////////
+// contextual adjustments
+////////////////////////////////////
+
+// let it breath
+* + .colophon {
+  margin-top: 2rem;
 }

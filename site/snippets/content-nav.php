@@ -27,7 +27,7 @@ if ($page->hasNextVisible()) {
 
 ?>
 
-<nav class="content-nav">
+<nav class="content-nav u-margin-bottom-sm">
   <ul class="content-nav-list u-center u-margin-top-off-children">
 
     <!-- first -->

@@ -10,11 +10,9 @@ $socialAccounts = ['twitter', 'dribbble', 'codepen', 'github'];
   <div class="tertiary-inner">
 
     <ul class="tertiary-social-list">
-      <?
-      foreach($socialAccounts as $social) {
+      <? foreach($socialAccounts as $social) {
         snippet('social-link', ['social' => $social]);
-      }
-      ?>
+      } ?>
     </ul>
 
     <div class="tertiary-copyright tertiary-text epsilon" role="contentinfo">

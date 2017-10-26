@@ -1,16 +1,29 @@
-// default spacing
-.block + .block {
-  margin-top: 1rem;
-}
+////////////////////////////////
+// list block types
+////////////////////////////////
 
 // add columns where that makes sense
 .block-list {
-  column-width: rem(300);
-  column-gap: $gutter * 2;
+  // halfway between $xs and $s
+  @media (min-width: 35em) {
+    columns: 2;
+    column-gap: $gutter * 2;
+    break-inside: avoid;
+  }
+}
+
+// keep groups grouped
+.block-bullet-list-group,
+.block-definition-list > li {
   break-inside: avoid;
 }
 
-// applied to container divs within ul
-.block-bullet-list-group {
-  break-inside: avoid;
+
+////////////////////////////////
+// contextual adjustments
+////////////////////////////////
+
+// default spacing
+.block + .block {
+  margin-top: 1rem;
 }

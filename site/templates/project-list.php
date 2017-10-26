@@ -4,19 +4,23 @@ snippet('global-head');
 snippet('global-body-open');
   snippet('global-nav');
 
-  // page title
+  // main
   snippet('global-main-open');
-    // filter content
-    snippet('filter-header');
+    // primary content
+    snippet('global-section-open', ['class' => 'primary-content single-column']);
 
-    // main content
-    snippet('global-section-open');
+      // title + filter
+      snippet('filter-header');
+      // list content
       snippet('project-list');
+      // cta
+      snippet('cta', ['class' => 'u-margin-top-lg u-margin-bottom-sm']);
+
     snippet('global-section-close');
-
-    snippet('cta');
-
   snippet('global-main-close');
+
+  // logo, colophon, social links, copyright
+  snippet('tertiary-sidebar');
 
   // footer
   snippet('global-footer');

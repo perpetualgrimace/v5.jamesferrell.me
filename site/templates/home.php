@@ -7,7 +7,7 @@ snippet('global-head');
 snippet('global-body-open');
   snippet('global-nav');
 
-  // page title
+  // main
   snippet('global-main-open');
 
     // project list
@@ -17,16 +17,15 @@ snippet('global-body-open');
 
     // article list
     snippet('global-section-open', ['class' => 'secondary-content']);
-      snippet('blog-list', ['pagNum' => 3, 'layout' => '']);
+      snippet('blog-list', ['pagNum' => 3]);
     snippet('global-section-close');
 
   snippet('global-main-close');
 
-  // sidebar
+  // logo, colophon, social links, copyright
   snippet('tertiary-sidebar');
 
   // footer
   snippet('global-footer');
-
   snippet('global-footer-scripts');
 snippet('global-body-close');

@@ -8,10 +8,11 @@ if ($page->cta() != '') {
   $cta = $site->cta()->kt();
 }
 
+if (isset($class)) { $class = $class; } else { $class = NULL; };
+
 ?>
 
-<div class="g-columns">
-  <article class="cta brand-theme u-left-center g-col">
-    <?= $cta ?>
-  </article>
-</div>
+
+<article class="cta brand-theme u-left-center<? e($class != NULL, ' ' . $class) ?>">
+  <?= $cta ?>
+</article>

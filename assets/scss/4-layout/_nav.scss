@@ -1,8 +1,8 @@
-////////////////////////////////
+////////////////////////////////////////////
 // container
-////////////////////////////////
+////////////////////////////////////////////
 
-// nav container
+// default positioning and theming
 .nav-container {
   top: 0;
   z-index: 11;
@@ -11,7 +11,6 @@
 
   // background color
   @media (min-width: $s) {
-    // width: 100%;
     background-color: $white;
   }
 
@@ -24,7 +23,11 @@
 }
 
 
-// nav element
+////////////////////////////////////////////
+// main nav element
+////////////////////////////////////////////
+
+// positioning
 .nav-main {
   height: $nav-height;
 
@@ -32,107 +35,102 @@
   @media (min-width: $m) {
     max-width: none;
   }
+
+  // offset nav-link padding on 3 column layout
   @media (min-width: $l) {
     left: -0.5rem;
   }
+}
 
-  // base style for nav elements
-  * {
-    @include body-semibold-font;
-    @include font-smoothing;
-    font-size: $epsilon;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: $gray;
-  }
+// base style for nav elements
+.nav-main * {
+  @include body-semibold-font;
+  @include font-smoothing;
+  font-size: $epsilon;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $gray;
 }
 
 
-////////////////////////////////
-// nav logo (small screens)
-////////////////////////////////
+////////////////////////////////////////////
+// nav logo for small screens
+// (site-intro used for 2+3 column layouts)
+////////////////////////////////////////////
 
-// container
+// nav-logo positioning
 .nav-logo {
   @media (max-width: $l - 0.001) {
+    // contain background
     width: 11.5rem;
-    padding: 0.75rem 0.75rem 0.75rem 2rem;
-    left: -2rem; // offset padding
+    // add padding to logo
+    padding-top: 0.75rem;
+    padding-left: 2rem;
+    // offset padding; needed so that the logo background is
+    // flush with the left edge of the screen
+    left: -2rem;
+    // make sure toggled nav-menu is above nav-logo
     z-index: -1;
-    box-shadow: none !important;
   }
 }
 
+// on tiny screens, only show JF icon
 .nav-logo .logo-name {
-  @media (max-width: 18em) {
+  @media (max-width: 18em - 0.001) {
     opacity: 0 !important;
   }
 }
 
 
-
-////////////////////////////////
+////////////////////////////////////////////
 // main nav list
-////////////////////////////////
+////////////////////////////////////////////
 
-// nav list
-.nav-list {
-
-  // small screens
-  @media (max-width: $s - 0.001) {
+// small screens
+@media (max-width: $s - 0.001) {
+  .nav-list {
     @include dropdown-hidden;
+    @include box-shadow-lg;
     max-width: $max-sidebar-width;
     right: $gutter;
     border-radius: 0 0 $radius-lg $radius-lg;
-
-    // prevent page jump
-    &:before {
-      @include pseudo;
-      width: 100%;
-      height: $nav-height * 1.17; // fudged
-
-      // feels bad 💩
-      @media (min-width: $xs) and (max-width: $s - 0.001) {
-        height: $nav-height * 1.11; // soooo fudged, omg
-      }
-    }
-
-    // fudge the box-shadow, accounting for pseudo element height with calc
-    @supports(height: calc(100% - 1em)) {
-      &:after {
-        @include pseudo;
-        @include box-shadow-lg;
-        position: absolute;
-        width: 100%;
-        height: calc(100% - #{$nav-height * 1.17}); // still fudged
-        border-radius: 0 0 $radius-lg $radius-lg;
-
-        // just kill me 💀
-        @media (min-width: $xs) and (max-width: $s - 0.001) {
-          height: calc(100% - #{$nav-height * 1.11}); // still fudged
-        }
-      }
-    }
   }
 }
 
 
-// nav list, medium screens
-.nav-list {
-  @media (min-width: $s) and (max-width: $l - 0.001) {
+// medium screens
+@media (min-width: $s) and (max-width: $l - 0.001) {
+  .nav-list {
+    // position next to nav-logo
     position: absolute;
     top: 0;
-    left: 12rem;
-    text-align: center;
+    left: 11.75rem;
   }
 }
+
+
+// expanded menu state via js
+.nav-list.is-expanded {
+  @include dropdown-visible;
+  @include nav-toggle-max-width;
+
+  // position expanded list directly below menu toggle button
+  @media (max-width: $s - 0.001) {
+    margin-top: -0.78rem; // fudged
+  }
+}
+
+
+////////////////////////////////////////////
+// main nav items
+////////////////////////////////////////////
 
 // nav items
 .nav-item {
   width: 100%;
   height: auto;
   float: left;
-  background: $white;
+  background-color: $white;
 
   @media (max-width: $s - 0.001) {
     & + & {
@@ -151,6 +149,10 @@
   }
 }
 
+
+////////////////////////////////////////////
+// main nav links
+////////////////////////////////////////////
 
 // nav links
 .nav-link {
@@ -176,216 +178,107 @@
 }
 
 
-//////////////////////////////////
-// hover effect via pseudo element
-//////////////////////////////////
+////////////////////////////////////////////
+// main nav link interactions
+////////////////////////////////////////////
 
-// initial state
-.nav-link:after {
-  @include pseudo;
-  @include inflate;
-  z-index: -1; // hide behind text
-  background: $brand-light;
-  background-image: linear-gradient(to bottom, $brand-light, $brand-color);
-  opacity: 0;
-  transform: translateY(100%);
-}
-
-// hover state
-.nav-link:hover,
-.nav-link:focus,
-.nav-link:active {
-  color: $white; // make text readable against pseudo element
-
-  // show pseudo element
-  &:after {
-    opacity: 1;
-    transform: none;
+.nav-link {
+  // simplified hover effect via background-color on smaller screens
+  &:hover, &:active, &:focus {
+    background-color: $brand-color;
+    color: $white;
+  }
+  // fancy hover via pseudo element on bigger screens
+  @media (min-width: $l) {
+    @include fancy-nav-hover;
   }
 }
 
 
-////////////////////////////////
-// nav menu toggle
-////////////////////////////////
+////////////////////////////////////////////
+// nav toggle button
+////////////////////////////////////////////
 
-// expanded menu via js
-.nav-list.is-expanded {
-  @include dropdown-visible;
-
-  // fudge the list into place
-  @media (max-width: $xs - 0.001) {
-    margin-top: -1.125rem;
-    top: -3px;
-  }
-
-  @media (min-width: $xs) and (max-width: $s - 0.001) {
-    margin-top: -1rem;
-    top: -2px;
-  }
-}
-
-// menu toggle
+// nav toggle button container
 .nav-toggle {
   @include box-shadow(rgba($black, 0.25));
+  // positioning
   position: absolute;
-  float: right;
-  text-align: right;
-  padding: 2px 10px 1px 9px; // somewhat fudged
-  right: $gutter;
   top: 0.675rem;
-  background: $white;
+  right: $gutter;
+  padding: 2px 10px 1px 9px; // somewhat fudged
+  // anchor menu text to right side when toggled
+  text-align: right;
+  // theming
+  background-color: $white;
   border-radius: $radius-lg;
 
-  &-text {
-    font-size: 18px;
-    color: $brand-color;
-  }
-
-  // active state
+  // nav-toggle active state
   &.is-active {
-    width: 100%;
-    max-width: $max-sidebar-width;
-    background: $brand-color;
+    @include nav-toggle-max-width;
+    width: $max-sidebar-width;
+    background-color: $brand-color;
     border-radius: $radius-lg $radius-lg 0 0;
     box-shadow: none;
-
-    .hamburger-bun {
-      background: $white;
-    }
-    .nav-toggle-text {
-      color: $white;
-    }
-
-  }
-
-  // hide on large screens
-  @media (min-width: $s) {
-    display: none;
   }
 }
 
 
-// limit width of toggled menu to container width
-@media (max-width: $xxs - 0.001) {
-  .nav-toggle.is-active,
-  .nav-list.is-expanded {
-    max-width: calc(100% - 2rem);
+// menu toggle text
+.nav-toggle-text {
+  font-size: 18px; // set in pixels like the icon and links
+  color: $brand-color;
+
+  // nav-toggle active state
+  .nav-toggle.is-active & { // .nav-toggle.is-active .nav-toggle-text
+    color: $white;
   }
 }
 
-// humburger icon
+
+// hamburger icon container
 .hamburger {
   display: inline-block;
   margin-left: 0.4rem;
-
-  // initial state
-  &-bun {
-    display: block;
-    width: 16px;
-    height: 2px;
-    border-radius: 1px;
-    background: $brand-color;
-
-    & + & {
-      margin-top: 3px;
-    }
-  }
-
-  // active state
-  &.is-active {
-    transform: translateX(5px);
-
-    .hamburger-bun-top {
-      transform: rotateZ(45deg) translateY(7px);
-    }
-    .hamburger-bun-patty {
-      opacity: 0;
-    }
-    .hamburger-bun-bottom {
-      transform: rotateZ(-45deg) translateY(-7px);
-    }
-  }
 }
 
-
-////////////////////////////////
-// social icons
-////////////////////////////////
-/*
-// social icons
-.nav-social-list {
-  display: none;
-  height: $nav-height;
-  width: 7rem;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-
-  // show on big-enough screens
-  @media (min-width: $xxs) {
-    display: block;
-  }
-
-  // send to the right instead of centering on bigger screens
-  @media (min-width: $m) {
-    float: right;
-    width: auto;
-    margin-left: $gutter;
-    margin-right: -($gutter * 0.5);
-  }
-}
-
-// social item
-.nav-social-item {
-  display: inline-block;
-  height: $nav-height;
-  overflow: hidden;
-}
-
-// social links
-.nav-social-link {
+// hamburger initial state
+.hamburger-bun {
   display: block;
-  padding: ($gutter * 0.7) ($gutter * 0.5); // fudged
-  max-height: $nav-height;
+  width: 16px;
+  height: 2px;
+  border-radius: 1px;
+  background-color: $brand-color;
 
-  // scale icons with baseline
-  svg {
-    height: 1rem;
-
-    // default color
-    path {
-      fill: $black;
-    }
+  // stacked buns
+  & + & {
+    margin-top: 3px;
   }
 }
 
-// :hover colors
-.nav-social-link-twitter {
-  &:hover path, &:active path, &:focus path {
-    fill: $twitter-color;
-  }
-}
-.nav-social-link-facebook {
-  &:hover path, &:active path, &:focus path {
-    fill: $facebook-color;
-  }
-}
-.nav-social-link-linkedin {
-  &:hover path, &:active path, &:focus path {
-    fill: $linkedin-color;
-  }
-}
-.nav-social-link-instagram {
-  &:hover path, &:active path, &:focus path {
-    fill: $instagram-color;
-  }
-}
-*/
+// hamburger active state
+.hamburger.is-active {
+  transform: translateX(5px);
 
-////////////////////////////////
+  .hamburger-bun {
+    background-color: $white;
+  }
+
+  .hamburger-bun-top {
+    transform: rotateZ(45deg) translateY(7px);
+  }
+  .hamburger-bun-patty {
+    opacity: 0;
+  }
+  .hamburger-bun-bottom {
+    transform: rotateZ(-45deg) translateY(-7px);
+  }
+}
+
+
+////////////////////////////////////////////
 // skip link
-////////////////////////////////
+////////////////////////////////////////////
 
 // skip link
 a.skip {
@@ -397,10 +290,11 @@ a.skip {
     left: 1.5rem;
   }
 }
+
+// focus
 .skip:focus {
   clip: auto;
   height: auto;
   width: auto;
-  overflow: visible;
   transform: none;
 }

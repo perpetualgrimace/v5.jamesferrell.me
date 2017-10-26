@@ -2,13 +2,15 @@ Title: Contact
 
 ----
 
-tertiary:
+secondary:
 
 ## Rather use your email client than this form?
 
 I hear you. My email address is  (email: hello@jamesferrell.me).
 
-## Find me elsewhere:
+----
+
+socialHeading: Find me elsewhere:
 
 ----
 

@@ -1,6 +1,4 @@
-<h2><?= $page->text() ?></h2>
-
-<form class="contact-form u-padding-top-lg" id="contact-form" action="<?= $page->url()?>" method="post">
+<form class="contact-form g-columns u-margin-top-lg u-padding-top-xs" id="contact-form" action="<?= $page->url()?>" method="post">
 
 
   <div class="g-columns">

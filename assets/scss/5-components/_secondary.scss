@@ -2,6 +2,23 @@
 // baseline adjustments
 ////////////////////////////////
 
+// set secondary heading font size
+.secondary > h2 {
+  font-size: $delta;
+}
+
+// space out secondary headings
+.secondary > * + h2 {
+  margin-top: 1.75em;
+}
+
+
+////////////////////////////////
+// blog-article-secondary meta
+////////////////////////////////
+
+// set secondary list item line-height and spacing
+// used in blog-article-secondary meta list
 .secondary-item {
   line-height: 1.25;
 
@@ -9,11 +26,6 @@
     margin-top: 1.25em;
   }
 }
-
-
-////////////////////////////////
-// alignment & positioning
-////////////////////////////////
 
 // give the label some room to breath
 .secondary-label,
@@ -28,8 +40,38 @@
 }
 
 
+// flexbox enhancement
+@supports (flex-wrap: wrap) {
+  // small screens only
+  @media (max-width: $xl - 0.001) {
+
+    // space out the items in a flexy way
+    .secondary-meta-list {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      max-width: 46rem;
+
+      // make the items not bunch up against each other
+      > .secondary-item {
+        padding-left: $gutter;
+        padding-right: $gutter;
+        text-align: center;
+      }
+
+      // adjust top margin of the first item to match the others;
+      // accounts for added height from adjacent .tag
+      > .secondary-item:first-of-type {
+        margin-top: 1em;
+      }
+    }
+  }
+}
+
+
 ////////////////////////////////
-// interactions
+// twitter link interactions
 ////////////////////////////////
 
 // twitter link
@@ -48,28 +90,23 @@
 
 
 ////////////////////////////////
-// flexbox enhancement
+// contact-secondary social list
 ////////////////////////////////
 
-@supports (flex-wrap: wrap) {
-  // small screens only
-  @media (max-width: $m - 0.001) {
+// targets opposite of _layout.scss media query (contact page exceptions);
+// where secondary-content is positioned below contact-form
+@media (min-width: 24em) and (max-width: 48em - 0.001),
+/*OR*/ (min-width: $l) and (max-width: 70em - 0.001) {
 
-    // space out the items in a flexy way
-    .secondary-list {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-around;
-      flex-wrap: wrap;
+  // display sidebar content inline
+  .secondary-social-list {
+    > li {
+      // background: blue; // debug
+      display: inline-block;
 
-      // adjust margin to match *+*
-      .secondary-item:first-of-type {
-        margin-top: 1.25em;
-      }
-
-      // make the items not bunch up against each other
-      .secondary-item:not(:last-of-type) {
-        margin-right: $gutter;
+      // space items out
+      &:not(:last-of-type) {
+        margin-right: $gutter * 2;
       }
     }
   }

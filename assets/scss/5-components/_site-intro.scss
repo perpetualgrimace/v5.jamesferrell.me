@@ -84,11 +84,16 @@
 
 .site-intro.is-collapsed,
 .nav-logo {
-  @include box-shadow;
   background: $brand-black;
   // make the same height as the main navbar
   height: $nav-height;
-  overflow: hidden;
+
+  // make shadow visible on larger screens
+  @media (min-width: $l) {
+    @include box-shadow;
+    z-index: 1;
+    overflow: hidden;
+  }
 
   // vertically offset inner block to position the logo correctly
   // NOTE: fudged as hell

@@ -26,16 +26,9 @@
     $description = $item->text()->excerpt(25, 'words');
   }
 
-  // get layout
-  if($cardLayout != '') {
-    $cardLayout = $cardLayout;
-  } else {
-    $cardLayout = '';
-  }
-
 ?>
 
-<article class="<?= $contentType?>-card-container card-container g-col <?= $cardLayout ?>">
+<article class="<?= $contentType?>-card-container card-container g-col">
 
   <div class="card-inner">
 
