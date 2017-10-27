@@ -22,9 +22,15 @@ if ($pages->find('blocks/' . $listName)):
 
   <ul class="block block-list block-definition-list u-list-reset">
 
-    <? foreach($listItems as $listItem): ?>
+    <? foreach($listItems as $listItem):
+      if ($listItem->link() != '') {
+        $listItemTitle = '<a class="heading" href="' . $listItem->link() . '">' . $listItem->title() . '</a>';
+      } else {
+        $listItemTitle = $listItem->title();
+      }
+    ?>
       <li><dl>
-        <dt class="heading delta"><?= $listItem->title() ?></dt>
+        <dt class="heading delta"><?= $listItemTitle ?></dt>
         <dd class="epsilon">
           <? if ($listItem->subhead() != ''): ?>
             <span class="block-definition-subhead milli u-uppercase">
