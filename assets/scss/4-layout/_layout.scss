@@ -56,7 +56,7 @@
 
   // add padding for tertiary-sidebar sections on smaller viewports
   // NOTE: needed to line up with the rest of the layout
-  @media (max-width: $l) {
+  @media (max-width: $l - 0.001) {
     > * {
       padding: 1rem;
     }

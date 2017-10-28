@@ -194,7 +194,7 @@ $device-tweakpoint-l: 68em;
     max-width: 100%; // flow off the screen
 
     // when the controller starts to scale down, switch to percentage based units for positioning
-    @media (max-width: 24em) {
+    @media (max-width: 24em - 0.001) {
       bottom: 0;
       margin-top: -20%;
     }
