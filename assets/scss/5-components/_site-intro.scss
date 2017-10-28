@@ -6,11 +6,15 @@
 .site-intro {
   // more pronounced gradient than the standard glossy overlay
   @include brand-color-depth;
+
+  @media (min-width: $l) {
+    height: rem(400);
+  }
 }
 
 // positioning
 .site-intro-inner {
-  @include teriary-sidebar-positioning;
+  @include tertiary-sidebar-positioning;
 }
 
 
@@ -56,9 +60,19 @@
   margin-right: 6px;
   // aesthetic
   border-radius: $radius;
+  overflow: hidden // needed for JF to X transition
+}
+
+// site-intro logo icon
+.site-intro .logo-icon {
+  display: none;
+
   // before transition
-  opacity: 0;
-  transform: scale(0.5);
+  @media (min-width: $l) {
+    display: inline-block;
+    opacity: 0;
+    transform: scale(0.5);
+  }
 }
 
 // logo image
@@ -70,11 +84,7 @@
 // mah name
 .logo-name {
   display: inline-block; // needed to apply transform
-
-  // offset the logo image on smaller screens; not necessary on larger viewports
-  @media (max-width: $l - 0.001) {
-    transform: translateX(-40px);
-  }
+  color: $white;
 }
 
 
@@ -82,48 +92,190 @@
 // collapsed state: logo only
 ////////////////////////////////
 
-.site-intro.is-collapsed,
 .nav-logo {
-  background: $brand-black;
-  // make the same height as the main navbar
-  height: $nav-height;
+  @include nav-logo;
+}
 
-  // make shadow visible on larger screens
-  @media (min-width: $l) {
+@media (min-width: $l) {
+  .site-intro.is-collapsed {
+    @include nav-logo;
     @include box-shadow;
-    z-index: 1;
-    overflow: hidden;
+    z-index: 2; // bring box shadow forward
+
+    // vertically offset inner block to position the logo correctly
+    // NOTE: fudged as hell
+    .site-intro-inner {
+      transform: translateY(-8.05rem);
+      // prevent collapsed site-intro from covering up social links
+      height: $nav-height;
+      // NOTE: using overflow: hidden completley hides the logo on focus ¯\_(ツ)_/¯
+    }
+
+    // shrink and hide the avatar
+    .site-intro-avatar-inner {
+      // after transition
+      transform: scale(0.15) translateY(50px);
+      opacity: 0;
+    }
+
+    // position & show the logo icon
+    .logo-icon,
+    .logo-name {
+      // after transition
+      opacity: 1;
+      transform: none;
+    }
+
+    // hide the bio offscreen
+    .site-intro-bio {
+      // after transition
+      transform: translateY(150%);
+      opacity: 0;
+    }
   }
+}
 
-  // vertically offset inner block to position the logo correctly
-  // NOTE: fudged as hell
-  .site-intro-inner {
-    top: -4.85rem;
+// fixed logo and offset
+@media (min-width: $l) and (min-height: $s) {
+  // make tertiary transitionable
+  .site-intro {
+    position: fixed;
+    height: 20rem;
+    top: 0;
+    z-index: 2;
+  }
+  .site-intro.is-collapsed {
+    height: $nav-height;
+  }
+  .site-intro + .tertiary {
+    position: fixed;
+    transform: translateY(20rem);
+    z-index: 1;
 
-    @media (min-width: $l) {
-      top: -8.05rem;
+    // extend bottom
+    &:after {
+      @include pseudo;
+      position: fixed;
+      width: $max-sidebar-width;
+      height: 100%;
+      z-index: 1;
+      background: $brand-black;
     }
   }
 
-  // position & show the logo icon
-  .logo-icon,
-  .logo-name {
-    // after transition
-    opacity: 1;
+  // offset tertiary content
+  .site-intro.is-collapsed + .tertiary {
+    position: fixed;
     transform: none;
-  }
+    top: $nav-height;
+    transform: 0;
 
-  // shrink and hide the avatar
-  .site-intro-avatar-inner {
-    // after transition
-    transform: scale(0.75);
+    // reset bottom extention
+    &:after {
+      display: none;
+    }
+  }
+}
+
+////////////////////////////////
+// toggle button
+////////////////////////////////
+
+// position above everything
+.site-intro-toggle {
+  @include inflate;
+  z-index: 1;
+}
+
+// interactions
+.site-intro-toggle:hover,
+.site-intro-toggle:focus {
+  background: rgba($white, 0.05);
+}
+
+// hide until javascript loads
+.no-js .site-intro-toggle {
+  display: none;
+}
+
+// make links clickable through the toggle button
+.site-intro a {
+  z-index: 2;
+}
+
+
+////////////////////////////////////////////////////
+// JF → + → x
+////////////////////////////////////////////////////
+
+// pseudo element default style for the + / x shape
+.site-intro-toggle {
+  &:before,
+  &:after {
+    @include pseudo;
+    position: absolute;
+    height: 2px;
+    width: 22px;
+    // fudged positioning, somewhat funky at non-100%, probably better with calc
+    top: rem(32);
+    left: rem(44);
+    // aesthetic
+    border-radius: $radius;
+    background: $white;
+    // to be transitioned
     opacity: 0;
   }
+  // to be transitioned
+  &:before {
+    transform: rotateZ(0);
+  }
+  &:after {
+    transform: rotateZ(-90deg);
+  }
+}
 
-  // hide the bio offscreen
-  .site-intro-bio {
-    // after transition
-    transform: translateY(150%);
+// collapsed state, initial
+.site-intro.is-collapsed .site-intro-toggle {
+  // rotate from left to right, X becomes +
+  &:before {
+    transform: rotateZ(45deg);
+  }
+  &:after {
+    transform: rotateZ(-45deg);
+  }
+}
+
+// collapsed state, hover
+.site-intro.is-collapsed .site-intro-toggle:hover,
+.site-intro.is-collapsed .site-intro-toggle:focus {
+  // rotate from left to right, X becomes +
+  &:before {
+    transform: rotateZ(0);
+  }
+  &:after {
+    transform: rotateZ(-90deg);
+  }
+
+  + .site-intro-inner .logo-icon-img {
+    transform: translate(-10px, -40px) rotateZ(-45deg);
     opacity: 0;
+  }
+}
+
+
+// expanded state, hover
+.site-intro-toggle:hover,
+.site-intro-toggle:focus {
+  // needed for all hover effects
+  &:before,
+  &:after {
+    opacity: 1;
+  }
+  // rotate from left to right, + becomes x
+  &:before {
+    transform: rotateZ(45deg);
+  }
+  &:after {
+    transform: rotateZ(-45deg);
   }
 }

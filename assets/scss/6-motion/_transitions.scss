@@ -12,14 +12,43 @@ a, label, input, textarea, button,
 }
 
 // site intro transition
-.site-intro-avatar-inner,
-.site-intro-logo-icon,
-.site-intro-logo-name,
-.site-intro-bio {
+.site-intro,
+.site-intro * {
+  transition:
+    background-color $timing-fast,
+    height $timing-gradual; // requires set height on both states
+}
+
+.site-intro-toggle {
+  transition: background-color $timing;
+}
+
+.site-intro-toggle:before,
+.site-intro-toggle:after,
+.site-intro-inner {
+  transition:
+    opacity $timing,
+    transform $timing;
+}
+
+.tertiary {
+  transition: transform $timing-gradual;
+}
+
+.site-intro:not(.is-collapsed) .site-intro-avatar-inner,
+.site-intro:not(.is-collapsed) .site-intro-bio { // transition in only
   /* autoprefixer: off */
   transition:
     opacity $timing-gradual,
     transform $timing-gradual;
+}
+
+.site-intro.is-collapsed .logo-icon {
+  /* autoprefixer: off */
+  transition:
+    opacity $timing,
+    transform $timing;
+  transition-delay: 0.1s;
 }
 
 // images

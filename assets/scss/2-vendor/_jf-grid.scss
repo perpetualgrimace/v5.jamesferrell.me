@@ -49,6 +49,10 @@ html {
   @media (min-width: $breakpoint-l) {
     font-size: 125%; // 20px
   }
+
+  @media (min-width: 110em) {
+    font-size: 137.5%; // 22px
+  }
 }
 
 

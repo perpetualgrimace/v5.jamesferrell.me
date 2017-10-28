@@ -1,4 +1,7 @@
-<div class="site-intro brand-theme">
+<div class="site-intro is-collapsed brand-theme" id="site-intro">
+
+  <button class="site-intro-toggle u-hide-below-l"><span class="u-screenreader">Show/hide my face</span></button>
+
   <div class="site-intro-inner">
 
     <!-- my face -->

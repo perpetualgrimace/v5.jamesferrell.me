@@ -32,6 +32,7 @@ $menutext = 'menu';
 
         <!-- logo + name for small screens -->
         <div class="nav-logo u-hide-above-l">
+          <a href="#site-intro" class="nav-logo-link u-hide-above-l"><span class="u-screenreader">Colophon</span></a>
           <? snippet('global-logo') ?>
         </div>
 

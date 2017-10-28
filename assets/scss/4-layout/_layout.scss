@@ -30,9 +30,7 @@
   // 2+ column layout, 4 rows of social icons
   @media (min-width: $l) and (min-height: $s) {
     min-height: rem(740);
-  }
-  // offset fixed nav
-  @media (min-width: $l) and (min-height: $xxs) {
+    // offset fixed nav
     margin-top: $nav-height;
   }
 }
@@ -160,7 +158,7 @@
 
     // offset for pages with image-header
     &.image-header-offset {
-      top: 11.115rem;
+      top: 11.9rem;
     }
 
     // offset for pages with filter-header

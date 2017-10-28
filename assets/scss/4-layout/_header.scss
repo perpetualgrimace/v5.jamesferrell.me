@@ -24,7 +24,7 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  min-height: rem(183);
+  min-height: 10rem;
   padding: 2rem; // align left edge to content, ensure even spacing
 
   // add glossy overlay to pseudo element so it shows up over the hero image

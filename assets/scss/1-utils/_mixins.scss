@@ -249,7 +249,16 @@
   z-index: 1;
 }
 
-// apply to a link
+
+// nav-logo style
+@mixin nav-logo {
+  // make the same height as the main navbar
+  height: $nav-height;
+  background: $brand-black;
+}
+
+
+// apply fancy hover interactions to a link
 @mixin fancy-nav-hover {
   &:after {
     @include pseudo;
@@ -288,10 +297,9 @@
 // sidebar inner styles
 ////////////////////////////////
 
-@mixin teriary-sidebar-positioning {
+@mixin tertiary-sidebar-positioning {
   max-width: $max-container-width / 2; // keep line-length reasonable
   padding: $gutter;
-  overflow: hidden; // prevent transformed elements from breaking out
 
   @media (min-width: $l) {
     max-width: $max-sidebar-width;

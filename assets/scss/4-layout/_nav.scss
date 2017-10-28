@@ -1,3 +1,6 @@
+// NOTE: fixed nav media query:
+// @media (min-width: $l) and (min-height: $s) {}
+
 ////////////////////////////////////////////
 // container
 ////////////////////////////////////////////
@@ -15,7 +18,7 @@
   }
 
   // fixed nav on bigger screens
-  @media (min-width: $l) and (min-height: $xxs) {
+  @media (min-width: $l) and (min-height: $s) {
     @include box-shadow($shadow);
     position: fixed;
   }
@@ -38,7 +41,7 @@
 
   // offset nav-link padding on 3 column layout
   @media (min-width: $l) {
-    left: -0.5rem;
+    padding-left: 0.5rem;
   }
 }
 
@@ -70,7 +73,7 @@
     // flush with the left edge of the screen
     left: -2rem;
     // make sure toggled nav-menu is above nav-logo
-    z-index: -1;
+    z-index: 0;
   }
 }
 
@@ -79,6 +82,12 @@
   @media (max-width: 18em - 0.001) {
     opacity: 0 !important;
   }
+}
+
+// link to site-intro
+.nav-logo-link {
+  @include inflate;
+  z-index: 1; // position above logo
 }
 
 
@@ -207,6 +216,7 @@
   top: 0.675rem;
   right: $gutter;
   padding: 2px 10px 1px 9px; // somewhat fudged
+  z-index: 1; // position above logo on tiny viewports
   // anchor menu text to right side when toggled
   text-align: right;
   // theming

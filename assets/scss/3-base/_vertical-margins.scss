@@ -26,7 +26,7 @@ main [id]:before {
   height: $gutter * 2;
 
   // account for fixed nav
-  @media (min-width: $l) and (min-height: $xxs) {
+  @media (min-width: $l) and (min-height: $s) {
     margin-top: -($gutter * 5);
     height: $gutter * 5;
   }
