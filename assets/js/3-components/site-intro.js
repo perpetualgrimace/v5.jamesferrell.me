@@ -9,9 +9,19 @@ $(document).ready(function(){
   $('.site-intro-toggle').on('click', function(e) {
     // toggle .site-intro class
     $('.site-intro').toggleClass('is-collapsed');
-    // set focus to contact link in bio
     // add .tertiary-is-collapsed body class to prevent scroll tests
     // $('body').toggleClass('tertiary-is-collpased');
+  });
+
+  // detect button focus
+  $('.site-intro-toggle').on('focus', function() {
+    // check if mouse is moved away from button
+    // (if so, assume focus was added via click and mouse is primary input method)
+    $(this).mouseout(function() {
+      // move focus away from button to re-enable sweet hover effects
+      // set focus to contact link in bio, add utility class that masks focus
+      $('.site-intro-bio a:first-of-type').addClass('u-link-reset').focus();
+    });
   });
 
 
