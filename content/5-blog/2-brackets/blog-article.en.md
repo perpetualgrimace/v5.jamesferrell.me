@@ -24,7 +24,9 @@ Hashtag: webtools
 
 Text:
 
-*This was originally meant to be a series. But at this point I'm probably just going to keep a list of the tools I use on my (link: uses text: uses page)*
+*This was originally meant to be a series. But at this point I'm probably just going to keep a list of the tools I use on my (link: uses text: uses page).*
+
+***
 
 (link: http://brackets.io text: Brackets) is an open-source code editor made by Adobe specifically for front end developers. I started using it somewhere in 2012. As a front end rookie with a background in design, it was very appealing.
 
@@ -50,10 +52,12 @@ Since Brackets was designed for front end developers, you won't find any support
 
 Lately I've been building as many sites with (link: html://getkirby.com text: Kirby CMS) as possible, which uses PHP. Since Brackets was designed for front end developers, working with back end code is a chore. There isn't any syntax highlighting or theme colors for PHP, and trying to open Live Preview with a PHP file causes an error message, even if you're running a local server. Another strike.
 
-*2017 Update: I have been informed that (link: https://twitter.com/AhoyLemon/status/905489610347868162 text: brackets has good syntax highlighting for PHP and SCSS files) by someone who still uses Brackets. So that's good.*
-
 ## Is it there a place for it today?
 
 While Brackets was my main code editor for a couple of years, it simply doesn't fit into the modern development workflow. And that's a bummer.
 
 You can still use it as a code editor and set up the functionality of Live Preview through other means, but what's the point? When I realized the main selling point of Brackets had become a hinderance, the only logical course of action was to move on.
+
+***
+
+**2017 Update**: I have been informed that (link: https://twitter.com/AhoyLemon/status/905489610347868162 text: brackets has good syntax highlighting for PHP and SCSS files) by someone who still uses Brackets. So that's good.

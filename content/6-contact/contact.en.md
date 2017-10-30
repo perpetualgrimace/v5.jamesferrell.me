@@ -50,7 +50,7 @@ Success:
 
 ## Thanks for contacting me.
 
-I'll be in touch. Probably within a day or so. But maybe longer on weekends.
+I'll be in touch. Probably within a day or so (but maybe longer on weekends).
 
 ----
 

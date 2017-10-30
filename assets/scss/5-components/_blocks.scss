@@ -27,3 +27,50 @@
 .block + .block {
   margin-top: 1rem;
 }
+
+// extra spacing for heading blocks
+.block + .block-heading {
+  margin-top: 2rem;
+}
+
+.block-heading + .block-definition-list {
+  margin-top: 0.8rem;
+}
+
+.block-bullet-list + .block-text {
+  margin-top: 1.75rem;
+}
+
+.block-text + .block-text {
+  margin-top: 1.75rem;
+}
+
+// definition list adjustments
+.block-definition-list {
+  // definition adjustment
+  dd {
+    margin-top: 0.75em;
+    line-height: 1.275;
+  }
+  // spacing of individual definitions (each definition is wrapped in an li)
+  li + li {
+    margin-top: 1em;
+  }
+}
+
+// bullet list adjustments
+.block-bullet-list-group {
+
+  & + & {
+    margin-top: 1.6rem;
+  }
+
+  ul {
+    line-height: 1;
+    margin-top: 0.8em;
+
+    li + li {
+      margin-top: 0.25rem;
+    }
+  }
+}

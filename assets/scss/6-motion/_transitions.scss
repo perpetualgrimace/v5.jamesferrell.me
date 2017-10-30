@@ -14,9 +14,12 @@ a, label, input, textarea, button,
 // site intro transition
 .site-intro,
 .site-intro * {
-  transition:
+  // only apply where transition takes place
+  @media (min-width: $l) {
+    transition:
     background-color $timing-fast,
     height $timing-gradual; // requires set height on both states
+  }
 }
 
 .site-intro-toggle {

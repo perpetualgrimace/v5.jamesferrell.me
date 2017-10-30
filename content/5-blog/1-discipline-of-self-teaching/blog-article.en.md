@@ -14,6 +14,8 @@ Text:
 
 *This post was originally written for <a href="http://bermanadvertising.com">Berman Advertising</a>. Jeff admires my ability to figure out how to do stuff and asked me to write about that. So that's what I did.*
 
+***
+
 Some people discover the thing that they want to do for the rest of their lives in a moment of clarity. Some refer to this as a calling. At one point, in the midst of their daily routine, EUREKA! They realize this is the thing for them.
 
 I think it’s safe to say that most of us don’t experience that moment — weirdos like (link: http://bermanadvertising.com/insights/subjectivity-vs-objectivity text: our art director) aside. Generally speaking, we become momentarily interested in a thing, and then we stumble upon another interesting thing, and then we lose interest in that other thing that we found interesting before, and then we move on. We repeat this process endlessly and, over time, we wind up learning a little about a lot of things.

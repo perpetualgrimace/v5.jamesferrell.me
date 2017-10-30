@@ -7,10 +7,19 @@
   margin-top: 0.625em;
 }
 
-
 // space out all components that follow main content
 main .content ~ * {
   margin-top: 2rem;
+}
+
+// content typography spacing
+.content h2 + p,
+.content p + p {
+  margin-top: 0.9em;
+}
+
+.content p + h2 {
+  margin-top: 1.25em;
 }
 
 

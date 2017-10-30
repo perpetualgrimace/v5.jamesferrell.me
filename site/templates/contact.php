@@ -8,9 +8,7 @@ snippet('global-body-open');
   snippet('global-main-open');
     // primary content
     snippet('global-section-open', ['class' => 'primary-content contact-primary-content']);
-
-      // title
-      snippet('basic-header');
+      
       // contact form
       snippet('contact');
 

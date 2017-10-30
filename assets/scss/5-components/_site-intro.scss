@@ -129,8 +129,11 @@
     // hide the bio offscreen
     .site-intro-bio {
       // after transition
-      transform: translateY(150%);
+      transform: translateY(-50%);
       opacity: 0;
+      clip: rect(1px, 1px, 1px, 1px);
+      height: 1px;
+      overflow: hidden;
     }
   }
 }
@@ -156,8 +159,8 @@
     &:after {
       @include pseudo;
       position: fixed;
-      width: $max-sidebar-width;
-      height: 100%;
+      width: 100%; // both needed
+      height: 100%; // both needed
       z-index: 1;
       background: $brand-black;
     }
@@ -168,7 +171,7 @@
     position: fixed;
     transform: none;
     top: $nav-height;
-    transform: 0;
+    transform: none;
 
     // reset bottom extention
     &:after {

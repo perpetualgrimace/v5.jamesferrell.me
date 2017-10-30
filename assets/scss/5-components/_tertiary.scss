@@ -15,8 +15,19 @@
 // container positioning
 ////////////////////////////////
 
+.tertiary {
+  @media (min-width: $l) {
+    @include secondary-content-width;
+  }
+}
+
 .tertiary-inner {
   @include tertiary-sidebar-positioning;
+
+  @media (min-width: $l) {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 // add padding, 1px border between social links and copyright

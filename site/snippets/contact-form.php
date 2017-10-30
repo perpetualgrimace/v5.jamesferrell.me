@@ -1,3 +1,5 @@
+<? snippet('basic-header'); ?>
+
 <form class="contact-form g-columns u-margin-top-lg u-padding-top-xs" id="contact-form" action="<?= $page->url()?>" method="post">
 
 

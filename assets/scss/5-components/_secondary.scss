@@ -1,6 +1,6 @@
-////////////////////////////////
+////////////////////////////////////////////////
 // baseline adjustments
-////////////////////////////////
+////////////////////////////////////////////////
 
 // set secondary heading font size
 .secondary > h2 {
@@ -13,9 +13,22 @@
 }
 
 
-////////////////////////////////
+////////////////////////////////////////////////
+// smaller viewports
+////////////////////////////////////////////////
+
+// style secondary text content in stacked layout
+// NOTE: to be used on texty pages with texty secondary content
+.secondary-content-scaling {
+  @media (max-width: $xl - 0.001) {
+    @include secondary-content-as-primary;
+  }
+}
+
+
+////////////////////////////////////////////////
 // blog-article-secondary meta
-////////////////////////////////
+////////////////////////////////////////////////
 
 // set secondary list item line-height and spacing
 // used in blog-article-secondary meta list
@@ -70,9 +83,9 @@
 }
 
 
-////////////////////////////////
+////////////////////////////////////////////////
 // twitter link interactions
-////////////////////////////////
+////////////////////////////////////////////////
 
 // twitter link
 .secondary-link[href*='twitter'] {
@@ -89,16 +102,21 @@
 }
 
 
-////////////////////////////////
-// contact-secondary social list
-////////////////////////////////
+////////////////////////////////////////////////
+// contact-secondary-content
+////////////////////////////////////////////////
 
 // targets opposite of _layout.scss media query (contact page exceptions);
 // where secondary-content is positioned below contact-form
 @media (min-width: 24em) and (max-width: 48em - 0.001),
 /*OR*/ (min-width: $l) and (max-width: 70em - 0.001) {
 
-  // display sidebar content inline
+  // style secondary content in stacked layout
+  .contact-secondary-content {
+    @include secondary-content-as-primary;
+  }
+
+  // display secondary content inline
   .secondary-social-list {
     > li {
       // background: blue; // debug
@@ -109,5 +127,17 @@
         margin-right: $gutter * 2;
       }
     }
+  }
+}
+
+
+////////////////////////////////////////////////
+// contact-secondary-content
+////////////////////////////////////////////////
+
+// minor spacing tweak for blog-list as secondary content (on home page)
+.secondary-content-blog-list {
+  @media (max-width: $xl - 0.001) {
+    margin-bottom: -0.5rem;
   }
 }

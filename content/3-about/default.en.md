@@ -45,17 +45,13 @@ blocks:
 
     ## Music & audio
 
-
-    I'm currently in a progressive rock band called (link: http://waypoints.bandcamp.com text: Waypoints) and an instrumental progressive math rock project called (link: http://bigmath.bandcamp.com text: Big Math).
-
-
-    By now you may have gathered that I'm really into progressive rock. 😂
+    Making music is time consuming and arguably less rewarding than making websites, but it's an important part of my identity. Drums are my main instrument, and I also play enough guitar and bass to get my ideas across. Lately I've been engineering all of my projects as well.
 
 
-    Before these projects, I was in an (link: http://www.tampabay.com/blogs/soundcheck/content/your-2009-ultimate-local-band-triptico text: award-winning latin rock band) called (link: http://triptico.bandcamp.com text: Triptico), briefly joined a national emocore band called (link: http://www.metalblade.com/us/artists/phoenix-mourning/ text: Phoenix Mourning) for a tour across the states, and made the first music that I wasn't embarrassed of in a modern rock band called (link: http://soundcloud.com/perpetualgrimace/sets/broken-self text: Broken Self). I've also done some (link: http://soundcloud.com/perpetualgrimace/sets/video-game-covers text: rock tributes to a few of my favorite video game soundtracks).
+    I'm currently in an instrumental progressive math rock project called (link: http://bigmath.bandcamp.com text: Big Math).
 
 
-    Drums are my main instrument, but I also play enough guitar and bass to get my ideas across. Lately I've been engineering all of my projects as well. Making music is an expensive and time consuming hobby, but it's an important part of my identity and it keeps me sane.
+    I've also been in an (link: http://www.tampabay.com/blogs/soundcheck/content/your-2009-ultimate-local-band-triptico text: award-winning latin rock band) called (link: http://triptico.bandcamp.com text: Triptico), briefly joined national emocore band (link: http://www.metalblade.com/us/artists/phoenix-mourning/ text: Phoenix Mourning) for a tour across the states, played in the Boston rock bands (link: http://waypoints.bandcamp.com text: Waypoints) and (link: http://ambushed.bandcamp.com text: Ambushed), and made the first music that I wasn't embarrassed of in a modern rock band called (link: http://soundcloud.com/perpetualgrimace/sets/broken-self text: Broken Self). From time to time, I also do (link: http://soundcloud.com/perpetualgrimace/sets/video-game-covers text: rock tributes to a few of my favorite video game music).
 
 ----
 

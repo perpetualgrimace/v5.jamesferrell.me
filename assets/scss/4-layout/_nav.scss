@@ -63,11 +63,19 @@
 
 // nav-logo positioning
 .nav-logo {
+  // default padding
+  padding-top: 0.75rem;
+
+  // padding adjustment on medium viewports
+  @media (min-width: $s) and (max-width: $l - 0.001) {
+    // add padding to logo
+    padding-top: 0.85rem;
+  }
+
+  // main style
   @media (max-width: $l - 0.001) {
     // contain background
     width: 11.5rem;
-    // add padding to logo
-    padding-top: 0.75rem;
     padding-left: 2rem;
     // offset padding; needed so that the logo background is
     // flush with the left edge of the screen

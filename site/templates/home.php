@@ -16,7 +16,7 @@ snippet('global-body-open');
     snippet('global-section-close');
 
     // article list
-    snippet('global-section-open', ['class' => 'secondary-content']);
+    snippet('global-section-open', ['class' => 'secondary-content secondary-content-blog-list']);
       snippet('blog-list', ['pagNum' => 3]);
     snippet('global-section-close');
 

@@ -18,7 +18,7 @@ snippet('global-body-open');
 
     // secondary content
     if ($page->secondary() != '') {
-      snippet('global-section-open', ['class' => 'secondary-content filter-header-offset']);
+      snippet('global-section-open', ['class' => 'secondary-content secondary-content-scaling filter-header-offset']);
         snippet('global-secondary');
       snippet('global-section-close');
     }

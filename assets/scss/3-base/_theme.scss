@@ -30,6 +30,11 @@ main {
       color: $brand-light;
     }
   }
+
+  // horizontal rule
+  hr {
+    @include hr;
+  }
 }
 
 

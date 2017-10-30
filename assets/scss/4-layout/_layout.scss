@@ -41,9 +41,12 @@
 /////////////////////////////////////////////
 
 // default margin for content
-.primary-content,
-.secondary-content {
+.primary-content {
   padding: 1.5rem 2rem;
+}
+
+.secondary-content {
+  padding: 1.5rem 2rem 2rem 2rem;
 }
 
 
@@ -93,7 +96,8 @@
     &:before {
       @include pseudo;
       position: fixed; // absolute won't reach the bottom, so fixed it is
-      width: inherit; // browsers are pretty good
+      width: inherit;
+      top: 0;
       height: 100%; // the whole dang ol' screen
       background: $brand-black;
     }
@@ -103,8 +107,7 @@
   .nav-container,
   .main {
     @include primary-content-width;
-    left: 25%; // fallback
-    left: calc(#{$max-sidebar-width});
+    @include primary-content-positioning;
   }
 }
 

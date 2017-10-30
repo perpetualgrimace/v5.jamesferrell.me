@@ -197,12 +197,15 @@
 
 
 ////////////////////////////////
-// perspective
+// horizontal rule
 ////////////////////////////////
 
-@mixin perspective-parent($perspective: 600) {
-  display: block;
-  perspective: $perspective;
+@mixin hr {
+  border: 0;
+  display: inline-block;
+  width: 2rem;
+  height: 2px;
+  background: $light-2;
 }
 
 
@@ -215,6 +218,11 @@
   width: calc(100% - #{$max-sidebar-width});
 }
 
+@mixin primary-content-positioning {
+  left: 25%; // fallback
+  left: calc(#{$max-sidebar-width});
+}
+
 @mixin secondary-content-width {
   width: 25%; // fallback
   width: calc(#{$max-sidebar-width});
@@ -224,6 +232,30 @@
   position: absolute;
   padding-left: $gutter; // combines with primary-content's also halfed gutter
   right: 0;
+}
+
+// style secondary content like primary content, add visual separator
+@mixin secondary-content-as-primary {
+  // compensate for _layout.scss's .section + .section margin-top reset
+  > .secondary {
+    padding-top: 2rem;
+  }
+
+  // visual separator
+  &:before {
+    @include pseudo;
+    @include hr;
+    position: absolute;
+    top: 1px;
+  }
+
+  // bump up text sizes to primary
+  h2 {
+    font-size: $gamma;
+  }
+  p {
+    font-size: $delta;
+  }
 }
 
 
