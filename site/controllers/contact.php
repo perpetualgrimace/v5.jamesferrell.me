@@ -14,7 +14,7 @@ return function($site, $pages, $page) {
           '_action' => 'email',
           'to'      => $page->email(),
           'sender'  => $page->email(),
-          'subject' => 'New message from the {{website-title}} contact form'
+          'subject' => 'New message via the jamesferrell.me contact form'
         ]
       ]
     ]

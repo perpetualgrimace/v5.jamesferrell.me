@@ -1,9 +1,9 @@
-Title: {{search-title}}
+Title: Search
 
 ----
 
 text:
 
-{{search-text}}
+This is a search
 
-(button: Back to home link: {{home-link}})
+(button: Back to home link: home)
