@@ -17,7 +17,7 @@
 
     // headings and terms
     dt, h3 {
-      font-size: rem(23); // fudgey font size in between $delta and $gamma
+      font-size: $bigger-than-delta;
     }
 
     // subheads

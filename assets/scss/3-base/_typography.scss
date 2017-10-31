@@ -34,13 +34,15 @@ button, input[type='button'], label,
 }
 
 // type size defaults
-h1           { font-size: $beta; }
-h2           { font-size: $gamma; }
-h3, p, li    { font-size: $delta;}
-h4           { font-size: $epsilon;}
+h1             { font-size: $beta; }
+h2             { font-size: $gamma; }
+h3, p, li      { font-size: $delta;}
+h4, figcaption { font-size: $epsilon;}
 h5, h6,
-small, label { font-size: $milli;}
+small, label   { font-size: $milli;}
 
+// bump up font-size for h3s that follow after an h2
+h2 ~ h3 { font-size: $bigger-than-delta; }
 
 // type size overrides
 .alpha {

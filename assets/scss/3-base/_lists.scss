@@ -32,5 +32,7 @@ ol {
   > li:before {
   	content: counter(list-counter)'.';
   	counter-increment: list-counter;
+    font-size: 0.75em;
+    top: 0.25rem;
   }
 }

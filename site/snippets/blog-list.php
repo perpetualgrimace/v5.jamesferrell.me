@@ -11,7 +11,7 @@
   if(isset($query) && ($query != '')) {
     $items = $results;
   } else {
-    $items = $pages->find('blog')->children()->visible()->sortBy('date')->flip()->paginate($pagNum);
+    $items = $pages->find('blog')->children()->visible()->flip()->paginate($pagNum);
   }
 
   $pagination = $items->pagination();

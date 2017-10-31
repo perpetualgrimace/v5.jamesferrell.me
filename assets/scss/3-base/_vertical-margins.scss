@@ -18,8 +18,16 @@ main .content ~ * {
   margin-top: 0.9em;
 }
 
-.content p + h2 {
+.content p + h2,
+.content ul + h2,
+.content ul + h3,
+.content figure + h2 {
   margin-top: 1.25em;
+  // border: 1px solid blue; // debugging
+}
+
+.content figure > figcaption {
+  margin-top: 0.5em;
 }
 
 
