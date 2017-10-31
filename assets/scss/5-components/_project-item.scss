@@ -107,14 +107,14 @@ $device-tweakpoint-l: 68em;
 
     // phone is in the foreground; it moves farther, faster
     & + .project-item-inner .mobile-container {
-      transform: translateY(-14px);
+      transform: translateY(-12px);
     }
 
     // other items are in the background; they move less, slower
     & + .project-item-inner .laptop-container,
     & + .project-item-inner .controller-container,
     & + .project-item-inner .album-container {
-      transform: translateY(-3px);
+      transform: translateY(-4px);
     }
   }
 }
