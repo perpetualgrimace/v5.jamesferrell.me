@@ -4,11 +4,25 @@
 
 // add columns where that makes sense
 .block-list {
+
   // halfway between $xs and $s
   @media (min-width: 35em) {
     columns: 2;
     column-gap: $gutter * 2;
     break-inside: avoid;
+  }
+
+  // if it's too small for columns, bump up font sizes
+  @media (max-width: 35em - 0.001) {
+    // headings and terms
+    dt, h3 {
+      font-size: rem(23); // fudgey font size in between $delta and $gamma
+    }
+    // list items and defintions
+    dd > p,
+    li {
+      font-size: $delta;
+    }
   }
 }
 
