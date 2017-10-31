@@ -8,9 +8,15 @@ $category = preg_replace('/\s\s+/', ' ', $category);
 $relativeDate = $page->published()->relative(1);
 
 // time to read
-$readingTime = readingtime($page->text(), [
-  'format' => '{minutesCount} {minutesLabel}'
-]);
+// since the plugin doesn't work with blocks, check for manual estimate via readingTime field
+if ($page->readingTime() != '') {
+  $readingTime = $page->readingTime();
+// use the plugin
+} else {
+  $readingTime = readingtime($page->text(), [
+    'format' => '{minutesCount} {minutesLabel}'
+  ]);
+}
 
 // twitter share link
 $twitterHandle = $pages->find('contact')->twitter();

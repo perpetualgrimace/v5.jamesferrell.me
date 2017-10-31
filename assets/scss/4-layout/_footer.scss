@@ -35,11 +35,17 @@
 
 // small screens
 @media (max-width: $xs - 0.001) {
+  // padding override
+  .footer-nav-list.g-col {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  // display links inline
   .footer-nav-link {
     display: block;
     padding-left: 0;
   }
-
+  // add border in between items
   .footer-nav-item + .footer-nav-item {
     border-top: 1px solid $gray;
   }
