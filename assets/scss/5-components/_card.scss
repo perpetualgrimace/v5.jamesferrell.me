@@ -90,3 +90,32 @@ a.card-title {
     display: none;
   }
 }
+
+
+////////////////////////////////
+// Flexbox layout enhancement
+////////////////////////////////
+
+// flexbox browsers only
+@supports (display: flex) {
+  // let them flex
+  .card-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    // adjust margin on blog page card list
+    &.blog-card-list {
+      margin-bottom: -0.5rem;
+    }
+
+    // set ideal width, let cards grow or shrink as necessary
+    > .card-container {
+      flex: 1 1 20rem;
+    }
+
+    // needed to make the inner container fill up parent container
+    .card-inner {
+      height: 100%;
+    }
+  }
+}

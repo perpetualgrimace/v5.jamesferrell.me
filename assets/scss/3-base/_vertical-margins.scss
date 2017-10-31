@@ -39,12 +39,11 @@ main .content ~ * {
 main [id]:before {
   @include pseudo;
   visibility: hidden;
-  margin-top: -($gutter * 2);
-  height: $gutter * 2;
+  pointer-events: none;
 
   // account for fixed nav
   @media (min-width: $l) and (min-height: $s) {
-    margin-top: -($gutter * 5);
-    height: $gutter * 5;
+    margin-top: -1.5rem;
+    height: 1.5rem;
   }
 }

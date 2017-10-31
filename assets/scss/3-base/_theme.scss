@@ -35,6 +35,20 @@ main {
   hr {
     @include hr;
   }
+
+  // code blocks
+  code {
+    background: $brand-black;
+    color: $light-1;
+    padding: 0.1em 0.5em;
+    border-radius: $radius;
+  }
+  // space out code blocks within paragraphs
+  p > code,
+  li > code {
+    margin-left: 0.1em;
+    margin-right: 0.1em;
+  }
 }
 
 

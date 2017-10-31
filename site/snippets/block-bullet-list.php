@@ -28,6 +28,8 @@ if ($pages->find('blocks/' . $listName)):
       <!-- heading -->
       <h3 class="block-bullet-list-heading"><?= $listItem->title() ?></h3>
 
+      <? e($listItem->description() != '', $listItem->description()->kt()) ?>
+
       <!-- list -->
       <?= $listItem->items()->kt() ?>
 
