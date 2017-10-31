@@ -14,10 +14,17 @@
 
   // if it's too small for columns, bump up font sizes
   @media (max-width: 35em - 0.001) {
+
     // headings and terms
     dt, h3 {
       font-size: rem(23); // fudgey font size in between $delta and $gamma
     }
+
+    // subheads
+    .block-definition-subhead {
+      font-size: $epsilon;
+    }
+
     // list items and defintions
     dd > p,
     li {
@@ -65,6 +72,12 @@
   dd {
     margin-top: 0.75em;
     line-height: 1.275;
+
+    // subhead adjustment
+    > .block-definition-subhead {
+      display: block; // necessary to honor margin adjustment
+      margin-top: -0.5em;
+    }
   }
   // spacing of individual definitions (each definition is wrapped in an li)
   li + li {
