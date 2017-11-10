@@ -23,7 +23,7 @@
 
 <!-- display project-items -->
 <? if ($items->count() != 0): ?>
-  <div class="project-list">
+  <div class="project-list" data-type-list>
     <? foreach ($items as $item) {
       snippet('project-item', array('item' => $item));
     } ?>

@@ -26,9 +26,15 @@
     $description = $item->text()->excerpt(25, 'words');
   }
 
+  // format tags for use in sorting
+  // problem solving, software ➡ problem-solving,-software
+  $tagList = str_replace(' ', '-', $item->topic());
+  // problem-solving,-software ➡ problem-solving software
+  $tagList = str_replace(',-', ' ', $tagList);
+
 ?>
 
-<article class="<?= $contentType?>-card-container card-container g-col">
+<article class="<?= $contentType?>-card-container card-container g-col" data-type-item data-type="<?= $tagList ?>">
 
   <div class="card-inner">
 

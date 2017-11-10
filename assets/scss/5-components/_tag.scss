@@ -6,7 +6,7 @@
   text-transform: uppercase;
   padding: 0.2rem 0.5rem 0.2rem 0.5rem;
   color: $white;
-  background: $black;
+  background-color: $black;
   border-radius: $radius;
 }
 
@@ -17,11 +17,37 @@
   // wrapper li; display tags horizontally
   .tag-item {
     display: inline-block;
-    // margin-bottom: 0.5em; // throws off wrapping tags
+    margin-bottom: 0.5em;
 
     // add spacing to the right of all but the last item
     &:not(:last-of-type) {
       margin-right: $gutter / 2;
     }
   }
+}
+
+
+// tag-links
+.tag-link {
+  background-color: $dark-1;
+
+  // interactions
+  &:hover, &:focus {
+    color: $white;
+    background-color: $brand-light;
+  }
+
+  // not selected
+  // NOTE: the order makes a difference here; this should come after interaction styles
+  &.is-selected {
+    background-color: $black;
+    pointer-events: none;
+  }
+}
+
+
+// before js loads in, prevent interactions
+body.no-js .tag-list {
+  pointer-events: none;
+  z-index: -1;
 }

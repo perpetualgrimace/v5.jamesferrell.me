@@ -1,0 +1,11 @@
+// margin fix
+.filter-header {
+  // account for .tag-item bottom margin on filter-header only
+  // NOTE: applying this globaly messes up the work-item tag placement
+  margin-bottom: 0;
+}
+
+// states for filter-header component
+[data-type-item].is-hidden {
+  display: none;
+}

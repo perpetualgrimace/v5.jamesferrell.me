@@ -69,12 +69,12 @@ $device-tweakpoint-l: 68em;
 
 // space out tag list
 .project-tag-list {
-  margin-top: rem(3); // fudged to fit the baseline
+  margin-top: rem(13); // fudged to fit the baseline
   margin-bottom: $gutter * 1.5;
 
   // add more margin at left-aligned layout
   @media (min-width: $device-tweakpoint-l) {
-    margin-bottom: $gutter * 2;
+    margin-bottom: $gutter * 1.5;
   }
 }
 

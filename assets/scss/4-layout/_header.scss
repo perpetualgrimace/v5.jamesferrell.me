@@ -60,12 +60,7 @@
 
 // headline positioning
 .filter-header-headline {
-  // TODO: uncomment next line once logic is in place
-  // margin-bottom: 0.65rem;
-  // TODO: remove next three lines once logic is in place
-  & ~ * {
-    display: none !important;
-  }
+  margin-bottom: 0.65rem;
 }
 
 // tagcloud positioning

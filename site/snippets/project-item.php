@@ -24,6 +24,12 @@
     $tags = ['untagged'];
   }
 
+  // format tags for use in sorting
+  // web design, web development, branding ➡ web-design,-web-development,-branding
+  $tagList = str_replace(' ', '-', $item->tags());
+  // web-design,-web-development,-branding ➡ web-design web-development branding
+  $tagList = str_replace(',-', ' ', $tagList);
+
   // link text
   if ($contentType == 'web') {
     $linkText = 'View live site';
@@ -45,7 +51,7 @@
 ?>
 
 
-<article class="<?= $contentType?>-project-item project-item dark-theme " style="background-color: <?= $projectColor ?>">
+<article class="<?= $contentType?>-project-item project-item dark-theme " style="background-color: <?= $projectColor ?>" data-type-item data-type="<?= $tagList ?>">
 
 
   <!-- link -->
@@ -67,7 +73,7 @@
       <!-- tags -->
       <ul class="project-tag-list tag-list">
         <? foreach ($tags as $tag): ?>
-          <li class="tag-item u-margin-top-sm">
+          <li class="tag-item">
             <? snippet('tag', ['tag' => $tag]); ?>
           </li>
         <? endforeach ?>

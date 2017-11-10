@@ -1,7 +1,5 @@
 <?
 
-// TODO: make tags functional
-
 // get tag name
 $tagName = $tag;
 

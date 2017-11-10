@@ -21,7 +21,7 @@ rsort($tags);
 
   <!-- headline -->
   <h1 class="filter-header-headline gamma">
-    <span class="category">All</span> <?= $contentType ?>
+    <span class="filter-header-category" data-filter-header-category>All</span> <?= $contentType ?>
   </h1>
 
 
@@ -31,11 +31,11 @@ rsort($tags);
   <!-- tag list -->
   <ul class="filter-tag-list tag-list">
     <li class="tag-item">
-      <span class="tag epsilon">All</span>
+      <a href="#all" class="tag tag-link epsilon is-selected" data-type-trigger>All</a>
     </li>
     <? foreach ($tags as $tag): ?>
       <li class="tag-item">
-        <? snippet('tag', ['tag' => $tag]) ?>
+        <? snippet('tag-link', ['tag' => $tag]) ?>
       </li>
     <? endforeach ?>
   </ul>

@@ -41,7 +41,7 @@
 
   <!-- display blog cards -->
   <? if ($items->count() != 0): ?>
-    <div class="g-columns g-compact card-list <?= $page->slug() . '-card-list' ?>">
+    <div class="g-columns g-compact card-list <?= $page->slug() . '-card-list' ?>"  data-type-list>
       <? foreach ($items as $item) {
         snippet('card', array('item' => $item));
       } ?>

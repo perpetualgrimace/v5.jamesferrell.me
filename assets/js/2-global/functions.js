@@ -33,6 +33,71 @@ function parentFocus(selector, parent) {
 }
 
 
+// uppercase initial letter
+function uppercaseInitial(string) {
+  // get first character and capitalize it
+  var firstChar = string.substring(0, 1).toUpperCase();
+  // get the rest of the string
+  var tail = string.substring(1);
+  // put them both together
+  return firstChar + tail;
+}
+
+
+// get the page hash
+function getHash() {
+  // get the hash value, minus the hash
+  return window.location.hash.substr(1);
+}
+
+
+// get the page slug
+// thanks, https://stackoverflow.com/questions/16717086/converting-url-string-into-slug#answer-16717628
+function getSlug() {
+  // get the full path and split it into components
+  var pathComponents = window.location.pathname.match(/([^\/]+)/g);
+  // get the last bit (AKA, the slug)
+  return pathComponents[pathComponents.length - 1];
+}
+
+
+// update filter header title
+function filter() {
+
+  // update hashtag value
+  hashVal = getHash();
+
+
+  // update category title
+
+  // convert category-title to Category title
+  var categoryTitle = uppercaseInitial( hashVal.replace('-', ' ') );
+  // set title to categoryTitle
+  $('[data-filter-header-category]').text(categoryTitle);
+
+
+  // update selected trigger style (.tag-link)
+
+  // remove .is-selected class from previously selected tag-link
+  $('[data-type-trigger]:not([href="#' + hashVal + '"])').removeClass('is-selected');
+  // add .is-selected class to currently selected tag-link
+  $('[data-type-trigger][href="#' + hashVal + '"]').addClass('is-selected');
+
+
+  // show/hide filtered items
+
+  // unide them all by default
+  $('[data-type-item]').removeClass('is-hidden');
+  // hide those who shall be hidden
+  if (hashVal != 'all') { // 'all' isn't a category, so without this everything gets hidden 😬
+    $('[data-type]:not([data-type*="' + hashVal + '"])').addClass('is-hidden');
+  }
+
+  // debug
+  console.log('filter() fired; category updated to "' + categoryTitle + '"');
+}
+
+
 // delay function
 // thanks, https://coderwall.com/p/biqpfw/jquery-window-size-onload-and-onresize
 var delay = (function() {
