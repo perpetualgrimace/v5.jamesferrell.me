@@ -54,12 +54,19 @@ function getHash() {
 // get the page slug
 // thanks, https://stackoverflow.com/questions/16717086/converting-url-string-into-slug#answer-16717628
 function getSlug() {
-  // get the full path and split it into components
-  var pathComponents = window.location.pathname.match(/([^\/]+)/g);
-  // get the last bit (AKA, the slug)
-  return pathComponents[pathComponents.length - 1];
-  // debugging
-  // console.log(slug + ' | ' + hashVal);
+
+  // if we're on the home page, there won't be a slug
+  if (window.location.pathname == '/') {
+    return 'home';
+  // otherwise, get the slug
+  } else {
+    // get the full path and split it into components
+    var pathComponents = window.location.pathname.match(/([^\/]+)/g);
+    // return the last bit (AKA, the slug)
+    return pathComponents[pathComponents.length - 1];
+    // debugging
+    // console.log('getSlug() fired; the slug is: ' + slug);
+  }
 }
 
 
@@ -98,10 +105,10 @@ function filter() {
       $('[data-type]:not([data-type*="' + hashVal + '"])').addClass('is-hidden');
     }
 
-  }
+    // debug
+    // console.log('filter() fired; category updated to "' + categoryTitle + '"');
 
-  // debug
-  console.log('filter() fired; category updated to "' + categoryTitle + '"');
+  }
 }
 
 
