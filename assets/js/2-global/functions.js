@@ -58,6 +58,8 @@ function getSlug() {
   var pathComponents = window.location.pathname.match(/([^\/]+)/g);
   // get the last bit (AKA, the slug)
   return pathComponents[pathComponents.length - 1];
+  // debugging
+  // console.log(slug + ' | ' + hashVal);
 }
 
 
@@ -67,30 +69,35 @@ function filter() {
   // update hashtag value
   hashVal = getHash();
 
-
-  // update category title
-
-  // convert category-title to Category title
-  var categoryTitle = uppercaseInitial( hashVal.replace('-', ' ') );
-  // set title to categoryTitle
-  $('[data-filter-header-category]').text(categoryTitle);
+  // check for filtery hash, exclude non-filtery hashes
+  if (hashVal != 'footer-nav' && hashVal != 'site-intro' && hashVal != 'main' && hashVal != '') {
 
 
-  // update selected trigger style (.tag-link)
+    // update category title
 
-  // remove .is-selected class from previously selected tag-link
-  $('[data-type-trigger]:not([href="#' + hashVal + '"])').removeClass('is-selected');
-  // add .is-selected class to currently selected tag-link
-  $('[data-type-trigger][href="#' + hashVal + '"]').addClass('is-selected');
+    // convert category-title to Category title
+    var categoryTitle = uppercaseInitial( hashVal.replace('-', ' ') );
+    // set title to categoryTitle
+    $('[data-filter-header-category]').text(categoryTitle);
 
 
-  // show/hide filtered items
+    // update selected trigger style (.tag-link)
 
-  // unide them all by default
-  $('[data-type-item]').removeClass('is-hidden');
-  // hide those who shall be hidden
-  if (hashVal != 'all') { // 'all' isn't a category, so without this everything gets hidden 😬
-    $('[data-type]:not([data-type*="' + hashVal + '"])').addClass('is-hidden');
+    // remove .is-selected class from previously selected tag-link
+    $('[data-type-trigger]:not([href="#' + hashVal + '"])').removeClass('is-selected');
+    // add .is-selected class to currently selected tag-link
+    $('[data-type-trigger][href="#' + hashVal + '"]').addClass('is-selected');
+
+
+    // show/hide filtered items
+
+    // unide them all by default
+    $('[data-type-item]').removeClass('is-hidden');
+    // hide those who shall be hidden
+    if (hashVal != 'all') { // 'all' isn't a category, so without this everything gets hidden 😬
+      $('[data-type]:not([data-type*="' + hashVal + '"])').addClass('is-hidden');
+    }
+
   }
 
   // debug

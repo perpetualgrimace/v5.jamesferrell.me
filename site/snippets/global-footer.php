@@ -20,7 +20,7 @@ $items = new Pages();
 
     <!-- navigation -->
     <div class="footer-nav g-columns milli">
-      <ul class="footer-nav-list g-col">
+      <ul class="footer-nav-list g-col" id="footer-nav">
         <? foreach($items as $item): ?>
 
           <li class="footer-nav-item">

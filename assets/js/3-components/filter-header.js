@@ -2,20 +2,13 @@ $(document).ready(function() {
 
   // get hash
   var hashVal = getHash();
-
   // get slug
   var slug = getSlug();
 
-  // debugging
-  console.log(slug + ' | ' + hashVal);
-
   // check for filtery pages
   if (slug == 'blog' || slug == 'projects') {
-    // check for filtery hash
-    if (hashVal != 'all' && hashVal != '') {
-      // filter items
-      filter();
-    }
+    // filter items
+    filter();
   }
 
 

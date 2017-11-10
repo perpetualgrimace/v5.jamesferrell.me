@@ -60,7 +60,17 @@
   margin-right: 6px;
   // aesthetic
   border-radius: $radius;
-  overflow: hidden // needed for JF to X transition
+  overflow: hidden; // needed for JF to X transition
+}
+
+// alt text treatment
+.logo-icon-img {
+  @include body-semibold-font;
+  color: $white;
+  // all fudged
+  font-size: 26px;
+  line-height: 1.1;
+  letter-spacing: -2px;
 }
 
 // site-intro logo icon
