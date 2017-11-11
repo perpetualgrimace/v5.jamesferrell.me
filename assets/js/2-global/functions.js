@@ -102,8 +102,25 @@ function filter() {
     $('[data-type-item]').removeClass('is-hidden');
     // hide those who shall be hidden
     if (hashVal != 'all') { // 'all' isn't a category, so without this everything gets hidden 😬
-      $('[data-type]:not([data-type*="' + hashVal + '"])').addClass('is-hidden');
+      $('[data-type-item]:not([data-type*="' + hashVal + '"])').addClass('is-hidden');
     }
+
+
+    // fancy highlight effect
+
+    // remove highlight class by default
+    $('.tag[data-type]').removeClass('is-highlighted');
+
+    // highlight the appropriate tags
+    if (hashVal != 'all') {
+      $('.tag[data-type*="' + hashVal + '"]').addClass('is-highlighted');
+    }
+
+    // remove the highlighted class after a bit
+    delay(function(){
+      $('.is-highlighted').removeClass('is-highlighted');
+    }, 1000);
+
 
     // debug
     // console.log('filter() fired; category updated to "' + categoryTitle + '"');
