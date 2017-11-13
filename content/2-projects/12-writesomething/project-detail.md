@@ -30,4 +30,4 @@ laptopImg2x: writesomething-laptop@2x.png
 
 ----
 
-externalLink: http://writesomething.org
+externalLink: https://web.archive.org/web/20170614035922/http://writesomething.org/
