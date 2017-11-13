@@ -118,13 +118,12 @@
       transform: translateY(-8.05rem);
       // prevent collapsed site-intro from covering up social links
       height: $nav-height;
-      // NOTE: using overflow: hidden completley hides the logo on focus ¯\_(ツ)_/¯
     }
 
     // shrink and hide the avatar
     .site-intro-avatar-inner {
       // after transition
-      transform: scale(0.15) translateY(50px);
+      transform: scale(0.5);
       opacity: 0;
     }
 
@@ -139,7 +138,7 @@
     // hide the bio offscreen
     .site-intro-bio {
       // after transition
-      transform: translateY(-50%);
+      transform: translateY(20%);
       opacity: 0;
       clip: rect(1px, 1px, 1px, 1px);
       height: 1px;
@@ -154,15 +153,16 @@
   .site-intro {
     position: fixed;
     height: 20rem;
-    top: 0;
     z-index: 2;
+    overflow: hidden;
   }
   .site-intro.is-collapsed {
     height: $nav-height;
   }
   .site-intro + .tertiary {
     position: fixed;
-    transform: translateY(20rem);
+    top: $nav-height;
+    transform: translateY(16.7rem); // 20rem - 3.3rem ($nav-height)
     z-index: 1;
 
     // extend bottom

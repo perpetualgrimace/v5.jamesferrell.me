@@ -38,12 +38,20 @@ a, label, input, textarea, button,
   transition: transform $timing-gradual;
 }
 
-.site-intro:not(.is-collapsed) .site-intro-avatar-inner,
+.site-intro:not(.is-collapsed) .site-intro-avatar-inner { // transition in only
+  /* autoprefixer: off */
+  transition:
+    opacity $timing-fast,
+    transform $timing;
+  transition-delay: 0.1s;
+}
+
+
 .site-intro:not(.is-collapsed) .site-intro-bio { // transition in only
   /* autoprefixer: off */
   transition:
-    opacity $timing-gradual,
-    transform $timing-gradual;
+    opacity $timing-long,
+    transform $timing-long;
 }
 
 .site-intro.is-collapsed .logo-icon {
