@@ -8,7 +8,7 @@ Headline: projects
 
 cta:
 
-## Do you like what you see?
+## Like my work?
 
 I'm happy to chat about a new project, or whatever. Let's grab a coffee.
 
