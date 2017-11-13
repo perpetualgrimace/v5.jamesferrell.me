@@ -32,7 +32,7 @@ $twitterShareLink = 'https://twitter.com/share?url=' . $page->url() . '&text=' .
     <!-- category -->
     <li class="secondary-item">
       <strong class="secondary-label">Category:</strong>
-      <span class="tag"><?= $category ?></span>
+      <? snippet('tag-link', ['tag' => $category]) ?>
     </li>
 
     <!-- date published -->
