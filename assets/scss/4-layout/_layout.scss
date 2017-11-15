@@ -23,6 +23,7 @@
 // make sure .main is large enough to fit entire expanded
 // tertiary sidebar, which has fixed positioning
 .main {
+  max-width: $max-main-width;
   // 2+ column layout, 2 rows of social icons
   @media (min-width: $l) {
     min-height: rem(680);
@@ -103,7 +104,7 @@
     }
   }
 
-  // position nav and main so that take up the right side fo the screen
+  // position nav and main so that take up the right side of the screen
   .nav-container,
   .main {
     @include primary-content-width;
@@ -116,6 +117,17 @@
 @media (min-width: $l) and (max-width: $xl - 0.001) {
   .primary-content.blog-content {
     max-width: $max-container-width;
+  }
+}
+
+
+/////////////////////////////////////////////
+// main container realignment on big screens
+/////////////////////////////////////////////
+
+.main {
+  @media (min-width: $xxxl) {
+    @include main-offset-positioning;
   }
 }
 
@@ -183,12 +195,7 @@
   // copied from primary-content 3 col layout; needed
   .contact-primary-content {
     @include primary-content-width;
-    padding-right: $gutter;
-
-    // limit contact form width
-    > * {
-      max-width: rem(800);
-    }
+    padding-right: 3rem; // a little extra white space is nice here
   }
 
   // copied from secondary-content 3 col layout and modified; also needed

@@ -36,7 +36,7 @@
 
   // layout adjustments on bigger screens
   @media (min-width: $m) {
-    max-width: none;
+    max-width: $max-main-width;
   }
 
   // offset nav-link padding on 3 column layout

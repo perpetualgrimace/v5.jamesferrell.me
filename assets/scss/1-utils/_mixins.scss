@@ -223,6 +223,15 @@
   left: calc(#{$max-sidebar-width});
 }
 
+@mixin main-offset-positioning {
+  // offset main container by half the sidebar width
+  left: 12.5%;
+  left: calc(#{$half-sidebar-width});
+  // center main container
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @mixin secondary-content-width {
   width: 25%; // fallback
   width: calc(#{$max-sidebar-width});
