@@ -42,11 +42,7 @@
   }
 
   // determine heading tag (for accessiblity!)
-  if($page->isHomePage()) {
-    $headingTag = 'h3';
-  } else {
-    $headingTag = 'h2';
-  }
+  $headingTag = 'h2';
 
 ?>
 

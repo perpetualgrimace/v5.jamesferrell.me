@@ -17,7 +17,7 @@
 
 <!-- home page -->
 <? if ($page->isHomePage()): ?>
-  <h2 class="u-padding-bottom"><?= $page->projectsHeadline() ?></h2>
+  <h1 class="u-padding-bottom gamma"><?= $page->projectsHeadline() ?></h1>
 <? endif ?>
 
 
