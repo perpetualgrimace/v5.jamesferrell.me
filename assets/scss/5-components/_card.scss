@@ -92,6 +92,30 @@ a.card-title {
 }
 
 
+////////////////////////////////////
+// link & interactions
+////////////////////////////////////
+
+.card-link {
+  @include inflate;
+  z-index: 3;
+  overflow: hidden;
+
+  // adjust title color on :hover / :focus
+  &:hover, &:focus {
+    & + .card-caption .card-title {
+      color: $brand-light;
+    }
+  }
+  &:active + .card-caption .card-title {
+    color: $brand-dark;
+  }
+}
+
+.card-inner.is-focused {
+  @include box-shadow-xl;
+}
+
 ////////////////////////////////
 // Flexbox layout enhancement
 ////////////////////////////////

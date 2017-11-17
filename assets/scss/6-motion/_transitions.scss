@@ -1,6 +1,7 @@
 // interactive stuff
 a, label, input, textarea, button,
-[class*=button], [class*=button]:after, .nav-link:after {
+[class*=button], [class*=button]:after,
+.nav-link:after, .card-inner {
   /* autoprefixer: off */
   transition:
     color $timing,

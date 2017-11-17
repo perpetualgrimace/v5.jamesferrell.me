@@ -42,7 +42,10 @@
   }
 
   // determine heading tag (for accessiblity!)
-  $headingTag = 'h2';
+  // $headingTag = 'h2';
+
+  // use slug as ID
+  $slug = $item->slug();
 
 ?>
 
@@ -51,7 +54,7 @@
 
 
   <!-- link -->
-  <a href="<?= $item->externalLink() ?>" class="project-item-link">
+  <a href="<?= $item->externalLink() ?>" class="project-item-link" aria-describedby="<?= $slug ?>">
     <span class="u-screenreader"><?= $linkText ?></span>
   </a>
 
@@ -64,7 +67,7 @@
     <div class="project-item-caption">
 
       <!-- heading -->
-      <<?= $headingTag ?> class="<?= $contentType?>-project-item-title project-item-title heading beta" href="<?= $item->externalLink() ?>"><?= $item->title() ?></<?= $headingTag ?>>
+      <h2 class="<?= $contentType?>-project-item-title project-item-title heading beta" href="<?= $item->externalLink() ?>" tabindex="-1" id="<?= $slug ?>"><?= $item->title() ?></h2>
 
       <!-- tags -->
       <ul class="project-tag-list tag-list">

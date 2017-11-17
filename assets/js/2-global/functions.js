@@ -2,33 +2,21 @@
 // interactions
 //////////////////////////////////////
 
-// when hovering or focusing a title,
-// add a state class to the container
-function titleFocus(title, container) {
-
-  $(title).focus(function() {
-    $(this).closest(container).addClass('is-focused');
-  });
-  $(title).blur(function() {
-    $(this).closest(container).removeClass('is-focused');
-  });
-  $(title).mouseenter(function() {
-    $(this).closest(container).addClass('is-focused');
-  });
-  $(title).mouseleave(function() {
-    $(this).closest(container).removeClass('is-focused');
-  });
-}
-
-
-// focus the parent
-function parentFocus(selector, parent) {
+// when hovering or focusing an object,
+// add a state class to the parent
+function parentFocus(selector, container) {
 
   $(selector).focus(function() {
-    $(this).closest(parent).addClass('is-focused');
+    $(this).closest(container).addClass('is-focused');
   });
   $(selector).blur(function() {
-    $(this).closest(parent).removeClass('is-focused');
+    $(this).closest(container).removeClass('is-focused');
+  });
+  $(selector).mouseenter(function() {
+    $(this).closest(container).addClass('is-focused');
+  });
+  $(selector).mouseleave(function() {
+    $(this).closest(container).removeClass('is-focused');
   });
 }
 
