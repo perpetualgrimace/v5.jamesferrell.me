@@ -1,10 +1,10 @@
 {
   "name": "v5.jamesferrell.me",
-  "version": "5.0",
+  "version": "5.0.1",
   "description": "Version 5 of my portfolio site",
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/perpetualgrimace/v5.jamesferrell.me"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/perpetualgrimace/v5.jamesferrell.me"
   },
   "main": "gulpfile.js",
   "dependencies": {
