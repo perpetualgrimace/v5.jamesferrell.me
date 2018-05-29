@@ -7,21 +7,21 @@ list:
   title: 'Especially good at:'
   items: |
     - Responsive web design
+    - UI design & prototyping
     - Style guides & design systems
     - Website architecture & wireframing
     - Sketch, Photoshop, & Illustrator
-    - HTML (HTML5)
-    - CSS (SCSS, CSS3)
+    - Valid, accessible HTML (HTML5)
+    - Clean, well-documented CSS (SCSS, PostCSS, CSS3)
     - Kirby CMS
     - Problem solving in general
 -
   title: 'Competent while actively improving:'
   items: |
     - Branding
-    - UI design & prototyping
     - Web accessibility
     - Web performance
+    - Javascript (React, vanilla, jQuery)
     - PHP
-    - Javascript (vanilla, jQuery)
     - Gulp & Grunt
     - Git
