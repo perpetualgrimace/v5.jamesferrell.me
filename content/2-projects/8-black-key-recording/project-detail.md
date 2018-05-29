@@ -30,4 +30,4 @@ laptopImg2x: blackkey-laptop@2x.png
 
 ----
 
-externalLink: http://blackkeyrecording.com
+externalLink: https://web.archive.org/web/20170621070649/http://blackkeyrecording.com/
