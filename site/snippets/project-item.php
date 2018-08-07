@@ -47,16 +47,34 @@
   // use slug as ID
   $slug = $item->slug();
 
+  // coming soon?
+  if ($item->comingSoon() == "true") {
+    $comingSoon = "is-coming-soon";
+  } else {
+    $comingSoon = "";
+  }
+
 ?>
 
 
-<article class="<?= $contentType?>-project-item project-item dark-theme " style="background-color: <?= $projectColor ?>" data-type-item data-type="<?= $tagList ?>">
+<article class="<?= $contentType?>-project-item project-item dark-theme <?= $comingSoon ?>" style="background-color: <?= $projectColor ?>" data-type-item data-type="<?= $tagList ?>">
 
 
   <!-- link -->
-  <a href="<?= $item->externalLink() ?>" class="project-item-link" aria-describedby="<?= $slug ?>">
-    <span class="u-screenreader"><?= $linkText ?></span>
-  </a>
+  <? if ($item->externalLink() != ""): ?>
+    <a href="<?= $item->externalLink() ?>" class="project-item-link" aria-describedby="<?= $slug ?>">
+      <span class="u-screenreader"><?= $linkText ?></span>
+    </a>
+  <!-- no link -->
+  <? else: ?>
+    <span class="project-item-link"></span>
+  <? endif ?>
+
+
+  <!-- coming soon -->
+  <? if ($comingSoon != ""): ?>
+    <p class="project-item-banner epsilon">Coming soon</p>
+  <? endif ?>
 
 
   <!-- inner container -->

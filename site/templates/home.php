@@ -12,7 +12,7 @@ snippet('global-body-open');
 
     // project list
     snippet('global-section-open', ['class' => 'primary-content']);
-      snippet('project-list', ['pagNum' => 6]);
+      snippet('project-list', ['pagNum' => 8]);
     snippet('global-section-close');
 
     // article list

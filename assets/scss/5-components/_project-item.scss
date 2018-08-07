@@ -48,6 +48,45 @@ $device-tweakpoint-l: 68em;
     // NOTE: won't apply to mobile, album or controller
     text-align: left;
   }
+
+  // coming soon; no hovering
+  &.is-coming-soon {
+
+    // banner
+    .project-item-banner {
+      // sizing
+      display: block;
+      padding: 0.5em 3em;
+      // positioning
+      position: absolute;
+      transform: rotateZ(-45deg);
+      top: 1.75em;
+      left: -3.25em;
+      z-index: 1;
+      // theming
+      color: $black;
+      background-color: $light-2;
+      box-shadow: 0 1px 1em rgba($black, 0.9);
+      // typography
+      text-align: center;
+      text-transform: uppercase;
+      // transitions
+      transition:
+        color $timing-gradual,
+        background $timing;
+    }
+
+    // interactions
+    .project-item-link {
+      cursor: default;
+      background-color: transparent !important;
+
+      &:hover + .project-item-banner {
+        color: $white;
+        background-color: $brand-color;
+      }
+    }
+  }
 }
 
 
@@ -107,14 +146,14 @@ $device-tweakpoint-l: 68em;
     opacity: 1;
 
     // phone is in the foreground; it moves farther, faster
-    & + .project-item-inner .mobile-container {
+    & ~ .project-item-inner .mobile-container {
       transform: translateY(-12px);
     }
 
     // other items are in the background; they move less, slower
-    & + .project-item-inner .laptop-container,
-    & + .project-item-inner .controller-container,
-    & + .project-item-inner .album-container {
+    & ~ .project-item-inner .laptop-container,
+    & ~ .project-item-inner .controller-container,
+    & ~ .project-item-inner .album-container {
       transform: translateY(-4px);
     }
   }
