@@ -1,6 +1,6 @@
 <?
 // get template
-$template = str_replace('.', '-', $page->intendedTemplate()) . ' ';
+$template = str_replace('.', '-', $page->intendedTemplate()) . '-template ';
 
 // get slug
 if ($page->slug() != $template) {
