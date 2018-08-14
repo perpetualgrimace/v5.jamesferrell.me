@@ -2,11 +2,11 @@ Title: James Ferrell
 
 ----
 
-Description: James Ferrell is a designer/developer in Boston, MA. This is his portfolio site. He doesn't usually talk in the third person like this.
+Description: James Ferrell is a front-end designer in Boston, MA. This is his portfolio site. He doesn't usually talk in the third person like this.
 
 ----
 
-Bio: Hello! I'm a multidisciplinary web designer/developer  currently living in Boston, MA. I design and build responsive, accessible, performant websites.
+Bio: Hello! I'm a multidisciplinary front-end designer currently living in Boston, MA. I design and build responsive, accessible, performant websites.
 
 I'm currently taking on new projects, so (link: contact text: get in touch)!
 

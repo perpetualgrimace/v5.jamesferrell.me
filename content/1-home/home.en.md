@@ -1,4 +1,4 @@
-Title: Web Designer & Developer
+Title: Front-end Designer
 
 ----
 

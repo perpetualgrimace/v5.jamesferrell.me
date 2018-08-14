@@ -4,7 +4,7 @@ title: Employment
 
 list:
 -
-  title: Product Designer at Datawheel
+  title: Front-End Designer at Datawheel
   subhead: December 2017 – Present
   text: Designed and implemented designs for data-oriented websites, organizing data into meaningful sections with appropriate visualizations. Designed product dashboards and sign-up flows.<br/><br/>Worked with high profile clients such as Verizon, Estée Lauder, and CDC (Center for Disease Control and Prevention).
 -

@@ -10,7 +10,7 @@ Description: Brackets is an appealing code editor for those just getting started
 
 ----
 
-Tags: design,development,brackets,adobe,code,front end,frontend,dev,tools,alternative,live preview,brackets extract,html,css,webtools
+Tags: design,development,brackets,adobe,code,front end,frontend,front-end,dev,tools,alternative,live preview,brackets extract,html,css,webtools
 
 ----
 
@@ -28,7 +28,7 @@ Text:
 
 ***
 
-(link: http://brackets.io text: Brackets) is an open-source code editor made by Adobe specifically for front end developers. I started using it somewhere in 2012. As a front end rookie with a background in design, it was very appealing.
+(link: http://brackets.io text: Brackets) is an open-source code editor made by Adobe specifically for front end developers. I started using it somewhere in 2012. As a front-end rookie with a background in design, it was very appealing.
 
 ## Live Preview is awesome
 
@@ -48,9 +48,9 @@ In a recent update, you can use Brackets Extract to open up a Photoshop document
 
 ## Moving beyond html, css and js
 
-Since Brackets was designed for front end developers, you won't find any support for PHP.
+Since Brackets was designed for front-end developers, you won't find any support for PHP.
 
-Lately I've been building as many sites with (link: html://getkirby.com text: Kirby CMS) as possible, which uses PHP. Since Brackets was designed for front end developers, working with back end code is a chore. There isn't any syntax highlighting or theme colors for PHP, and trying to open Live Preview with a PHP file causes an error message, even if you're running a local server. Another strike.
+Lately I've been building as many sites with (link: html://getkirby.com text: Kirby CMS) as possible, which uses PHP. Since Brackets was designed for front-end developers, working with back-end code is a chore. There isn't any syntax highlighting or theme colors for PHP, and trying to open Live Preview with a PHP file causes an error message, even if you're running a local server. Another strike.
 
 ## Is it there a place for it today?
 
