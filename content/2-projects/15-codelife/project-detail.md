@@ -10,7 +10,7 @@ thumbnailLayout: web
 
 ----
 
-tags: web design, font-end development, React
+tags: web design, front-end development, React
 
 ----
 
