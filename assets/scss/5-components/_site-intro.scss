@@ -71,6 +71,13 @@
   font-size: 26px;
   line-height: 1.1;
   letter-spacing: -2px;
+
+  // account for the broken image icon in newish chrome (fudged)
+  @supports (-webkit-appearance:none) {
+    &:not([src]) {
+      top: -16px;
+    }
+  }
 }
 
 // site-intro logo icon
