@@ -5,7 +5,7 @@
   if (isset($pagNum)) {
     $pagNum = $pagNum;
   } else {
-    $pagNum = 15;
+    $pagNum = 16;
   }
 
   // project list with pagination (used on both home page and project list page)

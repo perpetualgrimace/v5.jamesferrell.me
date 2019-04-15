@@ -6,10 +6,6 @@ color: #282935
 
 ----
 
-comingSoon: false
-
-----
-
 thumbnailLayout: web
 
 ----
