@@ -1,0 +1,22 @@
+title: Project list
+pages: true
+  template:
+    - project
+  limit: 20
+files: false
+icon: briefcase
+options:
+  status: false
+  template: false
+  url: false
+
+fields:
+  headline:
+    label: Title
+    type: text
+  cta:
+    label: Site-wide subscription call to action
+    type: markdown
+    tools:
+      - header1
+      - link

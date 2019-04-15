@@ -1,0 +1,50 @@
+title: Project detail
+pages: false
+files: true
+icon: briefcase
+options:
+  template: false
+
+fields:
+  title:
+    label: Project title
+  thumbnailLayout:
+    label: layout
+    type: select
+    width: 1/3
+    options:
+      web: web
+      album: album
+      controller: controller
+  tags:
+    label: tags
+    type: tags
+    lower: true
+    default: web design, front-end development, React, D3plus
+    width: 1/3
+  color:
+    label: hex color
+    width: 1/3
+  externalLink:
+    label: URL
+    width: 1/2
+  comingSoon:
+    label: coming soon
+    help: "true" or "false"
+    width: 1/2
+  mobileImg:
+    label: mobile image
+    type: image
+    width: 1/4
+  mobileImg2x:
+    label: mobile image (@2x)
+    type: image
+    width: 1/4
+  laptopImg:
+    label: laptop image
+    type: image
+    width: 1/4
+  laptopImg2x:
+    label: laptop image (@2x)
+    type: image
+    width: 1/4
